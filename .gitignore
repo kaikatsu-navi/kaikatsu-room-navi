@@ -1,0 +1,17 @@
+# 認証情報・機密ファイル（絶対にコミット禁止！）
+credentials*.json
+*.json.key
+.env
+.env.*
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+.venv/
+
+# OS固有ファイル
+.DS_Store
+Thumbs.db
