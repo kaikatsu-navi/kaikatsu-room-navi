@@ -197,8 +197,9 @@ def _write_prices_sheet(sh: Any, prices_data: List[Dict[str, Any]]) -> None:
 
     today_str = datetime.now().strftime("%Y/%m/%d")
 
-    # 基準ヘッダー定義（一番左（A列）に「最終確認日」を配置！）
-    base_headers = [k for k in prices_data[0].keys() if k != "最終確認日"]
+    # 基準ヘッダー定義（一番左（A列）に「最終確認日」を配置！Web用オブジェクト等は除外）
+    exclude_keys = {"最終確認日", "diffs", "has_diff"}
+    base_headers = [k for k in prices_data[0].keys() if k not in exclude_keys]
     headers = ["最終確認日"] + base_headers
     last_check_col_idx = 0
 
@@ -293,7 +294,9 @@ def _write_prices_sheet(sh: Any, prices_data: List[Dict[str, Any]]) -> None:
         row = []
         for h in headers:
             val = item.get(h, "")
-            if h == "店舗名":
+            if isinstance(val, (list, dict)):
+                val = json.dumps(val, ensure_ascii=False)
+            elif h == "店舗名":
                 # 店舗詳細ページへの公式リンク数式を設定！
                 store_code = str(item.get("店舗コード", "")).strip()
                 store_name = str(val).strip()
@@ -307,7 +310,7 @@ def _write_prices_sheet(sh: Any, prices_data: List[Dict[str, Any]]) -> None:
 
     # 1. 値の一括更新 (USER_ENTERED で数式を認識させる)
     ws.clear()
-    ws.update("A1", rows, value_input_option="USER_ENTERED")
+    ws.update(values=rows, range_name="A1", value_input_option="USER_ENTERED")
     logger.info(f"シート [{sheet_name}] の値を一括更新しました (全 {len(prices_data)} 行, {len(headers)} 列)")
 
     # 2. 書式設定 & チェックボックス設定
