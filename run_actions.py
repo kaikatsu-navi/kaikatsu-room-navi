@@ -7,6 +7,7 @@ from datetime import datetime
 import config
 import scraper
 import sheets_writer
+import validator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -54,6 +55,11 @@ def main():
         # 3. 最新データの取得
         current_data = scraper.fetch_all_key_rooms_data()
         logger.info(f"全 {len(current_data)} 店舗の最新データを取得完了！")
+
+        # 3.5. 自己防衛バリデーション＆サニタイズ（異常値の自動修復）
+        current_data, val_warnings = validator.validate_and_sanitize(current_data, prev_store_map)
+        if val_warnings:
+            logger.warning(f"⚠️ 合計 {len(val_warnings)} 件の異常値が検出され、安全に自己修復されました。")
 
         # 4. 差分検知（サイレント値上げチェック）
         price_keys = [
