@@ -83,7 +83,7 @@
             <option value="weekday3h_asc">平日3時間パックが安い順</option>
             <option value="weekend3h_asc">週末3時間パックが安い順</option>
             <option value="weekday6h_asc">平日6時間パックが安い順</option>
-            <option value="diff_desc">直近で値上げがあった店舗優先 🔥</option>
+            <option value="decrease_desc">🎉 直近で値下げされた店舗優先</option>
           </select>
         </div>
       </div>
@@ -101,9 +101,9 @@
         </div>
 
         <div id="amenityFiltersContainer" class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs pt-1">
-          <label class="cursor-pointer bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
-            <input type="checkbox" value="diff_only" class="filter-cb accent-red-600">
-            <span class="font-bold">🔥 直近で値上げあり</span>
+          <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="decrease_only" class="filter-cb accent-emerald-600">
+            <span class="font-bold">🎉 直近で値下げあり（お得！）</span>
           </label>
           <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="VIPフラット" class="filter-cb accent-emerald-600">
@@ -286,14 +286,16 @@
       const sort = document.getElementById('sortSelect').value;
       
       const cbs = Array.from(document.querySelectorAll('.filter-cb:checked')).map(cb => cb.value);
-      const diffOnly = cbs.includes('diff_only');
-      const amenityCbs = cbs.filter(c => c !== 'diff_only');
+      const decOnly = cbs.includes('decrease_only');
+      const amenityCbs = cbs.filter(c => c !== 'decrease_only');
 
       // フィルターバッジ表示
       const activeBadge = document.getElementById('filterActiveBadge');
       if (activeBadge) {
         activeBadge.classList.toggle('hidden', cbs.length === 0);
       }
+
+      const hasDecrease = (s) => (s['diffs'] || []).some(d => (d.diff || '').startsWith('-'));
 
       let filtered = allStores.filter(s => {
         if (search) {
@@ -304,7 +306,7 @@
         }
 
         if (pref && s['都道府県'] !== pref) return false;
-        if (diffOnly && !s['has_diff']) return false;
+        if (decOnly && !hasDecrease(s)) return false;
 
         for (const a of amenityCbs) {
           if (!s[a]) return false;
@@ -320,8 +322,8 @@
         filtered.sort((a, b) => (parseInt(a['週末_3hパック']) || 99999) - (parseInt(b['週末_3hパック']) || 99999));
       } else if (sort === 'weekday6h_asc') {
         filtered.sort((a, b) => (parseInt(a['平日_6hパック']) || 99999) - (parseInt(b['平日_6hパック']) || 99999));
-      } else if (sort === 'diff_desc') {
-        filtered.sort((a, b) => (b.has_diff ? 1 : 0) - (a.has_diff ? 1 : 0));
+      } else if (sort === 'decrease_desc') {
+        filtered.sort((a, b) => (hasDecrease(b) ? 1 : 0) - (hasDecrease(a) ? 1 : 0));
       }
 
       document.getElementById('matchCount').textContent = filtered.length;
@@ -363,21 +365,57 @@
         if (s['カラオケ']) badges.push('<span class="badge-amuse px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎤 カラオケ</span>');
         if (s['ダーツ']) badges.push('<span class="badge-amuse px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎯 ダーツ</span>');
 
+        // 差分の内訳（値上げ・値下げ）判定
+        const incDiffs = diffs.filter(d => !(d.diff || '').startsWith('-'));
+        const decDiffs = diffs.filter(d => (d.diff || '').startsWith('-'));
+        const hasInc = incDiffs.length > 0;
+        const hasDec = decDiffs.length > 0;
+
         // 改定サマリーバナー
         let diffBanner = '';
         if (hasDiff) {
           const changeDateStr = s['last_price_change_date'] ? `${s['last_price_change_date']}検知 / ` : '';
-          diffBanner = `
-            <div class="bg-red-50 border border-red-200 rounded-lg px-2.5 py-1.5 text-xs text-red-800 flex items-center justify-between">
-              <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
-                <i class="fa-solid fa-arrow-trend-up text-red-600"></i>
-                <span>直近で価格改定あり (${changeDateStr}${diffs.length}項目値上げ)</span>
+          
+          if (hasDec && !hasInc) {
+            // 純粋な値下げのみ！
+            diffBanner = `
+              <div class="bg-emerald-50 border border-emerald-300 rounded-lg px-2.5 py-1.5 text-xs text-emerald-800 flex items-center justify-between">
+                <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
+                  <i class="fa-solid fa-arrow-trend-down text-emerald-600"></i>
+                  <span>直近で値下げあり！ (${changeDateStr}${decDiffs.length}項目値下げ 🎉)</span>
+                </div>
+                <div class="text-[10px] sm:text-[11px] text-emerald-700 truncate max-w-[200px] sm:max-w-none">
+                  ${decDiffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円 (${d.diff})`).slice(0, 2).join(' / ')}${decDiffs.length > 2 ? ' ...他' : ''}
+                </div>
               </div>
-              <div class="text-[10px] sm:text-[11px] text-red-600 truncate max-w-[200px] sm:max-w-none">
-                ${diffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円`).slice(0, 2).join(' / ')}${diffs.length > 2 ? ' ...他' : ''}
+            `;
+          } else if (hasInc && !hasDec) {
+            // 値上げのみ
+            diffBanner = `
+              <div class="bg-red-50 border border-red-200 rounded-lg px-2.5 py-1.5 text-xs text-red-800 flex items-center justify-between">
+                <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
+                  <i class="fa-solid fa-arrow-trend-up text-red-600"></i>
+                  <span>直近で価格改定あり (${changeDateStr}${incDiffs.length}項目値上げ)</span>
+                </div>
+                <div class="text-[10px] sm:text-[11px] text-red-600 truncate max-w-[200px] sm:max-w-none">
+                  ${incDiffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円`).slice(0, 2).join(' / ')}${incDiffs.length > 2 ? ' ...他' : ''}
+                </div>
               </div>
-            </div>
-          `;
+            `;
+          } else if (hasInc && hasDec) {
+            // 混在
+            diffBanner = `
+              <div class="bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5 text-xs text-amber-900 flex items-center justify-between">
+                <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
+                  <i class="fa-solid fa-arrows-up-down text-amber-600"></i>
+                  <span>直近で価格改定あり (${changeDateStr}値上げ${incDiffs.length} / 値下げ${decDiffs.length})</span>
+                </div>
+                <div class="text-[10px] sm:text-[11px] text-amber-700 truncate max-w-[200px] sm:max-w-none">
+                  ${diffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円 (${d.diff})`).slice(0, 2).join(' / ')}${diffs.length > 2 ? ' ...他' : ''}
+                </div>
+              </div>
+            `;
+          }
         }
 
         const renderFeeCell = (key, isBold = false) => {
@@ -386,10 +424,14 @@
           const num = parseInt(val);
           const feeStr = isNaN(num) ? `${val}円` : `${num.toLocaleString()}円`;
           if (diffItemMap[key]) {
+            const diffVal = diffItemMap[key];
+            const isMinus = diffVal.startsWith('-');
+            const colorClass = isMinus ? 'text-emerald-600' : 'text-red-600';
+            const subColorClass = isMinus ? 'text-emerald-500' : 'text-red-500';
             return `
-              <div class="font-bold text-red-600">
+              <div class="font-bold ${colorClass}">
                 ${feeStr}
-                <span class="text-[8px] sm:text-[9px] font-normal block leading-tight text-red-500">${diffItemMap[key]}</span>
+                <span class="text-[8px] sm:text-[9px] font-normal block leading-tight ${subColorClass}">${diffVal}</span>
               </div>
             `;
           }
@@ -397,6 +439,30 @@
         };
 
         const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pref + ' ' + name + ' ' + addr)}`;
+
+        // タイトル横の改定ミニバッジ
+        let diffMiniBadge = '';
+        if (hasDiff) {
+          if (hasDec && !hasInc) {
+            diffMiniBadge = '<span class="text-[9px] sm:text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded-full font-bold">🎉 値下げあり</span>';
+          } else if (hasInc && !hasDec) {
+            diffMiniBadge = '<span class="text-[9px] sm:text-[10px] bg-red-600 text-white px-1.5 py-0.2 rounded-full font-bold">値上げあり</span>';
+          } else {
+            diffMiniBadge = '<span class="text-[9px] sm:text-[10px] bg-amber-600 text-white px-1.5 py-0.2 rounded-full font-bold">価格改定あり</span>';
+          }
+        }
+
+        // 住所横の改定日チップ
+        let dateChip = '';
+        if (s['last_price_change_date']) {
+          if (hasDec && !hasInc) {
+            dateChip = `<span class="inline-flex items-center gap-1 text-[11px] text-emerald-800 bg-emerald-50 border border-emerald-300 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px] text-emerald-600"></i> 最終値下げ: ${s['last_price_change_date']}</span>`;
+          } else if (hasInc && !hasDec) {
+            dateChip = `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終値上げ: ${s['last_price_change_date']}</span>`;
+          } else {
+            dateChip = `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終改定: ${s['last_price_change_date']}</span>`;
+          }
+        }
 
         return `
           <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-3.5 sm:p-5 hover:shadow-md transition">
@@ -413,7 +479,7 @@
                       <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400"></i>
                     </a>
                   </h3>
-                  ${hasDiff ? '<span class="text-[9px] sm:text-[10px] bg-red-600 text-white px-1.5 py-0.2 rounded-full font-bold">値上げあり</span>' : ''}
+                  ${diffMiniBadge}
                 </div>
                 
                 <div class="flex items-center gap-2 sm:gap-3 text-xs text-slate-500 flex-wrap">
@@ -427,7 +493,7 @@
                       <i class="fa-solid fa-phone text-slate-400"></i> ${tel}
                     </a>
                   ` : ''}
-                  ${s['last_price_change_date'] ? `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終値上げ: ${s['last_price_change_date']}</span>` : ''}
+                  ${dateChip}
                 </div>
               </div>
 
