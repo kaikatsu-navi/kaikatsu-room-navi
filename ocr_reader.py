@@ -222,10 +222,13 @@ def parse_prices_geometric(full_text_annotation: Dict[str, Any], text_fallback: 
     result["annotation_weekend_1"] = weekend_note
 
     add_fee = 0
+    pack_only_add = False
     if weekend_note:
         m_add = re.search(r"(\d{2,3})円が加算", weekend_note)
         if m_add:
             add_fee = int(m_add.group(1))
+        if "パック料金に" in weekend_note:
+            pack_only_add = True
 
     pages = full_text_annotation.get("pages", [])
     if not pages:
@@ -316,18 +319,18 @@ def parse_prices_geometric(full_text_annotation: Dict[str, Any], text_fallback: 
 
     # 4. 時間プラン行 (左端) の特定
     time_defs = [
-        ("private_weekday_basic_taxfee", "private_weekend_basic_taxfee", r"(?:基本|最初|30分)", False),
-        ("private_weekday_10_taxfee", "private_weekend_10_taxfee", r"(?:以降|10分|延長)", False),
-        ("private_weekday_1h_taxfee", "private_weekend_1h_taxfee", r"^1(?:時間|h)?$", False),
-        ("private_weekday_3h_taxfee", "private_weekend_3h_taxfee", r"^3(?:時間|h)?", False),
-        ("private_weekday_6h_taxfee", "private_weekend_6h_taxfee", r"^6(?:時間|h)?", False),
-        ("private_weekday_9h_taxfee", "private_weekend_9h_taxfee", r"^9(?:時間|h)?", False),
-        ("private_weekday_12h_taxfee", "private_weekend_12h_taxfee", r"^12(?:時間|h)?", False),
-        ("private_weekday_15h_taxfee", "private_weekend_15h_taxfee", r"^15(?:時間|h)?", False),
-        ("private_weekday_18h_taxfee", "private_weekend_18h_taxfee", r"^18(?:時間|h)?", False),
-        ("private_weekday_21h_taxfee", "private_weekend_21h_taxfee", r"^21(?:時間|h)?", False),
-        ("private_weekday_24h_taxfee", "private_weekend_24h_taxfee", r"^24(?:時間|h)?", False),
-        ("private_weekday_night8_taxfee", "private_weekend_night8_taxfee", r"ナイト", True),
+        ("private_weekday_basic_taxfee", "private_weekend_basic_taxfee", r"(?:基本|最初|30分)", False, False),
+        ("private_weekday_10_taxfee", "private_weekend_10_taxfee", r"(?:以降|10分|延長)", False, False),
+        ("private_weekday_1h_taxfee", "private_weekend_1h_taxfee", r"^1(?:時間|h)?$", True, False),
+        ("private_weekday_3h_taxfee", "private_weekend_3h_taxfee", r"^3(?:時間|h)?", True, False),
+        ("private_weekday_6h_taxfee", "private_weekend_6h_taxfee", r"^6(?:時間|h)?", True, False),
+        ("private_weekday_9h_taxfee", "private_weekend_9h_taxfee", r"^9(?:時間|h)?", True, False),
+        ("private_weekday_12h_taxfee", "private_weekend_12h_taxfee", r"^12(?:時間|h)?", True, False),
+        ("private_weekday_15h_taxfee", "private_weekend_15h_taxfee", r"^15(?:時間|h)?", True, False),
+        ("private_weekday_18h_taxfee", "private_weekend_18h_taxfee", r"^18(?:時間|h)?", True, False),
+        ("private_weekday_21h_taxfee", "private_weekend_21h_taxfee", r"^21(?:時間|h)?", True, False),
+        ("private_weekday_24h_taxfee", "private_weekend_24h_taxfee", r"^24(?:時間|h)?", True, False),
+        ("private_weekday_night8_taxfee", "private_weekend_night8_taxfee", r"ナイト", False, True),
     ]
 
     time_rows = []
@@ -348,13 +351,14 @@ def parse_prices_geometric(full_text_annotation: Dict[str, Any], text_fallback: 
     for line in left_lines:
         line_text = "".join([w["text"] for w in line])
         line_y = sum(w["center_y"] for w in line) / len(line)
-        for wday_k, wend_k, pattern, is_night in time_defs:
+        for wday_k, wend_k, pattern, is_pack, is_night in time_defs:
             if re.search(pattern, line_text):
                 if not any(r["wday_k"] == wday_k for r in time_rows):
                     time_rows.append({
                         "wday_k": wday_k,
                         "wend_k": wend_k,
                         "y": line_y,
+                        "is_pack": is_pack,
                         "is_night": is_night,
                         "label": line_text,
                         "wday_val": None,
@@ -388,26 +392,69 @@ def parse_prices_geometric(full_text_annotation: Dict[str, Any], text_fallback: 
 
     # 6. 時間行へのマッピング実行
     def map_prices_to_rows(col_prices, val_attr):
-        used_price_indices = set()
+        used_indices = set()
+
+        # A. ナイトパック行（最下部）を優先特定し、通常パックから除外
         for r in time_rows:
+            if r.get("is_night"):
+                best_idx = None
+                min_dist = 999999
+                for idx, p in enumerate(col_prices):
+                    dist = abs(p["y"] - r["y"])
+                    if dist < min_dist:
+                        min_dist = dist
+                        best_idx = idx
+                if best_idx is not None and min_dist <= 75:
+                    r[val_attr] = col_prices[best_idx]["val"]
+                    used_indices.add(best_idx)
+
+        # B. 基本・延長行
+        for r in time_rows:
+            if not r.get("is_pack") and not r.get("is_night"):
+                best_idx = None
+                min_dist = 999999
+                for idx, p in enumerate(col_prices):
+                    if idx in used_indices:
+                        continue
+                    dist = abs(p["y"] - r["y"])
+                    if dist < min_dist:
+                        min_dist = dist
+                        best_idx = idx
+                if best_idx is not None and min_dist <= 65:
+                    r[val_attr] = col_prices[best_idx]["val"]
+                    used_indices.add(best_idx)
+
+        # C. 通常パック行（3h, 6h, ..., 24h）
+        pack_rows = [r for r in time_rows if r.get("is_pack")]
+        # ナイトパックや基本延長を除外した通常パック用価格リスト
+        pack_prices = [p for idx, p in enumerate(col_prices) if idx not in used_indices and p["val"] >= 500]
+
+        # 直接距離でヒットする通常パックをマッピング
+        for r in pack_rows:
             best_idx = None
             min_dist = 999999
-            for idx, p in enumerate(col_prices):
+            for idx, p in enumerate(pack_prices):
                 dist = abs(p["y"] - r["y"])
                 if dist < min_dist:
                     min_dist = dist
                     best_idx = idx
-            if best_idx is not None and min_dist <= 75:
-                r[val_attr] = col_prices[best_idx]["val"]
-                used_price_indices.add(best_idx)
+            if best_idx is not None and min_dist <= 65:
+                r[val_attr] = pack_prices[best_idx]["val"]
 
-        pack_rows = [r for r in time_rows if any(k in r["wday_k"] for k in ["1h", "3h", "6h", "9h", "12h", "15h", "18h", "21h", "24h"])]
-        pack_prices = [p for idx, p in enumerate(col_prices) if idx in used_price_indices or p["val"] >= 500]
-
+        # セル結合補完: 未割り当ての通常パック行には、最も近い通常パック価格を割り当て
         for r in pack_rows:
             if r[val_attr] is None and pack_prices:
                 closest = min(pack_prices, key=lambda p: abs(p["y"] - r["y"]))
                 r[val_attr] = closest["val"]
+
+        # 単調非減少（時間が増えればパック料金は同額以上）の保証
+        last_val = 0
+        for r in pack_rows:
+            if r[val_attr] is not None:
+                if r[val_attr] < last_val:
+                    r[val_attr] = last_val
+                else:
+                    last_val = r[val_attr]
 
     if has_sub_weekday_weekend:
         wday_prices = get_prices_in_col(target_weekday_x, x_tolerance=75)
@@ -427,7 +474,13 @@ def parse_prices_geometric(full_text_annotation: Dict[str, Any], text_fallback: 
             v = r["wday_val"]
             if v is not None:
                 result[r["wday_k"]] = v
-                result[r["wend_k"]] = v + add_fee if add_fee else v
+                if add_fee:
+                    if pack_only_add and not (r.get("is_pack") or r.get("is_night")):
+                        result[r["wend_k"]] = v
+                    else:
+                        result[r["wend_k"]] = v + add_fee
+                else:
+                    result[r["wend_k"]] = v
 
     return result
 
