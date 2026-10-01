@@ -69,11 +69,19 @@
                  class="w-full pl-9 pr-4 py-2 border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none">
         </div>
 
-        <!-- 都道府県セレクト -->
+        <!-- 都道府県・エリア選択ボタン（複数選択＆地方グルーピング対応） -->
         <div>
-          <select id="prefSelect" class="w-full py-2 px-3 border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none bg-white">
-            <option value="">すべての都道府県（全国 415店舗）</option>
-          </select>
+          <button id="prefModalTriggerBtn" type="button" onclick="togglePrefModal()" 
+                  class="w-full py-2 px-3 border border-slate-300 rounded-lg text-xs sm:text-sm bg-white text-left flex justify-between items-center hover:border-orange-400 focus:ring-2 focus:ring-orange-500 focus:outline-none transition shadow-2xs">
+            <div class="flex items-center gap-1.5 truncate">
+              <i class="fa-solid fa-map-location-dot text-orange-600 text-sm flex-shrink-0"></i>
+              <span id="prefTriggerLabel" class="truncate font-medium text-slate-700">すべての都道府県（全国 415店舗）</span>
+            </div>
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+              <span id="prefSelectedCountBadge" class="hidden bg-orange-600 text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">0</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+            </div>
+          </button>
         </div>
 
         <!-- ソート -->
@@ -208,6 +216,52 @@
     </div>
   </div>
 
+  <!-- 都道府県・エリア選択 モーダル（複数選択＆地方グルーピング対応） -->
+  <div id="prefModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+    <div class="bg-white rounded-xl max-w-2xl w-full p-4 sm:p-5 shadow-2xl relative max-h-[90vh] flex flex-col">
+      <!-- モーダルヘッダー -->
+      <div class="flex justify-between items-center pb-3 border-b border-slate-200 flex-shrink-0">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-map-location-dot text-orange-600 text-lg"></i>
+          <div>
+            <h2 class="text-sm sm:text-base font-bold text-slate-900 leading-tight">エリア・都道府県を選択</h2>
+            <p class="text-[10px] sm:text-xs text-slate-500">エリアをまたいで自由に何県でも複数選択できます</p>
+          </div>
+        </div>
+        <button onclick="togglePrefModal()" class="text-slate-400 hover:text-slate-600 text-lg p-1">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- モーダルサブバー（選択数＆一括解除） -->
+      <div class="py-2 px-1 flex justify-between items-center bg-slate-50 border-b border-slate-100 flex-shrink-0 text-xs">
+        <div class="text-slate-700 font-medium">
+          選択中: <span id="prefModalSelectedCount" class="font-bold text-orange-600 text-sm">0</span> 都道府県
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="selectAllPrefs()" class="text-slate-600 hover:text-slate-900 underline text-xs">すべて選択</button>
+          <span class="text-slate-300">|</span>
+          <button type="button" onclick="clearAllPrefs()" class="text-orange-600 hover:text-orange-800 underline text-xs font-medium">全解除</button>
+        </div>
+      </div>
+
+      <!-- モーダルボディ（地方グルーピング・スクロール可能） -->
+      <div id="prefModalBody" class="overflow-y-auto py-3 space-y-3 flex-1 pr-1 text-xs">
+        <!-- JavaScriptで地方ごとに動的生成 -->
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="pt-3 border-t border-slate-200 flex justify-between items-center flex-shrink-0 gap-2">
+        <button type="button" onclick="togglePrefModal()" class="px-3.5 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-medium">
+          キャンセル
+        </button>
+        <button type="button" onclick="applyPrefSelection()" class="flex-1 sm:flex-initial px-5 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-bold text-xs sm:text-sm shadow-md transition active:scale-95 text-center">
+          <span id="prefModalApplyBtnText">選択したエリアで絞り込む</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- 誤り報告 モーダル -->
   <div id="feedbackModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-white rounded-xl max-w-md w-full p-5 sm:p-6 shadow-2xl relative">
@@ -277,12 +331,152 @@
       }
     }
 
+    // 地方と都道府県の定義（グルーピング）
+    const REGIONS = [
+      { name: "北海道", prefs: ["北海道"] },
+      { name: "東北", prefs: ["青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県"] },
+      { name: "関東", prefs: ["東京都", "神奈川県", "埼玉県", "千葉県", "茨城県", "栃木県", "群馬県"] },
+      { name: "上信越・北陸", prefs: ["新潟県", "長野県", "山梨県", "富山県", "石川県", "福井県"] },
+      { name: "東海", prefs: ["愛知県", "静岡県", "三重県", "岐阜県"] },
+      { name: "関西", prefs: ["大阪府", "兵庫県", "京都府", "滋賀県", "奈良県", "和歌山県"] },
+      { name: "中国", prefs: ["鳥取県", "島根県", "岡山県", "広島県", "山口県"] },
+      { name: "四国", prefs: ["徳島県", "香川県", "愛媛県", "高知県"] },
+      { name: "九州・沖縄", prefs: ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"] },
+    ];
+
+    let selectedPrefs = new Set();
+    let tempSelectedPrefs = new Set();
+
+    // 都道府県選択モーダル開閉
+    function togglePrefModal() {
+      const modal = document.getElementById('prefModal');
+      const isHidden = modal.classList.contains('hidden');
+      if (isHidden) {
+        tempSelectedPrefs = new Set(selectedPrefs);
+        renderPrefModalContent();
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // 都道府県モーダルの中身を描画
+    function renderPrefModalContent() {
+      const container = document.getElementById('prefModalBody');
+      const countEl = document.getElementById('prefModalSelectedCount');
+      if (countEl) countEl.textContent = tempSelectedPrefs.size;
+
+      // 各都道府県の店舗数を集計
+      const storeCounts = {};
+      allStores.forEach(s => {
+        const p = s['都道府県'];
+        if (p) storeCounts[p] = (storeCounts[p] || 0) + 1;
+      });
+
+      container.innerHTML = REGIONS.map((reg, regIdx) => {
+        const regStoresCount = reg.prefs.reduce((acc, p) => acc + (storeCounts[p] || 0), 0);
+
+        const chipsHtml = reg.prefs.map(p => {
+          const cnt = storeCounts[p] || 0;
+          const isChecked = tempSelectedPrefs.has(p);
+          const activeClass = isChecked 
+            ? 'bg-orange-500 text-white border-orange-600 font-bold shadow-xs' 
+            : 'bg-white text-slate-700 border-slate-200 hover:border-orange-300 hover:bg-orange-50/50';
+
+          return `
+            <button type="button" onclick="togglePrefChip('${p}')" 
+                    class="pref-chip px-2.5 py-1.5 rounded-lg border text-xs flex items-center justify-between gap-1 transition select-none ${activeClass}">
+              <span>${p}</span>
+              <span class="text-[10px] ${isChecked ? 'text-white/80' : 'text-slate-400'}">(${cnt})</span>
+            </button>
+          `;
+        }).join('');
+
+        return `
+          <div class="bg-slate-50/80 rounded-xl p-3 border border-slate-200/80">
+            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-200/60">
+              <div class="font-bold text-slate-800 flex items-center gap-1.5 text-xs sm:text-sm">
+                <span class="w-1.5 h-3.5 bg-orange-500 rounded-full inline-block"></span>
+                <span>${reg.name}</span>
+                <span class="text-[11px] font-normal text-slate-500">(${regStoresCount}店舗)</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px]">
+                <button type="button" onclick="toggleRegionPrefs(${regIdx}, true)" class="text-orange-600 hover:underline font-medium">この地方を選択</button>
+                <span class="text-slate-300">/</span>
+                <button type="button" onclick="toggleRegionPrefs(${regIdx}, false)" class="text-slate-400 hover:text-slate-600 hover:underline">解除</button>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5">
+              ${chipsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function togglePrefChip(pref) {
+      if (tempSelectedPrefs.has(pref)) {
+        tempSelectedPrefs.delete(pref);
+      } else {
+        tempSelectedPrefs.add(pref);
+      }
+      renderPrefModalContent();
+    }
+
+    function toggleRegionPrefs(regIdx, isSelect) {
+      const reg = REGIONS[regIdx];
+      if (!reg) return;
+      reg.prefs.forEach(p => {
+        if (isSelect) tempSelectedPrefs.add(p);
+        else tempSelectedPrefs.delete(p);
+      });
+      renderPrefModalContent();
+    }
+
+    function selectAllPrefs() {
+      REGIONS.forEach(r => r.prefs.forEach(p => tempSelectedPrefs.add(p)));
+      renderPrefModalContent();
+    }
+
+    function clearAllPrefs() {
+      tempSelectedPrefs.clear();
+      renderPrefModalContent();
+    }
+
+    function applyPrefSelection() {
+      selectedPrefs = new Set(tempSelectedPrefs);
+      updatePrefTriggerButton();
+      renderStores();
+      togglePrefModal();
+    }
+
+    function updatePrefTriggerButton() {
+      const labelEl = document.getElementById('prefTriggerLabel');
+      const badgeEl = document.getElementById('prefSelectedCountBadge');
+      
+      const count = selectedPrefs.size;
+      if (count === 0) {
+        labelEl.textContent = 'すべての都道府県（全国 415店舗）';
+        badgeEl.classList.add('hidden');
+      } else {
+        const arr = Array.from(selectedPrefs);
+        if (count === 1) {
+          labelEl.textContent = `${arr[0]}`;
+        } else if (count <= 2) {
+          labelEl.textContent = arr.join(', ');
+        } else {
+          labelEl.textContent = `${arr[0]}, ${arr[1]} +他${count - 2}県`;
+        }
+        badgeEl.textContent = count;
+        badgeEl.classList.remove('hidden');
+      }
+    }
+
     // データ読み込み
     async function loadData() {
       try {
         const resp = await fetch('stores.json?t=' + Date.now());
         allStores = await resp.json();
-        initPrefSelect();
         renderStores();
       } catch (err) {
         console.error('Failed to load stores.json:', err);
@@ -294,22 +488,9 @@
       }
     }
 
-    // 都道府県プルダウン初期化
-    function initPrefSelect() {
-      const prefs = [...new Set(allStores.map(s => s['都道府県']).filter(Boolean))];
-      const select = document.getElementById('prefSelect');
-      prefs.forEach(p => {
-        const opt = document.createElement('option');
-        opt.value = p;
-        opt.textContent = p;
-        select.appendChild(opt);
-      });
-    }
-
     // レンダリング (レスポンシブ：PCはワイドテーブル、スマホはハイブリッド最適化)
     function renderStores() {
       const search = document.getElementById('searchInput').value.trim().toLowerCase();
-      const pref = document.getElementById('prefSelect').value;
       const sort = document.getElementById('sortSelect').value;
       
       const cbs = Array.from(document.querySelectorAll('.filter-cb:checked')).map(cb => cb.value);
@@ -337,7 +518,9 @@
           if (!matchName && !matchCity && !matchAddr) return false;
         }
 
-        if (pref && s['都道府県'] !== pref) return false;
+        // 都道府県複数選択フィルター
+        if (selectedPrefs.size > 0 && !selectedPrefs.has(s['都道府県'])) return false;
+
         if (decOnly && !hasDecrease(s)) return false;
         if (nightOnly && !hasNight(s)) return false;
 
@@ -678,13 +861,13 @@
 
     // イベントリスナー
     document.getElementById('searchInput').addEventListener('input', renderStores);
-    document.getElementById('prefSelect').addEventListener('change', renderStores);
     document.getElementById('sortSelect').addEventListener('change', renderStores);
     document.querySelectorAll('.filter-cb').forEach(cb => cb.addEventListener('change', renderStores));
 
     document.getElementById('resetFiltersBtn').addEventListener('click', () => {
       document.getElementById('searchInput').value = '';
-      document.getElementById('prefSelect').value = '';
+      selectedPrefs.clear();
+      updatePrefTriggerButton();
       document.getElementById('sortSelect').value = 'default';
       document.querySelectorAll('.filter-cb').forEach(cb => cb.checked = false);
       renderStores();
