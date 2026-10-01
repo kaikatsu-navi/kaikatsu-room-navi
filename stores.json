@@ -175,7 +175,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20104",
@@ -232,7 +234,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20106",
@@ -289,7 +293,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20109",
@@ -467,7 +473,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20110",
@@ -645,7 +653,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20111",
@@ -823,7 +833,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20113",
@@ -1001,7 +1013,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20114",
@@ -1071,7 +1085,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20121",
@@ -1237,7 +1253,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20122",
@@ -1415,7 +1433,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20123",
@@ -1581,7 +1601,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20126",
@@ -1759,7 +1781,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20127",
@@ -1816,7 +1840,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20131",
@@ -1873,7 +1899,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20132",
@@ -2051,7 +2079,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20135",
@@ -2229,7 +2259,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20136",
@@ -2407,7 +2439,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20137",
@@ -2464,7 +2498,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20139",
@@ -2642,7 +2678,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20140",
@@ -2699,7 +2737,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20142",
@@ -2877,7 +2917,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20144",
@@ -3055,7 +3097,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20145",
@@ -3233,7 +3277,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20146",
@@ -3423,7 +3469,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20153",
@@ -3480,7 +3528,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20156",
@@ -3658,7 +3708,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20162",
@@ -3836,7 +3888,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20164",
@@ -4014,7 +4068,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20165",
@@ -4192,7 +4248,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20166",
@@ -4249,7 +4307,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20168",
@@ -4427,7 +4487,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20169",
@@ -4605,7 +4667,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20170",
@@ -4662,7 +4726,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20171",
@@ -4840,7 +4906,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20172",
@@ -5018,7 +5086,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20173",
@@ -5075,7 +5145,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20174",
@@ -5132,7 +5204,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20175",
@@ -5298,7 +5372,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20176",
@@ -5355,7 +5431,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20191",
@@ -5533,7 +5611,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20192",
@@ -5711,7 +5791,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20203",
@@ -5768,7 +5850,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20205",
@@ -5825,7 +5909,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20206",
@@ -5882,7 +5968,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20208",
@@ -6060,7 +6148,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20210",
@@ -6238,7 +6328,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20211",
@@ -6422,7 +6514,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20212",
@@ -6479,7 +6573,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20214",
@@ -6536,7 +6632,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20216",
@@ -6720,7 +6818,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3440,
+    "週末_ナイト12h": 3660
   },
   {
     "店舗コード": "20222",
@@ -6898,7 +6998,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20225",
@@ -6955,7 +7057,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20227",
@@ -7133,7 +7237,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20228",
@@ -7311,7 +7417,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20229",
@@ -7489,7 +7597,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20230",
@@ -7655,7 +7765,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20235",
@@ -7712,7 +7824,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20236",
@@ -7890,7 +8004,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20237",
@@ -8068,7 +8184,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20239",
@@ -8246,7 +8364,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20242",
@@ -8303,7 +8423,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20245",
@@ -8360,7 +8482,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20246",
@@ -8417,7 +8541,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20247",
@@ -8474,7 +8600,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20249",
@@ -8531,7 +8659,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20250",
@@ -8709,7 +8839,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20252",
@@ -8766,7 +8898,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20257",
@@ -8944,7 +9078,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20258",
@@ -9122,7 +9258,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20259",
@@ -9300,7 +9438,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20260",
@@ -9357,7 +9497,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20263",
@@ -9414,7 +9556,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20264",
@@ -9471,7 +9615,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20265",
@@ -9649,7 +9795,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20267",
@@ -9706,7 +9854,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20268",
@@ -9872,7 +10022,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20271",
@@ -10050,7 +10202,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20273",
@@ -10114,7 +10268,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20275",
@@ -10171,7 +10327,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20279",
@@ -10228,7 +10386,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20281",
@@ -10285,7 +10445,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20283",
@@ -10342,7 +10504,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20284",
@@ -10399,7 +10563,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20285",
@@ -10577,7 +10743,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20286",
@@ -10634,7 +10802,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20287",
@@ -10812,7 +10982,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20288",
@@ -10869,7 +11041,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2310,
+    "週末_ナイト12h": 2530
   },
   {
     "店舗コード": "20289",
@@ -11041,7 +11215,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20290",
@@ -11098,7 +11274,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20291",
@@ -11155,7 +11333,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20293",
@@ -11333,7 +11513,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20295",
@@ -11499,7 +11681,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20296",
@@ -11556,7 +11740,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20297",
@@ -11613,7 +11799,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20305",
@@ -11791,7 +11979,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20308",
@@ -11957,7 +12147,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20310",
@@ -12135,7 +12327,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20313",
@@ -12313,7 +12507,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20315",
@@ -12370,7 +12566,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20317",
@@ -12427,7 +12625,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20318",
@@ -12497,7 +12697,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20320",
@@ -12554,7 +12756,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20321",
@@ -12720,7 +12924,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20322",
@@ -12777,7 +12983,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20323",
@@ -12834,7 +13042,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20324",
@@ -13012,7 +13222,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20325",
@@ -13076,7 +13288,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20326",
@@ -13254,7 +13468,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20327",
@@ -13432,7 +13648,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20328",
@@ -13610,7 +13828,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20329",
@@ -13667,7 +13887,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20330",
@@ -13737,7 +13959,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20332",
@@ -13855,7 +14079,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20333",
@@ -14033,7 +14259,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20335",
@@ -14090,7 +14318,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20337",
@@ -14147,7 +14377,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20338",
@@ -14204,7 +14436,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20339",
@@ -14382,7 +14616,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20342",
@@ -14560,7 +14796,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20343",
@@ -14617,7 +14855,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20344",
@@ -14674,7 +14914,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20345",
@@ -14731,7 +14973,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20348",
@@ -14788,7 +15032,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20351",
@@ -14845,7 +15091,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20352",
@@ -15023,7 +15271,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20353",
@@ -15201,7 +15451,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20354",
@@ -15379,7 +15631,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20355",
@@ -15503,7 +15757,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20356",
@@ -15681,7 +15937,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20357",
@@ -15738,7 +15996,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20358",
@@ -15795,7 +16055,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2310,
+    "週末_ナイト12h": 2530
   },
   {
     "店舗コード": "20359",
@@ -15973,7 +16235,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20360",
@@ -16151,7 +16415,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20361",
@@ -16329,7 +16595,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20362",
@@ -16507,7 +16775,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20363",
@@ -16685,7 +16955,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20365",
@@ -16742,7 +17014,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20366",
@@ -16799,7 +17073,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20368",
@@ -16856,7 +17132,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20370",
@@ -16913,7 +17191,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20371",
@@ -16970,7 +17250,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20382",
@@ -17027,7 +17309,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20383",
@@ -17205,7 +17489,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20384",
@@ -17287,7 +17573,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20387",
@@ -17369,7 +17657,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20389",
@@ -17426,7 +17716,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20390",
@@ -17592,7 +17884,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20391",
@@ -17770,7 +18064,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20392",
@@ -17948,7 +18244,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20401",
@@ -18005,7 +18303,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20403",
@@ -18171,7 +18471,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20404",
@@ -18241,7 +18543,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20405",
@@ -18407,7 +18711,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20412",
@@ -18464,7 +18770,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20413",
@@ -18521,7 +18829,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20421",
@@ -18699,7 +19009,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20422",
@@ -18877,7 +19189,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20423",
@@ -18934,7 +19248,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20435",
@@ -19112,7 +19428,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20436",
@@ -19278,7 +19596,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20441",
@@ -19456,7 +19776,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20442",
@@ -19634,7 +19956,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20443",
@@ -19812,7 +20136,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20444",
@@ -19990,7 +20316,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20446",
@@ -20047,7 +20375,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20448",
@@ -20104,7 +20434,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20449",
@@ -20161,7 +20493,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20451",
@@ -20327,7 +20661,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20452",
@@ -20505,7 +20841,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20453",
@@ -20562,7 +20900,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20456",
@@ -20619,7 +20959,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20458",
@@ -20797,7 +21139,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20459",
@@ -20854,7 +21198,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20460",
@@ -21020,7 +21366,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20462",
@@ -21198,7 +21546,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20463",
@@ -21376,7 +21726,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20465",
@@ -21433,7 +21785,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20467",
@@ -21490,7 +21844,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20468",
@@ -21656,7 +22012,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20469",
@@ -21834,7 +22192,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20470",
@@ -21891,7 +22251,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20472",
@@ -22069,7 +22431,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20473",
@@ -22126,7 +22490,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20475",
@@ -22304,7 +22670,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20480",
@@ -22361,7 +22729,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20483",
@@ -22418,7 +22788,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20484",
@@ -22596,7 +22968,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20485",
@@ -22653,7 +23027,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2900
   },
   {
     "店舗コード": "20488",
@@ -22710,7 +23086,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20493",
@@ -22767,7 +23145,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20494",
@@ -22945,7 +23325,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20495",
@@ -23123,7 +23505,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20496",
@@ -23180,7 +23564,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20497",
@@ -23237,7 +23623,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20498",
@@ -23379,7 +23767,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20499",
@@ -23436,7 +23826,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20501",
@@ -23493,7 +23885,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20503",
@@ -23550,7 +23944,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20507",
@@ -23607,7 +24003,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20508",
@@ -23664,7 +24062,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20513",
@@ -23721,7 +24121,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20514",
@@ -23887,7 +24289,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20515",
@@ -23944,7 +24348,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20517",
@@ -24122,7 +24528,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20522",
@@ -24300,7 +24708,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20533",
@@ -24466,7 +24876,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20534",
@@ -24523,7 +24935,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20535",
@@ -24701,7 +25115,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20536",
@@ -24758,7 +25174,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20537",
@@ -24815,7 +25233,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20542",
@@ -24993,7 +25413,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20543",
@@ -25050,7 +25472,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20545",
@@ -25107,7 +25531,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20549",
@@ -25177,7 +25603,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2570,
+    "週末_ナイト12h": 2790
   },
   {
     "店舗コード": "20553",
@@ -25234,7 +25662,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20555",
@@ -25291,7 +25721,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20557",
@@ -25469,7 +25901,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20558",
@@ -25647,7 +26081,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20560",
@@ -25825,7 +26261,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20561",
@@ -25882,7 +26320,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20562",
@@ -25939,7 +26379,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20564",
@@ -25996,7 +26438,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20565",
@@ -26053,7 +26497,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20566",
@@ -26110,7 +26556,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20569",
@@ -26167,7 +26615,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20570",
@@ -26224,7 +26674,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20572",
@@ -26402,7 +26854,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20574",
@@ -26459,7 +26913,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20575",
@@ -26637,7 +27093,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20584",
@@ -26694,7 +27152,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20591",
@@ -26872,7 +27332,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20593",
@@ -26929,7 +27391,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20596",
@@ -26986,7 +27450,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20600",
@@ -27043,7 +27509,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20602",
@@ -27100,7 +27568,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20611",
@@ -27157,7 +27627,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20612",
@@ -27335,7 +27807,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20622",
@@ -27392,7 +27866,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20623",
@@ -27449,7 +27925,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20624",
@@ -27627,7 +28105,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20625",
@@ -27684,7 +28164,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20626",
@@ -27741,7 +28223,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20627",
@@ -27798,7 +28282,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20633",
@@ -27855,7 +28341,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20635",
@@ -27912,7 +28400,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20637",
@@ -27969,7 +28459,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20638",
@@ -28147,7 +28639,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20640",
@@ -28204,7 +28698,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20641",
@@ -28268,7 +28764,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20642",
@@ -28446,7 +28944,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20643",
@@ -28510,7 +29010,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20645",
@@ -28574,7 +29076,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20646",
@@ -28638,7 +29142,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20647",
@@ -28816,7 +29322,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20651",
@@ -28873,7 +29381,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20652",
@@ -28930,7 +29440,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20653",
@@ -29048,7 +29560,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20664",
@@ -29105,7 +29619,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20665",
@@ -29162,7 +29678,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3100
   },
   {
     "店舗コード": "20666",
@@ -29219,7 +29737,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3100
   },
   {
     "店舗コード": "20672",
@@ -29276,7 +29796,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20681",
@@ -29333,7 +29855,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20691",
@@ -29390,7 +29914,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20692",
@@ -29447,7 +29973,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20693",
@@ -29625,7 +30153,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20694",
@@ -29803,7 +30333,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20705",
@@ -29873,7 +30405,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20706",
@@ -29930,7 +30464,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20713",
@@ -30108,7 +30644,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20714",
@@ -30286,7 +30824,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20716",
@@ -30343,7 +30883,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20717",
@@ -30400,7 +30942,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3870
   },
   {
     "店舗コード": "20718",
@@ -30578,7 +31122,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20719",
@@ -30635,7 +31181,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20720",
@@ -30801,7 +31349,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20771",
@@ -30991,7 +31541,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20772",
@@ -31169,7 +31721,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20773",
@@ -31226,7 +31780,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20774",
@@ -31283,7 +31839,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20775",
@@ -31340,7 +31898,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20801",
@@ -31410,7 +31970,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20802",
@@ -31467,7 +32029,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3100
   },
   {
     "店舗コード": "20805",
@@ -31524,7 +32088,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20810",
@@ -31714,7 +32280,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20811",
@@ -31880,7 +32448,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20812",
@@ -31937,7 +32507,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3100
   },
   {
     "店舗コード": "20814",
@@ -32103,7 +32675,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20815",
@@ -32281,7 +32855,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20816",
@@ -32459,7 +33035,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20817",
@@ -32625,7 +33203,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20818",
@@ -32682,7 +33262,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20819",
@@ -32739,7 +33321,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20820",
@@ -32857,7 +33441,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20821",
@@ -32927,7 +33513,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2110,
+    "週末_ナイト12h": 2330
   },
   {
     "店舗コード": "20822",
@@ -32984,7 +33572,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20823",
@@ -33054,7 +33644,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2110,
+    "週末_ナイト12h": 2330
   },
   {
     "店舗コード": "20832",
@@ -33111,7 +33703,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20833",
@@ -33168,7 +33762,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20834",
@@ -33225,7 +33821,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20843",
@@ -33282,7 +33880,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20845",
@@ -33339,7 +33939,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20847",
@@ -33396,7 +33998,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20848",
@@ -33453,7 +34057,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20849",
@@ -33510,7 +34116,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20850",
@@ -33567,7 +34175,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20851",
@@ -33624,7 +34234,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20852",
@@ -33681,7 +34293,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20853",
@@ -33751,7 +34365,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20861",
@@ -33808,7 +34424,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20862",
@@ -33878,7 +34496,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20872",
@@ -34002,7 +34622,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 4130,
+    "週末_ナイト12h": 4460
   },
   {
     "店舗コード": "20873",
@@ -34059,7 +34681,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20874",
@@ -34116,7 +34740,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20875",
@@ -34240,7 +34866,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 4130,
+    "週末_ナイト12h": 4460
   },
   {
     "店舗コード": "20881",
@@ -34406,7 +35034,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20882",
@@ -34463,7 +35093,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20884",
@@ -34520,7 +35152,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20885",
@@ -34577,7 +35211,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20886",
@@ -34743,7 +35379,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20887",
@@ -34909,7 +35547,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20888",
@@ -34966,7 +35606,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20889",
@@ -35156,7 +35798,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20890",
@@ -35213,7 +35857,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20891",
@@ -35391,7 +36037,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20892",
@@ -35569,7 +36217,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20893",
@@ -35626,7 +36276,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20894",
@@ -35683,7 +36335,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20895",
@@ -35740,7 +36394,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20896",
@@ -35822,7 +36478,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20897",
@@ -36018,7 +36676,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20898",
@@ -36075,7 +36735,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2790,
+    "週末_ナイト12h": 3110
   },
   {
     "店舗コード": "20899",
@@ -36132,7 +36794,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20900",
@@ -36189,7 +36853,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20901",
@@ -36246,7 +36912,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20902",
@@ -36303,7 +36971,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20903",
@@ -36360,7 +37030,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20904",
@@ -36430,7 +37102,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20905",
@@ -36608,7 +37282,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20906",
@@ -36665,7 +37341,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20907",
@@ -36722,7 +37400,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20908",
@@ -36779,7 +37459,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20909",
@@ -36836,7 +37518,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20910",
@@ -36893,7 +37577,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20911",
@@ -36950,7 +37636,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20912",
@@ -37128,7 +37816,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20913",
@@ -37306,7 +37996,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20914",
@@ -37400,7 +38092,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20915",
@@ -37578,7 +38272,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20916",
@@ -37756,7 +38452,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20917",
@@ -37826,7 +38524,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20918",
@@ -37883,7 +38583,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20919",
@@ -37940,7 +38642,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20920",
@@ -38118,7 +38822,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 4130,
+    "週末_ナイト12h": 4460
   },
   {
     "店舗コード": "20922",
@@ -38175,7 +38881,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20923",
@@ -38232,7 +38940,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 2990
   },
   {
     "店舗コード": "20925",
@@ -38410,7 +39120,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20926",
@@ -38588,7 +39300,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20927",
@@ -38645,7 +39359,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20928",
@@ -38811,7 +39527,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20929",
@@ -38989,7 +39707,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20930",
@@ -39167,7 +39887,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20931",
@@ -39224,7 +39946,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20933",
@@ -39281,7 +40005,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20934",
@@ -39459,7 +40185,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 4130,
+    "週末_ナイト12h": 4460
   },
   {
     "店舗コード": "20935",
@@ -39516,7 +40244,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20936",
@@ -39573,7 +40303,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20937",
@@ -39630,7 +40362,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20938",
@@ -39796,7 +40530,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20939",
@@ -39974,7 +40710,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20940",
@@ -40031,7 +40769,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20941",
@@ -40088,7 +40828,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20942",
@@ -40254,7 +40996,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20943",
@@ -40420,7 +41164,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3760
   },
   {
     "店舗コード": "20946",
@@ -40477,7 +41223,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20947",
@@ -40534,7 +41282,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20948",
@@ -40591,7 +41341,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20949",
@@ -40648,7 +41400,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20950",
@@ -40705,7 +41459,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20951",
@@ -40883,7 +41639,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20952",
@@ -41061,7 +41819,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20953",
@@ -41239,7 +41999,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20954",
@@ -41296,7 +42058,9 @@
     "ビリヤード": true,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20956",
@@ -41353,7 +42117,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20957",
@@ -41410,7 +42176,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20958",
@@ -41467,7 +42235,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20959",
@@ -41524,7 +42294,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20960",
@@ -41618,7 +42390,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20961",
@@ -41675,7 +42449,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 2790
   },
   {
     "店舗コード": "20963",
@@ -41732,7 +42508,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20964",
@@ -41789,7 +42567,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20965",
@@ -41846,7 +42626,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20966",
@@ -42030,7 +42812,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2990,
+    "週末_ナイト12h": 3320
   },
   {
     "店舗コード": "20967",
@@ -42087,7 +42871,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20968",
@@ -42144,7 +42930,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20969",
@@ -42201,7 +42989,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20970",
@@ -42271,7 +43061,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20971",
@@ -42449,7 +43241,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20973",
@@ -42506,7 +43300,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20974",
@@ -42563,7 +43359,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3100
   },
   {
     "店舗コード": "20975",
@@ -42620,7 +43418,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20976",
@@ -42677,7 +43477,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20977",
@@ -42867,7 +43669,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2770,
+    "週末_ナイト12h": 3100
   },
   {
     "店舗コード": "20978",
@@ -42924,7 +43728,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20979",
@@ -43102,7 +43908,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 2640,
+    "週末_ナイト12h": 2860
   },
   {
     "店舗コード": "20980",
@@ -43166,7 +43974,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20981",
@@ -43344,7 +44154,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20982",
@@ -43522,7 +44334,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20983",
@@ -43579,7 +44393,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20984",
@@ -43636,7 +44452,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": 2310,
+    "週末_ナイト12h": 2530
   },
   {
     "店舗コード": "20985",
@@ -43693,7 +44511,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20986",
@@ -43750,7 +44570,9 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20987",
@@ -43832,7 +44654,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20988",
@@ -44022,7 +44846,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": 3430,
+    "週末_ナイト12h": 3650
   },
   {
     "店舗コード": "20989",
@@ -44200,7 +45026,9 @@
       }
     ],
     "has_diff": true,
-    "last_price_change_date": "2026/09/29"
+    "last_price_change_date": "2026/09/29",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   },
   {
     "店舗コード": "20990",
@@ -44257,6 +45085,8 @@
     "ビリヤード": false,
     "diffs": [],
     "has_diff": false,
-    "last_price_change_date": ""
+    "last_price_change_date": "",
+    "平日_ナイト12h": "-",
+    "週末_ナイト12h": "-"
   }
 ]

@@ -169,6 +169,26 @@ def extract_price_row(store_info: Dict[str, Any], price_data: Optional[Dict[str,
             return str(val)
 
 
+    def get_night_num(hours: int, is_weekend: bool) -> Any:
+        prefix = "private_weekend" if is_weekend else "private_weekday"
+        if hours == 8:
+            val = p.get(f"{prefix}_night8_taxfee")
+            if val not in [None, "", "-"]:
+                try:
+                    return int(val)
+                except (ValueError, TypeError):
+                    return str(val)
+        for slot in ["8", "A", "B", "C"]:
+            t = p.get(f"night_pack_{slot}_time")
+            if t and str(t) == str(hours):
+                val = p.get(f"{prefix}_night{slot}_taxfee")
+                if val not in [None, "", "-"]:
+                    try:
+                        return int(val)
+                    except (ValueError, TypeError):
+                        return str(val)
+        return "-"
+
     # 設備・サービス判定用セット
     services = set(store_info.get("service", []))
     roomtypes = set(store_info.get("roomtype", []))
@@ -204,7 +224,8 @@ def extract_price_row(store_info: Dict[str, Any], price_data: Optional[Dict[str,
         "平日_18hパック": get_num("private_weekday_18h_taxfee"),
         "平日_21hパック": get_num("private_weekday_21h_taxfee"),
         "平日_24hパック": get_num("private_weekday_24h_taxfee"),
-        "平日_ナイト8h": get_num("private_weekday_night8_taxfee"),
+        "平日_ナイト8h": get_night_num(8, False),
+        "平日_ナイト12h": get_night_num(12, False),
 
         # 3. 週末料金
         "週末_基本30分": get_num("private_weekend_basic_taxfee"),
@@ -217,7 +238,8 @@ def extract_price_row(store_info: Dict[str, Any], price_data: Optional[Dict[str,
         "週末_18hパック": get_num("private_weekend_18h_taxfee"),
         "週末_21hパック": get_num("private_weekend_21h_taxfee"),
         "週末_24hパック": get_num("private_weekend_24h_taxfee"),
-        "週末_ナイト8h": get_num("private_weekend_night8_taxfee"),
+        "週末_ナイト8h": get_night_num(8, True),
+        "週末_ナイト12h": get_night_num(12, True),
 
         # 4. 設備・サービス（オレンジアイコン）
         "個室WEB予約": "鍵付完全個室 WEB予約" in services,
