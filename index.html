@@ -374,7 +374,7 @@
                 <span>直近で価格改定あり (${changeDateStr}${diffs.length}項目値上げ)</span>
               </div>
               <div class="text-[10px] sm:text-[11px] text-red-600 truncate max-w-[200px] sm:max-w-none">
-                ${diffs.map(d => `${d.item} ${d.before}円→${d.after}円`).slice(0, 2).join(' / ')}${diffs.length > 2 ? ' ...他' : ''}
+                ${diffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円`).slice(0, 2).join(' / ')}${diffs.length > 2 ? ' ...他' : ''}
               </div>
             </div>
           `;
@@ -383,7 +383,8 @@
         const renderFeeCell = (key, isBold = false) => {
           const val = s[key];
           if (!val || val === '-') return '<span class="text-slate-300">-</span>';
-          const feeStr = `${val}円`;
+          const num = parseInt(val);
+          const feeStr = isNaN(num) ? `${val}円` : `${num.toLocaleString()}円`;
           if (diffItemMap[key]) {
             return `
               <div class="font-bold text-red-600">
@@ -421,7 +422,11 @@
                     <i class="fa-solid fa-location-dot text-orange-500"></i>
                     <span class="truncate max-w-[240px] sm:max-w-none">${addr}</span>
                   </a>
-                  ${tel ? `<span class="hidden sm:inline text-[11px]"><i class="fa-solid fa-phone text-slate-400"></i> ${tel}</span>` : ''}
+                  ${tel ? `
+                    <a href="tel:${tel.replace(/[^0-9]/g, '')}" class="inline-flex items-center gap-1 text-[11px] text-slate-600 hover:text-orange-600 hover:underline" title="電話をかける">
+                      <i class="fa-solid fa-phone text-slate-400"></i> ${tel}
+                    </a>
+                  ` : ''}
                   ${s['last_price_change_date'] ? `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終値上げ: ${s['last_price_change_date']}</span>` : ''}
                 </div>
               </div>
@@ -429,9 +434,15 @@
               <!-- 右上/スマホ下部のアクションボタン -->
               <div class="flex items-center gap-2 w-full sm:w-auto justify-end pt-1 sm:pt-0">
                 <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
-                   class="sm:hidden flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 py-1.5 rounded-lg text-xs font-medium transition">
+                   class="sm:hidden flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
                   <i class="fa-solid fa-location-dot text-orange-500"></i> 地図
                 </a>
+                ${tel ? `
+                  <a href="tel:${tel.replace(/[^0-9]/g, '')}" 
+                     class="sm:hidden flex-1 text-center bg-orange-50 hover:bg-orange-100 text-orange-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-phone text-orange-600"></i> 電話
+                  </a>
+                ` : ''}
                 <button onclick="toggleModal('feedbackModal', '${name}')" 
                         class="text-[11px] text-slate-400 hover:text-red-500 transition px-2 py-1.5 rounded hover:bg-slate-50 flex items-center gap-1">
                   <i class="fa-regular fa-flag"></i> <span class="hidden sm:inline">誤り報告</span>
