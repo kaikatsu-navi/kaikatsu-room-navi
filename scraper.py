@@ -211,7 +211,7 @@ def extract_price_row(store_info: Dict[str, Any], price_data: Optional[Dict[str,
         "電話番号": store_info.get("tel", ""),
         "住所": address,
         "個室タイプ": roomtype_str,
-        "週末料金注記": p.get("annotation_weekend_1", "") or "",
+        "週末料金注記": ((p.get("annotation_weekend_1") or "").strip() + " " + (p.get("annotation_weekend_2") or "").strip()).strip(),
 
         # 2. 平日料金
         "平日_基本30分": get_num("private_weekday_basic_taxfee"),
