@@ -105,6 +105,10 @@
             <input type="checkbox" value="decrease_only" class="filter-cb accent-emerald-600">
             <span class="font-bold">🎉 直近で値下げあり（お得！）</span>
           </label>
+          <label class="cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-800 border border-indigo-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="night_pack_only" class="filter-cb accent-indigo-600">
+            <span class="font-bold">🌙 ナイトパックあり (8h/12h)</span>
+          </label>
           <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="VIPフラット" class="filter-cb accent-emerald-600">
             <span class="font-bold">👑 VIPフラット</span>
@@ -287,7 +291,8 @@
       
       const cbs = Array.from(document.querySelectorAll('.filter-cb:checked')).map(cb => cb.value);
       const decOnly = cbs.includes('decrease_only');
-      const amenityCbs = cbs.filter(c => c !== 'decrease_only');
+      const nightOnly = cbs.includes('night_pack_only');
+      const amenityCbs = cbs.filter(c => c !== 'decrease_only' && c !== 'night_pack_only');
 
       // フィルターバッジ表示
       const activeBadge = document.getElementById('filterActiveBadge');
@@ -296,6 +301,10 @@
       }
 
       const hasDecrease = (s) => (s['diffs'] || []).some(d => (d.diff || '').startsWith('-'));
+      const hasNight = (s) => {
+        const keys = ['平日_ナイト8h', '週末_ナイト8h', '平日_ナイト12h', '週末_ナイト12h'];
+        return keys.some(k => s[k] && s[k] !== '-' && s[k] !== '');
+      };
 
       let filtered = allStores.filter(s => {
         if (search) {
@@ -307,6 +316,7 @@
 
         if (pref && s['都道府県'] !== pref) return false;
         if (decOnly && !hasDecrease(s)) return false;
+        if (nightOnly && !hasNight(s)) return false;
 
         for (const a of amenityCbs) {
           if (!s[a]) return false;
