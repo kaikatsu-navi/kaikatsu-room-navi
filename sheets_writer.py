@@ -198,7 +198,7 @@ def _write_prices_sheet(sh: Any, prices_data: List[Dict[str, Any]]) -> None:
     today_str = datetime.now().strftime("%Y/%m/%d")
 
     # 基準ヘッダー定義（一番左（A列）に「最終確認日」を配置！Web用オブジェクト等は除外）
-    exclude_keys = {"最終確認日", "diffs", "has_diff"}
+    exclude_keys = {"最終確認日", "diffs", "has_diff", "last_price_change_date"}
     base_headers = [k for k in prices_data[0].keys() if k not in exclude_keys]
     headers = ["最終確認日"] + base_headers
     last_check_col_idx = 0

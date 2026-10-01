@@ -112,12 +112,33 @@ def main():
         else:
             logger.info("料金の改定はありませんでした。")
 
-        # 5. 各店舗データに diffs 情報を埋め込んで stores.json を生成
+        # 5. 各店舗データに diffs ＆ 最終改定日情報を埋め込んで stores.json を生成
+        today_str = datetime.now().strftime("%Y/%m/%d")
+        RECENT_DAYS_LIMIT = 30  # 直近の基準（30日以内）
+
         for cur in current_data:
             code = str(cur.get("店舗コード", ""))
-            # 過去のdiffを保持するか、今回の差分をセット
-            cur["diffs"] = diff_by_store.get(code, prev_store_map.get(code, {}).get("diffs", []))
-            cur["has_diff"] = len(cur["diffs"]) > 0
+            prev = prev_store_map.get(code, {})
+
+            if code in diff_by_store:
+                cur["diffs"] = diff_by_store[code]
+                cur["last_price_change_date"] = today_str
+            else:
+                cur["diffs"] = prev.get("diffs", [])
+                cur["last_price_change_date"] = prev.get("last_price_change_date", "")
+
+            # 直近30日以内の改定があるか判定
+            is_recent = False
+            if cur["last_price_change_date"] and len(cur.get("diffs", [])) > 0:
+                try:
+                    change_dt = datetime.strptime(cur["last_price_change_date"], "%Y/%m/%d")
+                    diff_days = (datetime.now() - change_dt).days
+                    if 0 <= diff_days <= RECENT_DAYS_LIMIT:
+                        is_recent = True
+                except Exception:
+                    pass
+
+            cur["has_diff"] = is_recent
 
         with open(stores_json_path, "w", encoding="utf-8") as f:
             json.dump(current_data, f, ensure_ascii=False, indent=2)

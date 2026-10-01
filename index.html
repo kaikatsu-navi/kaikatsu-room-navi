@@ -363,11 +363,12 @@
         // 改定サマリーバナー
         let diffBanner = '';
         if (hasDiff) {
+          const changeDateStr = s['last_price_change_date'] ? `${s['last_price_change_date']}検知 / ` : '';
           diffBanner = `
             <div class="bg-red-50 border border-red-200 rounded-lg px-2.5 py-1.5 text-xs text-red-800 flex items-center justify-between">
               <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
                 <i class="fa-solid fa-arrow-trend-up text-red-600"></i>
-                <span>直近で価格改定あり (${diffs.length}項目値上げ)</span>
+                <span>直近で価格改定あり (${changeDateStr}${diffs.length}項目値上げ)</span>
               </div>
               <div class="text-[10px] sm:text-[11px] text-red-600 truncate max-w-[200px] sm:max-w-none">
                 ${diffs.map(d => `${d.item} ${d.before}円→${d.after}円`).slice(0, 2).join(' / ')}${diffs.length > 2 ? ' ...他' : ''}
@@ -404,7 +405,7 @@
                   <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                     <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
                        class="hover:text-orange-600 transition inline-flex items-center gap-1.5">
-                      ${name}
+                       ${name}
                       <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400"></i>
                     </a>
                   </h3>
@@ -418,6 +419,7 @@
                     <span class="truncate max-w-[240px] sm:max-w-none">${addr}</span>
                   </a>
                   ${tel ? `<span class="hidden sm:inline text-[11px]"><i class="fa-solid fa-phone text-slate-400"></i> ${tel}</span>` : ''}
+                  ${s['last_price_change_date'] ? `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終値上げ: ${s['last_price_change_date']}</span>` : ''}
                 </div>
               </div>
 

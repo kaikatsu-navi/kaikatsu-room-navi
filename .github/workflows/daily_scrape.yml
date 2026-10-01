@@ -2,8 +2,8 @@ name: Daily Kaikatsu Scraper & Web Deploy
 
 on:
   schedule:
-    # 毎日 午前3:45 JST (UTC 18:45)
-    - cron: '45 18 * * *'
+    # 毎日 夜23:25 JST (UTC 14:25) - 遅延考慮の前倒し実行
+    - cron: '25 14 * * *'
   workflow_dispatch: # GitHubのWeb画面から手動実行できるボタン
 
 permissions:
