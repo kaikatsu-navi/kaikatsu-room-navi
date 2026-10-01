@@ -101,45 +101,68 @@
         </div>
 
         <div id="amenityFiltersContainer" class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs pt-1">
+          <!-- 特殊条件 -->
           <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="decrease_only" class="filter-cb accent-emerald-600">
-            <span class="font-bold">🎉 直近で値下げあり（お得！）</span>
+            <span class="font-bold">🎉 値下げあり</span>
           </label>
           <label class="cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-800 border border-indigo-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="night_pack_only" class="filter-cb accent-indigo-600">
-            <span class="font-bold">🌙 ナイトパックあり (8h/12h)</span>
+            <span class="font-bold">🌙 ナイトパック (8h/12h)</span>
           </label>
-          <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
-            <input type="checkbox" value="VIPフラット" class="filter-cb accent-emerald-600">
-            <span class="font-bold">👑 VIPフラット</span>
+          <label class="cursor-pointer bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition shadow-xs">
+            <input type="checkbox" value="無料トースト" class="filter-cb accent-amber-600">
+            <span class="font-bold">🍞 無料トースト (32店限定!)</span>
           </label>
+
+          <!-- 設備・サービス -->
           <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="無料シャワー" class="filter-cb accent-orange-600">
             <span>🚿 無料シャワー</span>
-          </label>
-          <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
-            <input type="checkbox" value="個室WEB予約" class="filter-cb accent-orange-600">
-            <span>📱 WEB予約可</span>
           </label>
           <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="駐車場" class="filter-cb accent-orange-600">
             <span>🚗 駐車場</span>
           </label>
           <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
-            <input type="checkbox" value="飲み放題カフェ" class="filter-cb accent-orange-600">
-            <span>☕ カフェ</span>
+            <input type="checkbox" value="100円モーニング" class="filter-cb accent-orange-600">
+            <span>🍳 モーニング</span>
+          </label>
+          <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="ソフトクリーム" class="filter-cb accent-orange-600">
+            <span>🍦 ソフトクリーム</span>
           </label>
           <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
             <input type="checkbox" value="コインランドリー" class="filter-cb accent-orange-600">
             <span>🧺 ランドリー</span>
           </label>
           <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
-            <input type="checkbox" value="カラオケ" class="filter-cb accent-orange-600">
+            <input type="checkbox" value="個室WEB予約" class="filter-cb accent-orange-600">
+            <span>📱 WEB予約可</span>
+          </label>
+
+          <!-- 個室・部屋タイプ -->
+          <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="VIPルーム" class="filter-cb accent-emerald-600">
+            <span class="font-bold">👑 VIPルーム</span>
+          </label>
+          <label class="cursor-pointer bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="ワイドルーム" class="filter-cb accent-emerald-600">
+            <span>🛋️ ワイドルーム</span>
+          </label>
+
+          <!-- アミューズメント -->
+          <label class="cursor-pointer bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="カラオケ" class="filter-cb accent-blue-600">
             <span>🎤 カラオケ</span>
           </label>
-          <label class="cursor-pointer bg-slate-100 hover:bg-slate-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
-            <input type="checkbox" value="ダーツ" class="filter-cb accent-orange-600">
+          <label class="cursor-pointer bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="ダーツ" class="filter-cb accent-purple-600">
             <span>🎯 ダーツ</span>
+          </label>
+          <label class="cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-800 border border-indigo-200 px-2 sm:px-2.5 py-1 rounded-md flex items-center gap-1 transition">
+            <input type="checkbox" value="ビリヤード" class="filter-cb accent-indigo-600">
+            <span>🎱 ビリヤード</span>
           </label>
         </div>
       </div>
@@ -363,17 +386,26 @@
         const diffItemMap = {};
         diffs.forEach(d => { diffItemMap[d.item] = d.diff; });
 
-        // 設備バッジ
+        // 設備バッジ一覧（公式準拠のフルラインナップ）
         const badges = [];
         if (s['個室WEB予約']) badges.push('<a href="https://reservation.kaikatsu.jp/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-sm transition inline-flex items-center gap-1 active:scale-95" title="公式WEB予約ページを開く">📱 WEB予約可 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-amber-100"></i></a>');
-        if (s['VIPフラット']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">👑 VIPフラット</span>');
-        if (s['無料シャワー']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 無料シャワー</span>');
-        if (s['有料シャワー']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 有料シャワー</span>');
+        if (s['無料トースト']) badges.push('<span class="bg-amber-100 text-amber-950 border border-amber-300 font-bold px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-xs" title="全国32店舗限定！無料トースト食べ放題">🍞 無料トースト</span>');
+        if (s['VIPルーム'] || s['VIPフラット']) badges.push('<span class="bg-amber-50 text-amber-800 border border-amber-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">👑 VIPルーム</span>');
+        if (s['ワイドルーム']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">🛋️ ワイド</span>');
+        if (s['無料シャワー']) badges.push('<span class="bg-sky-50 text-sky-800 border border-sky-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 無料シャワー</span>');
+        if (s['有料シャワー']) badges.push('<span class="bg-slate-100 text-slate-700 border border-slate-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 有料シャワー</span>');
         if (s['駐車場']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚗 駐車場</span>');
-        if (s['飲み放題カフェ']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">☕ カフェ</span>');
+        if (s['100円モーニング']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🍳 モーニング</span>');
+        if (s['ソフトクリーム']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🍦 ソフトクリーム</span>');
         if (s['コインランドリー']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🧺 ランドリー</span>');
-        if (s['カラオケ']) badges.push('<span class="badge-amuse px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎤 カラオケ</span>');
-        if (s['ダーツ']) badges.push('<span class="badge-amuse px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎯 ダーツ</span>');
+        if (s['飲み放題カフェ']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">☕ カフェ</span>');
+        if (s['カラオケ']) badges.push('<span class="bg-blue-50 text-blue-800 border border-blue-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎤 カラオケ</span>');
+        if (s['ダーツ']) badges.push('<span class="bg-purple-50 text-purple-800 border border-purple-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎯 ダーツ</span>');
+        if (s['ビリヤード']) badges.push('<span class="bg-indigo-50 text-indigo-800 border border-indigo-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎱 ビリヤード</span>');
+        if (s['ファミリールーム']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">👨‍👩‍👧 ファミリー</span>');
+        if (s['マッサージ']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">💆 マッサージ</span>');
+        if (s['アルコール販売']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🍺 アルコール</span>');
+        if (s['加熱式たばこエリア']) badges.push('<span class="bg-slate-100 text-slate-600 border border-slate-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚬 喫煙エリア</span>');
 
         // 差分の内訳（値上げ・値下げ）判定
         const incDiffs = diffs.filter(d => !(d.diff || '').startsWith('-'));
