@@ -182,7 +182,32 @@ async function toggleStoreVacancy(storeCode, event) {
   }
 }
 
-function renderVacancyContent(storeCode, data, container) {
+function formatVacancyTime(timestamp) {
+  const d = timestamp ? new Date(timestamp) : new Date();
+  const year = d.getFullYear();
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  const hours = String(d.getHours()).padStart(2, '0');
+  const minutes = String(d.getMinutes()).padStart(2, '0');
+  return `${year}年${month}月${day}日 ${hours}:${minutes} 時点`;
+}
+
+function refreshStoreVacancy(storeCode, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  const sCode = String(storeCode);
+  vacancyCache.delete(sCode);
+  const container = document.getElementById(`store-vacancy-${sCode}`);
+  if (container) {
+    container.classList.add('hidden');
+    container.dataset.loading = "";
+  }
+  toggleStoreVacancy(sCode, event);
+}
+
+function renderVacancyContent(storeCode, data, container, timestamp) {
   const seats = (data && data.seat_type) ? data.seat_type : [];
   if (seats.length === 0) {
     container.innerHTML = `
@@ -209,28 +234,41 @@ function renderVacancyContent(storeCode, data, container) {
       : '<i class="fa-solid fa-circle-check text-emerald-600"></i>';
 
     return `
-      <div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg border ${badgeBg} text-xs">
+      <div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg border ${badgeBg} text-xs shadow-2xs">
         <span class="truncate pr-2">${name}</span>
-        <span class="flex items-center gap-1 flex-shrink-0 text-[11px]">${statusIcon} ${status}</span>
+        <span class="flex items-center gap-1 flex-shrink-0 text-[11px] font-bold">${statusIcon} ${status}</span>
       </div>
     `;
   };
 
+  const timeStr = formatVacancyTime(timestamp || (vacancyCache.get(String(storeCode)) || {}).timestamp);
+
   container.innerHTML = `
     <div class="bg-gradient-to-r from-emerald-50/70 to-slate-50 rounded-xl p-3 border border-emerald-200 shadow-2xs space-y-2">
-      <div class="flex items-center justify-between text-xs pb-1.5 border-b border-emerald-200/60">
-        <div class="font-bold text-slate-800 flex items-center gap-1.5">
-          <i class="fa-solid fa-door-open text-emerald-600"></i>
-          <span>リアルタイム空席速報</span>
+      <!-- 空席ヘッダー: タイトル ＆ 日時 ＆ 更新アクション -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs pb-2 border-b border-emerald-200/60 gap-1.5">
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <span class="font-bold text-slate-800 flex items-center gap-1">
+            <i class="fa-solid fa-door-open text-emerald-600"></i>
+            <span>リアルタイム空席速報</span>
+          </span>
+          <span class="text-[11px] font-bold text-emerald-900 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded shadow-2xs">
+            🕒 ${timeStr}
+          </span>
         </div>
-        <div class="flex items-center gap-2">
-          <button type="button" onclick="toggleStoreVacancy('${storeCode}', event)" class="text-[10px] text-slate-400 hover:text-slate-600">
-            <i class="fa-solid fa-chevron-up"></i> 閉じる
+        <div class="flex items-center gap-2 self-end sm:self-auto">
+          <button type="button" onclick="refreshStoreVacancy('${storeCode}', event)" 
+                  class="text-[11px] text-emerald-700 hover:text-emerald-900 font-bold flex items-center gap-1 px-1.5 py-0.5 rounded hover:bg-emerald-100/60 transition" 
+                  title="最新の空き状況を再取得">
+            <i class="fa-solid fa-rotate-right text-[10px]"></i> 更新
           </button>
           <a href="https://www.kaikatsu.jp/shop/detail/vacancy.html?store_code=${storeCode}" target="_blank" rel="noopener noreferrer" 
-             class="text-[10px] text-orange-600 hover:underline flex items-center gap-0.5">
+             class="text-[11px] text-orange-600 hover:underline flex items-center gap-0.5 font-medium">
             公式詳細 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
           </a>
+          <button type="button" onclick="toggleStoreVacancy('${storeCode}', event)" class="text-[11px] text-slate-400 hover:text-slate-600 ml-0.5" title="閉じる">
+            <i class="fa-solid fa-chevron-up"></i>
+          </button>
         </div>
       </div>
 
@@ -253,6 +291,10 @@ function renderVacancyContent(storeCode, data, container) {
           </div>
         </div>
       ` : ''}
+
+      <div class="text-[10px] text-slate-400 text-right pt-0.5">
+        ※更新時刻により実際の空き状況と異なる場合がございます
+      </div>
     </div>
   `;
 }
