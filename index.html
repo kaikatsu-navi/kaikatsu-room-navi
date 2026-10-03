@@ -1125,11 +1125,18 @@
           }
         }
 
+        const formatFee = (val) => {
+          if (!val || val === '-' || val === 'None' || val === 'NaN') return '-';
+          const num = parseInt(val);
+          return isNaN(num) ? '-' : `${num.toLocaleString()}円`;
+        };
+
         const renderFeeCell = (key, isBold = false) => {
           const val = s[key];
-          if (!val || val === '-') return '<span class="text-slate-300">-</span>';
+          if (!val || val === '-' || val === 'None' || val === 'NaN') return '<span class="text-slate-300">-</span>';
           const num = parseInt(val);
-          const feeStr = isNaN(num) ? `${val}円` : `${num.toLocaleString()}円`;
+          if (isNaN(num)) return '<span class="text-slate-300">-</span>';
+          const feeStr = `${num.toLocaleString()}円`;
           if (diffItemMap[key]) {
             const diffVal = diffItemMap[key];
             const isMinus = diffVal.startsWith('-');
@@ -1246,23 +1253,23 @@
               <div class="grid grid-cols-4 gap-1.5 text-center">
                 <div class="bg-white rounded p-1.5 shadow-xs border border-slate-100">
                   <div class="text-[9px] text-slate-400 font-semibold mb-0.5">基本30分</div>
-                  <div class="text-xs font-bold text-slate-800">${s['平日_基本30分'] ? s['平日_基本30分'] + '円' : '-'}</div>
-                  <div class="text-[9px] text-amber-700">${s['週末_基本30分'] ? s['週末_基本30分'] + '円' : '-'}</div>
+                  <div class="text-xs font-bold text-slate-800">${formatFee(s['平日_基本30分'])}</div>
+                  <div class="text-[9px] text-amber-700">${formatFee(s['週末_基本30分'])}</div>
                 </div>
                 <div class="bg-orange-50/60 rounded p-1.5 shadow-xs border border-orange-200/60">
                   <div class="text-[9px] text-orange-600 font-bold mb-0.5">3hパック</div>
-                  <div class="text-xs font-bold text-slate-900">${s['平日_3hパック'] ? s['平日_3hパック'] + '円' : '-'}</div>
-                  <div class="text-[9px] text-amber-800 font-medium">${s['週末_3hパック'] ? s['週末_3hパック'] + '円' : '-'}</div>
+                  <div class="text-xs font-bold text-slate-900">${formatFee(s['平日_3hパック'])}</div>
+                  <div class="text-[9px] text-amber-800 font-medium">${formatFee(s['週末_3hパック'])}</div>
                 </div>
                 <div class="bg-orange-50/60 rounded p-1.5 shadow-xs border border-orange-200/60">
                   <div class="text-[9px] text-orange-600 font-bold mb-0.5">6hパック</div>
-                  <div class="text-xs font-bold text-slate-900">${s['平日_6hパック'] ? s['平日_6hパック'] + '円' : '-'}</div>
-                  <div class="text-[9px] text-amber-800 font-medium">${s['週末_6hパック'] ? s['週末_6hパック'] + '円' : '-'}</div>
+                  <div class="text-xs font-bold text-slate-900">${formatFee(s['平日_6hパック'])}</div>
+                  <div class="text-[9px] text-amber-800 font-medium">${formatFee(s['週末_6hパック'])}</div>
                 </div>
                 <div class="bg-indigo-50/60 rounded p-1.5 shadow-xs border border-indigo-200/60">
                   <div class="text-[9px] text-indigo-700 font-bold mb-0.5">ナイト8h</div>
-                  <div class="text-xs font-bold text-indigo-950">${s['平日_ナイト8h'] ? s['平日_ナイト8h'] + '円' : '-'}</div>
-                  <div class="text-[9px] text-slate-400">${s['週末_ナイト8h'] ? s['週末_ナイト8h'] + '円' : '-'}</div>
+                  <div class="text-xs font-bold text-indigo-950">${formatFee(s['平日_ナイト8h'])}</div>
+                  <div class="text-[9px] text-slate-400">${formatFee(s['週末_ナイト8h'])}</div>
                 </div>
               </div>
               <div class="flex justify-between items-center text-[9px] text-slate-400 mt-1.5 px-0.5">
