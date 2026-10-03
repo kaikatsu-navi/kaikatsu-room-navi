@@ -1,0 +1,1113 @@
+let allStores = [];
+
+// === お気に入り店舗（LocalStorage）管理 ===
+const FAV_STORAGE_KEY = 'kaikatsu_fav_stores';
+
+function getFavoriteStores() {
+  try {
+    const raw = localStorage.getItem(FAV_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    console.error('Failed to load favorites from localStorage', e);
+    return [];
+  }
+}
+
+function saveFavoriteStores(favList) {
+  try {
+    localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify(favList));
+  } catch (e) {
+    console.error('Failed to save favorites to localStorage', e);
+  }
+}
+
+function isFavorite(storeCode) {
+  const favList = getFavoriteStores();
+  return favList.includes(String(storeCode));
+}
+
+function toggleFavorite(storeCode, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  const sCode = String(storeCode);
+  let favList = getFavoriteStores();
+  if (favList.includes(sCode)) {
+    favList = favList.filter(id => id !== sCode);
+  } else {
+    favList.push(sCode);
+  }
+  saveFavoriteStores(favList);
+  updateHeaderFavBadge();
+  renderStores();
+}
+
+function updateHeaderFavBadge() {
+  const favList = getFavoriteStores();
+  const badge = document.getElementById('headerFavCountBadge');
+  const favBtn = document.getElementById('headerFavBtn');
+  if (badge) {
+    if (favList.length > 0) {
+      badge.textContent = favList.length;
+      badge.classList.remove('hidden');
+    } else {
+      badge.classList.add('hidden');
+    }
+  }
+  if (favBtn) {
+    const cb = document.getElementById('favoriteOnlyCheckbox');
+    const isFavOnly = cb && cb.checked;
+    if (isFavOnly) {
+      favBtn.className = 'bg-amber-400 text-slate-900 font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs shadow-sm active:scale-95';
+    } else {
+      favBtn.className = 'bg-white/20 hover:bg-white/30 text-white font-medium px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs shadow-sm active:scale-95';
+    }
+  }
+}
+
+function toggleFavoriteFilterFromHeader() {
+  const cb = document.getElementById('favoriteOnlyCheckbox');
+  if (cb) {
+    cb.checked = !cb.checked;
+    updateHeaderFavBadge();
+    renderStores();
+  }
+}
+
+    // モーダル開閉
+    function toggleModal(id, storeName = '') {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('hidden');
+        if (id === 'feedbackModal' && storeName) {
+          document.getElementById('reportStoreName').value = storeName;
+        }
+      }
+    }
+
+    function handleFeedbackSubmit(e) {
+      e.preventDefault();
+      alert('ご報告ありがとうございます！開発チームで確認のうえ、次回スクレイピング時に反映させていただきます✨');
+      toggleModal('feedbackModal');
+      e.target.reset();
+    }
+
+    // === 料金改定速報＆ヒストリー関連ロジック ===
+    let currentUpdatesFilter = 'all';
+
+    function openPriceUpdatesModal() {
+      currentUpdatesFilter = 'all';
+      updateFilterButtonsUI();
+      renderPriceUpdatesContent();
+      toggleModal('priceUpdatesModal');
+    }
+
+    function filterUpdatesModal(type) {
+      currentUpdatesFilter = type;
+      updateFilterButtonsUI();
+      renderPriceUpdatesContent();
+    }
+
+    function updateFilterButtonsUI() {
+      const btnAll = document.getElementById('btnUpdatesAll');
+      const btnDec = document.getElementById('btnUpdatesDec');
+      const btnInc = document.getElementById('btnUpdatesInc');
+      if (!btnAll || !btnDec || !btnInc) return;
+
+      const baseClass = 'px-2.5 py-1 rounded-full border transition text-[11px]';
+      btnAll.className = baseClass;
+      btnDec.className = baseClass;
+      btnInc.className = baseClass;
+
+      if (currentUpdatesFilter === 'all') {
+        btnAll.className += ' bg-orange-600 text-white border-orange-600 font-bold';
+        btnDec.className += ' border-slate-300 bg-white text-emerald-700 hover:bg-emerald-50';
+        btnInc.className += ' border-slate-300 bg-white text-red-700 hover:bg-red-50';
+      } else if (currentUpdatesFilter === 'decrease') {
+        btnDec.className += ' bg-emerald-600 text-white border-emerald-600 font-bold';
+        btnAll.className += ' border-slate-300 bg-white text-slate-700 hover:bg-slate-50';
+        btnInc.className += ' border-slate-300 bg-white text-red-700 hover:bg-red-50';
+      } else if (currentUpdatesFilter === 'increase') {
+        btnInc.className += ' bg-red-600 text-white border-red-600 font-bold';
+        btnAll.className += ' border-slate-300 bg-white text-slate-700 hover:bg-slate-50';
+        btnDec.className += ' border-slate-300 bg-white text-emerald-700 hover:bg-emerald-50';
+      }
+    }
+
+    function renderPriceUpdatesContent() {
+      const container = document.getElementById('priceUpdatesModalBody');
+      const countEl = document.getElementById('priceUpdatesCount');
+      if (!container || !countEl) return;
+
+      // diffs を持っている店舗を抽出
+      const storesWithDiff = allStores.filter(s => (s.diffs && s.diffs.length > 0) || s.has_diff);
+
+      // フィルター適用
+      const filtered = storesWithDiff.filter(s => {
+        const diffs = s.diffs || [];
+        const hasDec = diffs.some(d => (d.diff || '').startsWith('-'));
+        const hasInc = diffs.some(d => !(d.diff || '').startsWith('-'));
+        if (currentUpdatesFilter === 'decrease') return hasDec;
+        if (currentUpdatesFilter === 'increase') return hasInc;
+        return true;
+      });
+
+      // 改定日降順でソート
+      filtered.sort((a, b) => {
+        const dateA = a.last_price_change_date || '';
+        const dateB = b.last_price_change_date || '';
+        return dateB.localeCompare(dateA);
+      });
+
+      countEl.textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 sm:p-8 text-center text-slate-500 bg-slate-50 rounded-xl border border-dashed border-slate-200 space-y-2">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <div class="font-bold text-slate-800 text-sm">現在、改定検知データはありません</div>
+            <p class="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+              本サイトの価格改定監視・自動収集システムは <span class="font-bold text-orange-600">2026年10月3日</span> より正式稼働を開始しました！
+            </p>
+            <p class="text-[11px] text-slate-400">
+              明日以降、快活CLUB公式HPで料金変更（値上げ・値下げ）が検知され次第、ここにリアルタイムで速報が自動蓄積されます。
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      // 日付ごとに店舗をグループ化
+      const groupsByDate = {};
+      filtered.forEach(s => {
+        const dateKey = s.last_price_change_date || '最近の改定';
+        if (!groupsByDate[dateKey]) {
+          groupsByDate[dateKey] = [];
+        }
+        groupsByDate[dateKey].push(s);
+      });
+
+      const sortedDates = Object.keys(groupsByDate).sort((a, b) => b.localeCompare(a));
+
+      container.innerHTML = sortedDates.map((dateKey, idx) => {
+        const stores = groupsByDate[dateKey];
+        const isFirst = idx === 0;
+        const accId = `nat-acc-${idx}`;
+
+        const incCount = stores.filter(s => (s.diffs || []).some(d => !(d.diff || '').startsWith('-'))).length;
+        const decCount = stores.filter(s => (s.diffs || []).some(d => (d.diff || '').startsWith('-'))).length;
+
+        let dateBadge = '';
+        if (decCount > 0 && incCount === 0) {
+          dateBadge = `<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded border border-emerald-300">値下げ ${decCount}店</span>`;
+        } else if (incCount > 0 && decCount === 0) {
+          dateBadge = `<span class="bg-red-100 text-red-800 text-[10px] font-bold px-1.5 py-0.2 rounded border border-red-200">値上げ ${incCount}店</span>`;
+        } else {
+          dateBadge = `<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.2 rounded border border-amber-300">値上げ${incCount} / 値下げ${decCount}</span>`;
+        }
+
+        const storeCardsHtml = stores.map(s => {
+          const code = s['店舗コード'];
+          const name = s['店舗名'];
+          const pref = s['都道府県'];
+          const city = s['市区町村'];
+          const diffs = s['diffs'] || [];
+          const hasDec = diffs.some(d => (d.diff || '').startsWith('-'));
+          const hasInc = diffs.some(d => !(d.diff || '').startsWith('-'));
+
+          let badgeHtml = '';
+          if (hasDec && !hasInc) {
+            badgeHtml = '<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 text-[10px] font-bold px-1.5 py-0.2 rounded">🎉 値下げ</span>';
+          } else if (hasInc && !hasDec) {
+            badgeHtml = '<span class="bg-red-100 text-red-800 border border-red-200 text-[10px] font-bold px-1.5 py-0.2 rounded">値上げ</span>';
+          } else {
+            badgeHtml = '<span class="bg-amber-100 text-amber-800 border border-amber-300 text-[10px] font-bold px-1.5 py-0.2 rounded">改定あり</span>';
+          }
+
+          const summaryItems = diffs.slice(0, 3).map(d => {
+            const isMinus = (d.diff || '').startsWith('-');
+            const color = isMinus ? 'text-emerald-700 bg-emerald-50' : 'text-red-700 bg-red-50';
+            return `<span class="inline-block px-1.5 py-0.5 rounded text-[10px] ${color} font-medium border border-slate-200/60">${d.item}: ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円 (${d.diff})</span>`;
+          }).join(' ');
+
+          return `
+            <div onclick="goToStoreFromModal('${code}')" 
+                 class="bg-white hover:bg-orange-50/50 p-2.5 sm:p-3 rounded-lg border border-slate-200 hover:border-orange-300 transition cursor-pointer shadow-2xs group">
+              <div class="flex justify-between items-start gap-2 mb-1">
+                <div>
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-1.5 py-0.2 rounded">${pref} ${city}</span>
+                    <h4 class="font-bold text-slate-900 group-hover:text-orange-600 transition text-xs sm:text-sm flex items-center gap-1">
+                      ${name}
+                      <i class="fa-solid fa-angle-right text-[10px] text-slate-300 group-hover:text-orange-500 group-hover:translate-x-0.5 transition-transform"></i>
+                    </h4>
+                    ${badgeHtml}
+                  </div>
+                </div>
+                <div class="text-[10px] text-orange-600 font-medium group-hover:underline flex items-center gap-0.5 whitespace-nowrap">
+                  カードへ移動 <i class="fa-solid fa-arrow-down text-[9px]"></i>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1 mt-1">
+                ${summaryItems}
+                ${diffs.length > 3 ? `<span class="text-[10px] text-slate-400 self-center">他${diffs.length - 3}項目</span>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="rounded-xl border border-slate-200 overflow-hidden shadow-2xs bg-slate-50/50 mb-3 last:mb-0">
+            <button type="button" onclick="toggleHistoryAccordion('${accId}')" 
+                    class="w-full py-2.5 px-3 bg-slate-100/80 hover:bg-slate-200/70 flex items-center justify-between transition text-left select-none border-b border-slate-200">
+              <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                <i class="fa-regular fa-calendar-check text-orange-600 text-xs"></i>
+                <span class="font-bold text-slate-800 text-xs sm:text-sm">${dateKey} 検知</span>
+                <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium">(${stores.length}店舗)</span>
+                ${dateBadge}
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-400">
+                <span class="text-[10px] text-slate-400 hidden sm:inline" id="label-${accId}">${isFirst ? '閉じる' : '展開'}</span>
+                <i id="arrow-${accId}" class="fa-solid fa-chevron-down text-xs transition-transform ${isFirst ? 'rotate-180' : ''}"></i>
+              </div>
+            </button>
+            <div id="${accId}" class="${isFirst ? '' : 'hidden'} p-2 sm:p-2.5 space-y-2">
+              ${storeCardsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // モーダルから店舗へジャンプ＆ハイライト
+    function goToStoreFromModal(storeCode) {
+      toggleModal('priceUpdatesModal');
+      
+      const targetStore = allStores.find(s => String(s['店舗コード']) === String(storeCode));
+      if (targetStore) {
+        let needRerender = false;
+        if (selectedPrefs.size > 0 && !selectedPrefs.has(targetStore['都道府県'])) {
+          selectedPrefs.clear();
+          updatePrefTriggerButton();
+          needRerender = true;
+        }
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput && searchInput.value.trim() !== '') {
+          searchInput.value = '';
+          needRerender = true;
+        }
+        if (needRerender) {
+          renderStores();
+        }
+      }
+
+      setTimeout(() => {
+        const el = document.getElementById(`store-${storeCode}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.classList.add('ring-4', 'ring-orange-400', 'bg-orange-50/50');
+          setTimeout(() => {
+            el.classList.remove('ring-4', 'ring-orange-400', 'bg-orange-50/50');
+          }, 2500);
+        }
+      }, 150);
+    }
+
+    // 店舗別改定ヒストリーモーダルを開く
+    function openStoreHistoryModal(storeCode) {
+      const store = allStores.find(s => String(s['店舗コード']) === String(storeCode));
+      if (!store) return;
+
+      document.getElementById('historyModalStoreName').textContent = store['店舗名'];
+      document.getElementById('historyModalPrefCity').textContent = `${store['都道府県']} ${store['市区町村']}`;
+      document.getElementById('historyModalDate').textContent = store['last_price_change_date'] 
+        ? `最終検知日: ${store['last_price_change_date']}` 
+        : '直近の改定検知データなし';
+      document.getElementById('historyModalOfficialLink').href = `https://www.kaikatsu.jp/shop/detail/${storeCode}.html`;
+
+      const badgeEl = document.getElementById('historyModalBadge');
+      const diffs = store['diffs'] || [];
+      const hasDec = diffs.some(d => (d.diff || '').startsWith('-'));
+      const hasInc = diffs.some(d => !(d.diff || '').startsWith('-'));
+
+      if (diffs.length > 0) {
+        if (hasDec && !hasInc) {
+          badgeEl.className = 'text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300';
+          badgeEl.textContent = '🎉 値下げあり';
+        } else if (hasInc && !hasDec) {
+          badgeEl.className = 'text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-100 text-red-800 border border-red-200';
+          badgeEl.textContent = '値上げあり';
+        } else {
+          badgeEl.className = 'text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300';
+          badgeEl.textContent = '改定あり';
+        }
+        badgeEl.classList.remove('hidden');
+      } else {
+        badgeEl.classList.add('hidden');
+      }
+
+      const bodyEl = document.getElementById('storeHistoryModalBody');
+      if (diffs.length === 0) {
+        bodyEl.innerHTML = `
+          <div class="p-6 text-center text-slate-500 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <i class="fa-solid fa-circle-check text-emerald-500 text-3xl"></i>
+            <div class="font-bold text-slate-800 text-sm">直近の料金改定はありません</div>
+            <p class="text-xs text-slate-500">
+              この店舗は <span class="font-bold text-slate-700">2026/10/03（データ収集開始日）</span> 以降、料金の変更がなく安定して稼働しています。
+            </p>
+          </div>
+        `;
+      } else {
+        // 日付ごとに diffs をグループ化
+        const defaultDate = store['last_price_change_date'] || '直近の改定';
+        const groupsByDate = {};
+
+        diffs.forEach(d => {
+          const dateKey = d.date || defaultDate;
+          if (!groupsByDate[dateKey]) {
+            groupsByDate[dateKey] = [];
+          }
+          groupsByDate[dateKey].push(d);
+        });
+
+        // 日付の新しい順にソート
+        const sortedDates = Object.keys(groupsByDate).sort((a, b) => b.localeCompare(a));
+
+        const accordionsHtml = sortedDates.map((dateKey, idx) => {
+          const items = groupsByDate[dateKey];
+          const isFirst = idx === 0; // 最新日は初期オープン
+          const accId = `hist-acc-${storeCode}-${idx}`;
+
+          const groupInc = items.filter(d => !(d.diff || '').startsWith('-')).length;
+          const groupDec = items.filter(d => (d.diff || '').startsWith('-')).length;
+
+          let groupBadge = '';
+          if (groupDec > 0 && groupInc === 0) {
+            groupBadge = `<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded border border-emerald-300">値下げ ${groupDec}件</span>`;
+          } else if (groupInc > 0 && groupDec === 0) {
+            groupBadge = `<span class="bg-red-100 text-red-800 text-[10px] font-bold px-1.5 py-0.2 rounded border border-red-200">値上げ ${groupInc}件</span>`;
+          } else {
+            groupBadge = `<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.2 rounded border border-amber-300">値上げ${groupInc} / 値下げ${groupDec}</span>`;
+          }
+
+          const rowsHtml = items.map(d => {
+            const isMinus = (d.diff || '').startsWith('-');
+            const diffColor = isMinus ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-red-700 bg-red-50 font-bold';
+            return `
+              <tr class="hover:bg-slate-50 transition border-b border-slate-100">
+                <td class="py-2 px-2.5 font-medium text-slate-800">${d.item}</td>
+                <td class="py-2 px-2 text-right text-slate-400 line-through">${Number(d.before).toLocaleString()}円</td>
+                <td class="py-2 px-2 text-right font-bold text-slate-900">${Number(d.after).toLocaleString()}円</td>
+                <td class="py-2 px-2.5 text-right">
+                  <span class="inline-block px-1.5 py-0.2 rounded text-[11px] ${diffColor}">${d.diff}</span>
+                </td>
+              </tr>
+            `;
+          }).join('');
+
+          return `
+            <div class="rounded-xl border border-slate-200 overflow-hidden shadow-2xs bg-white mb-2.5 last:mb-0">
+              <button type="button" onclick="toggleHistoryAccordion('${accId}')" 
+                      class="w-full py-2.5 px-3 bg-slate-50 hover:bg-slate-100 flex items-center justify-between transition text-left select-none border-b border-slate-200">
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <i class="fa-regular fa-calendar-check text-orange-600 text-xs"></i>
+                  <span class="font-bold text-slate-800 text-xs sm:text-sm">${dateKey} 検知</span>
+                  <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium">(${items.length}項目改定)</span>
+                  ${groupBadge}
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-400">
+                  <span class="text-[10px] text-slate-400 hidden sm:inline" id="label-${accId}">${isFirst ? '閉じる' : '展開'}</span>
+                  <i id="arrow-${accId}" class="fa-solid fa-chevron-down text-xs transition-transform ${isFirst ? 'rotate-180' : ''}"></i>
+                </div>
+              </button>
+              <div id="${accId}" class="${isFirst ? '' : 'hidden'} overflow-x-auto">
+                <table class="w-full text-xs">
+                  <thead class="bg-slate-50/80 text-slate-600 border-b border-slate-200 text-[11px]">
+                    <tr>
+                      <th class="py-2 px-2.5 text-left font-bold">対象パック・項目</th>
+                      <th class="py-2 px-2 text-right font-semibold">改定前</th>
+                      <th class="py-2 px-2 text-right font-semibold">改定後</th>
+                      <th class="py-2 px-2.5 text-right font-bold">変動額</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${rowsHtml}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        bodyEl.innerHTML = `
+          <div class="bg-amber-50/60 p-2.5 rounded-lg border border-amber-200/80 text-[11px] text-amber-900 mb-2.5 flex items-center justify-between">
+            <span class="font-bold">改定履歴: 全 ${sortedDates.length} 回 / 計 ${diffs.length} 項目</span>
+            <span class="text-[10px] text-amber-700">※ 各改定日をクリックで開閉できます</span>
+          </div>
+          <div>
+            ${accordionsHtml}
+          </div>
+        `;
+      }
+
+      toggleModal('storeHistoryModal');
+    }
+
+    function toggleHistoryAccordion(id) {
+      const bodyEl = document.getElementById(id);
+      const arrowEl = document.getElementById(`arrow-${id}`);
+      const labelEl = document.getElementById(`label-${id}`);
+      if (bodyEl && arrowEl) {
+        const isHidden = bodyEl.classList.contains('hidden');
+        bodyEl.classList.toggle('hidden');
+        arrowEl.classList.toggle('rotate-180', isHidden);
+        if (labelEl) {
+          labelEl.textContent = isHidden ? '閉じる' : '展開';
+        }
+      }
+    }
+
+    function updateHeaderDiffBadge() {
+      const badge = document.getElementById('headerDiffCountBadge');
+      if (!badge) return;
+      const count = allStores.filter(s => (s.diffs && s.diffs.length > 0) || s.has_diff).length;
+      if (count > 0) {
+        badge.textContent = count;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // アコーディオン開閉（スマホ用全パック）
+    function toggleStoreDetails(storeCode) {
+      const detailsEl = document.getElementById(`details-${storeCode}`);
+      const btnEl = document.getElementById(`btn-details-${storeCode}`);
+      const arrowEl = document.getElementById(`arrow-details-${storeCode}`);
+      if (detailsEl) {
+        const isHidden = detailsEl.classList.contains('hidden');
+        detailsEl.classList.toggle('hidden');
+        if (btnEl && arrowEl) {
+          btnEl.querySelector('.btn-text').textContent = isHidden ? '閉じる' : '全パック料金を見る';
+          arrowEl.classList.toggle('rotate-180', isHidden);
+        }
+      }
+    }
+
+    // 地方と都道府県の定義（グルーピング）
+    const REGIONS = [
+      { name: "北海道", prefs: ["北海道"] },
+      { name: "東北", prefs: ["青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県"] },
+      { name: "関東", prefs: ["東京都", "神奈川県", "埼玉県", "千葉県", "茨城県", "栃木県", "群馬県"] },
+      { name: "上信越・北陸", prefs: ["新潟県", "長野県", "山梨県", "富山県", "石川県", "福井県"] },
+      { name: "東海", prefs: ["愛知県", "静岡県", "三重県", "岐阜県"] },
+      { name: "関西", prefs: ["大阪府", "兵庫県", "京都府", "滋賀県", "奈良県", "和歌山県"] },
+      { name: "中国", prefs: ["鳥取県", "島根県", "岡山県", "広島県", "山口県"] },
+      { name: "四国", prefs: ["徳島県", "香川県", "愛媛県", "高知県"] },
+      { name: "九州・沖縄", prefs: ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"] },
+    ];
+
+    let selectedPrefs = new Set();
+    let tempSelectedPrefs = new Set();
+
+    // 都道府県選択モーダル開閉
+    function togglePrefModal() {
+      const modal = document.getElementById('prefModal');
+      const isHidden = modal.classList.contains('hidden');
+      if (isHidden) {
+        tempSelectedPrefs = new Set(selectedPrefs);
+        renderPrefModalContent();
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    // 都道府県モーダルの中身を描画
+    function renderPrefModalContent() {
+      const container = document.getElementById('prefModalBody');
+      const countEl = document.getElementById('prefModalSelectedCount');
+      if (countEl) countEl.textContent = tempSelectedPrefs.size;
+
+      // 各都道府県の店舗数を集計
+      const storeCounts = {};
+      allStores.forEach(s => {
+        const p = s['都道府県'];
+        if (p) storeCounts[p] = (storeCounts[p] || 0) + 1;
+      });
+
+      container.innerHTML = REGIONS.map((reg, regIdx) => {
+        const regStoresCount = reg.prefs.reduce((acc, p) => acc + (storeCounts[p] || 0), 0);
+
+        const chipsHtml = reg.prefs.map(p => {
+          const cnt = storeCounts[p] || 0;
+          const isChecked = tempSelectedPrefs.has(p);
+          const activeClass = isChecked 
+            ? 'bg-orange-500 text-white border-orange-600 font-bold shadow-xs' 
+            : 'bg-white text-slate-700 border-slate-200 hover:border-orange-300 hover:bg-orange-50/50';
+
+          return `
+            <button type="button" onclick="togglePrefChip('${p}')" 
+                    class="pref-chip px-2.5 py-1.5 rounded-lg border text-xs flex items-center justify-between gap-1 transition select-none ${activeClass}">
+              <span>${p}</span>
+              <span class="text-[10px] ${isChecked ? 'text-white/80' : 'text-slate-400'}">(${cnt})</span>
+            </button>
+          `;
+        }).join('');
+
+        return `
+          <div class="bg-slate-50/80 rounded-xl p-3 border border-slate-200/80">
+            <div class="flex justify-between items-center mb-2 pb-1.5 border-b border-slate-200/60">
+              <div class="font-bold text-slate-800 flex items-center gap-1.5 text-xs sm:text-sm">
+                <span class="w-1.5 h-3.5 bg-orange-500 rounded-full inline-block"></span>
+                <span>${reg.name}</span>
+                <span class="text-[11px] font-normal text-slate-500">(${regStoresCount}店舗)</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px]">
+                <button type="button" onclick="toggleRegionPrefs(${regIdx}, true)" class="text-orange-600 hover:underline font-medium">この地方を選択</button>
+                <span class="text-slate-300">/</span>
+                <button type="button" onclick="toggleRegionPrefs(${regIdx}, false)" class="text-slate-400 hover:text-slate-600 hover:underline">解除</button>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1.5">
+              ${chipsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function togglePrefChip(pref) {
+      if (tempSelectedPrefs.has(pref)) {
+        tempSelectedPrefs.delete(pref);
+      } else {
+        tempSelectedPrefs.add(pref);
+      }
+      renderPrefModalContent();
+    }
+
+    function toggleRegionPrefs(regIdx, isSelect) {
+      const reg = REGIONS[regIdx];
+      if (!reg) return;
+      reg.prefs.forEach(p => {
+        if (isSelect) tempSelectedPrefs.add(p);
+        else tempSelectedPrefs.delete(p);
+      });
+      renderPrefModalContent();
+    }
+
+    function selectAllPrefs() {
+      REGIONS.forEach(r => r.prefs.forEach(p => tempSelectedPrefs.add(p)));
+      renderPrefModalContent();
+    }
+
+    function clearAllPrefs() {
+      tempSelectedPrefs.clear();
+      renderPrefModalContent();
+    }
+
+    function applyPrefSelection() {
+      selectedPrefs = new Set(tempSelectedPrefs);
+      updatePrefTriggerButton();
+      renderStores();
+      togglePrefModal();
+    }
+
+    function updatePrefTriggerButton() {
+      const labelEl = document.getElementById('prefTriggerLabel');
+      const badgeEl = document.getElementById('prefSelectedCountBadge');
+      
+      const count = selectedPrefs.size;
+      if (count === 0) {
+        labelEl.textContent = 'すべての都道府県（全国 415店舗）';
+        badgeEl.classList.add('hidden');
+      } else {
+        const arr = Array.from(selectedPrefs);
+        if (count === 1) {
+          labelEl.textContent = `${arr[0]}`;
+        } else if (count <= 2) {
+          labelEl.textContent = arr.join(', ');
+        } else {
+          labelEl.textContent = `${arr[0]}, ${arr[1]} +他${count - 2}県`;
+        }
+        badgeEl.textContent = count;
+        badgeEl.classList.remove('hidden');
+      }
+    }
+
+    // データ読み込み
+    async function loadData() {
+      try {
+        const resp = await fetch('stores.json?t=' + Date.now());
+        allStores = await resp.json();
+        renderStores();
+        updateHeaderDiffBadge();
+        updateHeaderFavBadge();
+      } catch (err) {
+        console.error('Failed to load stores.json:', err);
+        document.getElementById('storeList').innerHTML = `
+          <div class="p-8 text-center bg-red-50 text-red-700 rounded-xl border border-red-200 text-xs sm:text-sm">
+            データの読み込みに失敗しました。ローカルHTTPサーバー経由で開いているか確認してください。
+          </div>
+        `;
+      }
+    }
+
+    // レンダリング (レスポンシブ：PCはワイドテーブル、スマホはハイブリッド最適化)
+    function renderStores() {
+      const search = document.getElementById('searchInput').value.trim().toLowerCase();
+      const sort = document.getElementById('sortSelect').value;
+      
+      const cbs = Array.from(document.querySelectorAll('.filter-cb:checked')).map(cb => cb.value);
+      const favOnly = cbs.includes('favorite_only');
+      const decOnly = cbs.includes('decrease_only');
+      const nightOnly = cbs.includes('night_pack_only');
+      const amenityCbs = cbs.filter(c => c !== 'favorite_only' && c !== 'decrease_only' && c !== 'night_pack_only');
+
+      // フィルターバッジ表示
+      const activeBadge = document.getElementById('filterActiveBadge');
+      if (activeBadge) {
+        activeBadge.classList.toggle('hidden', cbs.length === 0);
+      }
+
+      const favSet = new Set(getFavoriteStores());
+      const hasDecrease = (s) => (s['diffs'] || []).some(d => (d.diff || '').startsWith('-'));
+      const hasNight = (s) => {
+        const keys = ['平日_ナイト8h', '週末_ナイト8h', '平日_ナイト12h', '週末_ナイト12h'];
+        return keys.some(k => s[k] && s[k] !== '-' && s[k] !== '');
+      };
+
+      let filtered = allStores.filter(s => {
+        const sCode = String(s['店舗コード']);
+        if (favOnly && !favSet.has(sCode)) return false;
+
+        if (search) {
+          const matchName = (s['店舗名'] || '').toLowerCase().includes(search);
+          const matchCity = (s['市区町村'] || '').toLowerCase().includes(search);
+          const matchAddr = (s['住所'] || '').toLowerCase().includes(search);
+          if (!matchName && !matchCity && !matchAddr) return false;
+        }
+
+        // 都道府県複数選択フィルター
+        if (selectedPrefs.size > 0 && !selectedPrefs.has(s['都道府県'])) return false;
+
+        if (decOnly && !hasDecrease(s)) return false;
+        if (nightOnly && !hasNight(s)) return false;
+
+        for (const a of amenityCbs) {
+          if (!s[a]) return false;
+        }
+
+        return true;
+      });
+
+      // ソート処理（指定条件でソート後、お気に入り店舗★を最上部にピン留め）
+      if (sort === 'weekday3h_asc') {
+        filtered.sort((a, b) => (parseInt(a['平日_3hパック']) || 99999) - (parseInt(b['平日_3hパック']) || 99999));
+      } else if (sort === 'weekend3h_asc') {
+        filtered.sort((a, b) => (parseInt(a['週末_3hパック']) || 99999) - (parseInt(b['週末_3hパック']) || 99999));
+      } else if (sort === 'weekday6h_asc') {
+        filtered.sort((a, b) => (parseInt(a['平日_6hパック']) || 99999) - (parseInt(b['平日_6hパック']) || 99999));
+      } else if (sort === 'decrease_desc') {
+        filtered.sort((a, b) => (hasDecrease(b) ? 1 : 0) - (hasDecrease(a) ? 1 : 0));
+      }
+
+      // お気に入りを最優先で最上部に固定（安定ソート）
+      filtered.sort((a, b) => {
+        const aFav = favSet.has(String(a['店舗コード'])) ? 1 : 0;
+        const bFav = favSet.has(String(b['店舗コード'])) ? 1 : 0;
+        return bFav - aFav;
+      });
+
+      document.getElementById('matchCount').textContent = filtered.length;
+
+      const container = document.getElementById('storeList');
+      if (filtered.length === 0) {
+        if (favOnly) {
+          container.innerHTML = `
+            <div class="p-8 sm:p-12 text-center text-slate-500 bg-white rounded-xl border border-dashed border-amber-300 space-y-2">
+              <i class="fa-regular fa-star text-3xl sm:text-4xl text-amber-400"></i>
+              <div class="font-bold text-slate-800 text-sm sm:text-base">お気に入り店舗がまだ登録されていません</div>
+              <p class="text-xs text-slate-500 max-w-sm mx-auto">
+                店舗カードの右上にある「★ 保存」ボタンを押すと、お気に入りに登録して最上部に固定できます！
+              </p>
+            </div>
+          `;
+        } else {
+          container.innerHTML = `
+            <div class="p-8 sm:p-12 text-center text-slate-400 bg-white rounded-xl border border-dashed border-slate-300">
+              <i class="fa-solid fa-magnifying-glass text-2xl sm:text-3xl mb-2"></i>
+              <p class="text-xs sm:text-sm">条件に一致する店舗が見つかりませんでした。</p>
+            </div>
+          `;
+        }
+        return;
+      }
+
+      container.innerHTML = filtered.map(s => {
+        const code = s['店舗コード'];
+        const name = s['店舗名'];
+        const pref = s['都道府県'];
+        const city = s['市区町村'];
+        const addr = s['住所'];
+        const tel = s['電話番号'];
+        const hasDiff = s['has_diff'];
+        const diffs = s['diffs'] || [];
+        const weekendNote = s['週末料金注記'];
+
+        const diffItemMap = {};
+        diffs.forEach(d => { diffItemMap[d.item] = d.diff; });
+
+        // 設備バッジ一覧（公式準拠のフルラインナップ）
+        const badges = [];
+        if (s['個室WEB予約']) badges.push('<a href="https://reservation.kaikatsu.jp/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-sm transition inline-flex items-center gap-1 active:scale-95" title="公式WEB予約ページを開く">📱 WEB予約可 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-amber-100"></i></a>');
+        if (s['無料トースト']) badges.push('<span class="bg-amber-100 text-amber-950 border border-amber-300 font-bold px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-xs" title="全国32店舗限定！無料トースト食べ放題">🍞 無料トースト</span>');
+        if (s['VIPルーム'] || s['VIPフラット']) badges.push('<span class="bg-amber-50 text-amber-800 border border-amber-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">👑 VIPルーム</span>');
+        if (s['ワイドルーム']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">🛋️ ワイド</span>');
+        if (s['無料シャワー']) badges.push('<span class="bg-sky-50 text-sky-800 border border-sky-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 無料シャワー</span>');
+        if (s['有料シャワー']) badges.push('<span class="bg-slate-100 text-slate-700 border border-slate-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 有料シャワー</span>');
+        if (s['駐車場']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚗 駐車場</span>');
+        if (s['100円モーニング']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🍳 100円モーニング</span>');
+        if (s['ソフトクリーム']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🍦 ソフトクリーム</span>');
+        if (s['コインランドリー']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🧺 ランドリー</span>');
+        if (s['飲み放題カフェ']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">☕ カフェ</span>');
+        if (s['カラオケ']) badges.push('<span class="bg-blue-50 text-blue-800 border border-blue-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎤 カラオケ</span>');
+        if (s['ダーツ']) badges.push('<span class="bg-purple-50 text-purple-800 border border-purple-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎯 ダーツ</span>');
+        if (s['ビリヤード']) badges.push('<span class="bg-indigo-50 text-indigo-800 border border-indigo-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🎱 ビリヤード</span>');
+        if (s['ファミリールーム']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">👨‍👩‍👧 ファミリー</span>');
+        if (s['マッサージ']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">💆 マッサージ</span>');
+        if (s['アルコール販売']) badges.push('<span class="badge-service px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🍺 アルコール</span>');
+        if (s['加熱式たばこエリア']) badges.push('<span class="bg-slate-100 text-slate-600 border border-slate-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚬 喫煙エリア</span>');
+
+        // 差分の内訳（値上げ・値下げ）判定
+        const incDiffs = diffs.filter(d => !(d.diff || '').startsWith('-'));
+        const decDiffs = diffs.filter(d => (d.diff || '').startsWith('-'));
+        const hasInc = incDiffs.length > 0;
+        const hasDec = decDiffs.length > 0;
+
+        // 改定サマリーバナー
+        let diffBanner = '';
+        if (hasDiff) {
+          const changeDateStr = s['last_price_change_date'] ? `${s['last_price_change_date']}検知 / ` : '';
+          
+          if (hasDec && !hasInc) {
+            // 純粋な値下げのみ！
+            diffBanner = `
+              <div onclick="openStoreHistoryModal('${code}')" class="cursor-pointer bg-emerald-50 hover:bg-emerald-100/70 border border-emerald-300 rounded-lg px-2.5 py-1.5 text-xs text-emerald-800 flex items-center justify-between transition shadow-2xs group">
+                <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
+                  <i class="fa-solid fa-arrow-trend-down text-emerald-600"></i>
+                  <span>直近で値下げあり！ (${changeDateStr}${decDiffs.length}項目値下げ 🎉)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="text-[10px] sm:text-[11px] text-emerald-700 truncate max-w-[160px] sm:max-w-none hidden sm:block">
+                    ${decDiffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円 (${d.diff})`).slice(0, 2).join(' / ')}${decDiffs.length > 2 ? ' ...他' : ''}
+                  </div>
+                  <span class="text-[10px] sm:text-[11px] text-emerald-800 font-bold group-hover:underline flex items-center gap-0.5 whitespace-nowrap">
+                    内訳 <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                  </span>
+                </div>
+              </div>
+            `;
+          } else if (hasInc && !hasDec) {
+            // 値上げのみ
+            diffBanner = `
+              <div onclick="openStoreHistoryModal('${code}')" class="cursor-pointer bg-red-50 hover:bg-red-100/70 border border-red-200 rounded-lg px-2.5 py-1.5 text-xs text-red-800 flex items-center justify-between transition shadow-2xs group">
+                <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
+                  <i class="fa-solid fa-arrow-trend-up text-red-600"></i>
+                  <span>直近で価格改定あり (${changeDateStr}${incDiffs.length}項目値上げ)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="text-[10px] sm:text-[11px] text-red-600 truncate max-w-[160px] sm:max-w-none hidden sm:block">
+                    ${incDiffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円`).slice(0, 2).join(' / ')}${incDiffs.length > 2 ? ' ...他' : ''}
+                  </div>
+                  <span class="text-[10px] sm:text-[11px] text-red-800 font-bold group-hover:underline flex items-center gap-0.5 whitespace-nowrap">
+                    内訳 <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                  </span>
+                </div>
+              </div>
+            `;
+          } else if (hasInc && hasDec) {
+            // 混在
+            diffBanner = `
+              <div onclick="openStoreHistoryModal('${code}')" class="cursor-pointer bg-amber-50 hover:bg-amber-100/70 border border-amber-200 rounded-lg px-2.5 py-1.5 text-xs text-amber-900 flex items-center justify-between transition shadow-2xs group">
+                <div class="flex items-center gap-1.5 font-bold text-[11px] sm:text-xs">
+                  <i class="fa-solid fa-arrows-up-down text-amber-600"></i>
+                  <span>直近で価格改定あり (${changeDateStr}値上げ${incDiffs.length} / 値下げ${decDiffs.length})</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="text-[10px] sm:text-[11px] text-amber-700 truncate max-w-[160px] sm:max-w-none hidden sm:block">
+                    ${diffs.map(d => `${d.item} ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円 (${d.diff})`).slice(0, 2).join(' / ')}${diffs.length > 2 ? ' ...他' : ''}
+                  </div>
+                  <span class="text-[10px] sm:text-[11px] text-amber-900 font-bold group-hover:underline flex items-center gap-0.5 whitespace-nowrap">
+                    内訳 <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                  </span>
+                </div>
+              </div>
+            `;
+          }
+        }
+
+        const formatFee = (val) => {
+          if (!val || val === '-' || val === 'None' || val === 'NaN') return '-';
+          const num = parseInt(val);
+          return isNaN(num) ? '-' : `${num.toLocaleString()}円`;
+        };
+
+        const renderFeeCell = (key, isBold = false) => {
+          const val = s[key];
+          if (!val || val === '-' || val === 'None' || val === 'NaN') return '<span class="text-slate-300">-</span>';
+          const num = parseInt(val);
+          if (isNaN(num)) return '<span class="text-slate-300">-</span>';
+          const feeStr = `${num.toLocaleString()}円`;
+          if (diffItemMap[key]) {
+            const diffVal = diffItemMap[key];
+            const isMinus = diffVal.startsWith('-');
+            const colorClass = isMinus ? 'text-emerald-600' : 'text-red-600';
+            const subColorClass = isMinus ? 'text-emerald-500' : 'text-red-500';
+            return `
+              <div class="font-bold ${colorClass}">
+                ${feeStr}
+                <span class="text-[8px] sm:text-[9px] font-normal block leading-tight ${subColorClass}">${diffVal}</span>
+              </div>
+            `;
+          }
+          return `<span class="${isBold ? 'font-bold text-slate-900' : 'text-slate-700'}">${feeStr}</span>`;
+        };
+
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pref + ' ' + name + ' ' + addr)}`;
+
+        // タイトル横の改定ミニバッジ
+        let diffMiniBadge = '';
+        if (hasDiff) {
+          if (hasDec && !hasInc) {
+            diffMiniBadge = '<span class="text-[9px] sm:text-[10px] bg-emerald-600 text-white px-1.5 py-0.2 rounded-full font-bold">🎉 値下げあり</span>';
+          } else if (hasInc && !hasDec) {
+            diffMiniBadge = '<span class="text-[9px] sm:text-[10px] bg-red-600 text-white px-1.5 py-0.2 rounded-full font-bold">値上げあり</span>';
+          } else {
+            diffMiniBadge = '<span class="text-[9px] sm:text-[10px] bg-amber-600 text-white px-1.5 py-0.2 rounded-full font-bold">価格改定あり</span>';
+          }
+        }
+
+        // 住所横の改定日チップ
+        let dateChip = '';
+        if (s['last_price_change_date']) {
+          if (hasDec && !hasInc) {
+            dateChip = `<span class="inline-flex items-center gap-1 text-[11px] text-emerald-800 bg-emerald-50 border border-emerald-300 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px] text-emerald-600"></i> 最終値下げ: ${s['last_price_change_date']}</span>`;
+          } else if (hasInc && !hasDec) {
+            dateChip = `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終値上げ: ${s['last_price_change_date']}</span>`;
+          } else {
+            dateChip = `<span class="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded font-medium"><i class="fa-regular fa-calendar-check text-[10px]"></i> 最終改定: ${s['last_price_change_date']}</span>`;
+          }
+        }
+
+        const isFav = favSet.has(String(code));
+        const favBtnClass = isFav 
+          ? 'text-amber-500 bg-amber-50 hover:bg-amber-100 border border-amber-300 font-bold' 
+          : 'text-slate-400 hover:text-amber-500 hover:bg-slate-50 border border-transparent';
+        const cardBorderClass = isFav 
+          ? 'border-amber-300 ring-2 ring-amber-300/40 shadow-sm' 
+          : 'border-slate-200';
+
+        return `
+          <div id="store-${code}" class="store-card bg-white rounded-xl shadow-sm border ${cardBorderClass} p-3.5 sm:p-5 hover:shadow-md transition duration-300 relative">
+            
+            <!-- 上段: 店舗名 & バッジ & アクション -->
+            <div class="flex flex-col sm:flex-row justify-between items-start gap-2.5 pb-2.5 border-b border-slate-100">
+              <div class="w-full sm:w-auto">
+                <div class="flex items-center gap-1.5 sm:gap-2 mb-1 flex-wrap">
+                  <span class="text-[10px] sm:text-xs font-bold text-orange-600 bg-orange-50 px-1.5 py-0.5 rounded">${pref} ${city}</span>
+                  <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                    <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
+                       class="hover:text-orange-600 transition inline-flex items-center gap-1.5">
+                       ${name}
+                      <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-slate-400"></i>
+                    </a>
+                  </h3>
+                  ${isFav ? '<span class="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.2 rounded font-bold flex items-center gap-0.5"><i class="fa-solid fa-star text-amber-500 text-[9px]"></i> お気に入り</span>' : ''}
+                  ${diffMiniBadge ? `<span onclick="openStoreHistoryModal('${code}')" class="cursor-pointer hover:opacity-80 transition">${diffMiniBadge}</span>` : ''}
+                </div>
+                
+                <div class="flex items-center gap-2 sm:gap-3 text-xs text-slate-500 flex-wrap">
+                  <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" 
+                     class="hover:text-orange-600 hover:underline flex items-center gap-1 text-slate-600 text-[11px] sm:text-xs" title="Googleマップで開く">
+                    <i class="fa-solid fa-location-dot text-orange-500"></i>
+                    <span class="truncate max-w-[240px] sm:max-w-none">${addr}</span>
+                  </a>
+                  ${tel ? `
+                    <a href="tel:${tel.replace(/[^0-9]/g, '')}" class="inline-flex items-center gap-1 text-[11px] text-slate-600 hover:text-orange-600 hover:underline" title="電話をかける">
+                      <i class="fa-solid fa-phone text-slate-400"></i> ${tel}
+                    </a>
+                  ` : ''}
+                  ${dateChip}
+                </div>
+              </div>
+
+              <!-- 右上/スマホ下部のアクションボタン -->
+              <div class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-end pt-1 sm:pt-0">
+                <button type="button" onclick="toggleFavorite('${code}', event)" 
+                        class="text-xs ${favBtnClass} transition px-2.5 py-1.5 rounded-lg flex items-center gap-1 active:scale-95" 
+                        title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}">
+                  <i class="fa-${isFav ? 'solid' : 'regular'} fa-star text-sm ${isFav ? 'text-amber-500' : ''}"></i>
+                  <span class="text-[11px]">${isFav ? '登録中' : '保存'}</span>
+                </button>
+                <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
+                   class="sm:hidden flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
+                  <i class="fa-solid fa-location-dot text-orange-500"></i> 地図
+                </a>
+                ${tel ? `
+                  <a href="tel:${tel.replace(/[^0-9]/g, '')}" 
+                     class="sm:hidden flex-1 text-center bg-orange-50 hover:bg-orange-100 text-orange-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-phone text-orange-600"></i> 電話
+                  </a>
+                ` : ''}
+                <button onclick="openStoreHistoryModal('${code}')" 
+                        class="text-[11px] ${hasDiff ? 'text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 font-semibold' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'} transition px-2 py-1.5 rounded flex items-center gap-1"
+                        title="料金改定履歴を見る">
+                  <i class="fa-solid fa-clock-rotate-left ${hasDiff ? 'text-orange-600' : 'text-slate-400'}"></i> <span class="hidden sm:inline">履歴</span>
+                </button>
+                <button onclick="toggleModal('feedbackModal', '${name}')" 
+                        class="text-[11px] text-slate-400 hover:text-red-500 transition px-2 py-1.5 rounded hover:bg-slate-50 flex items-center gap-1"
+                        title="誤り報告">
+                  <i class="fa-regular fa-flag"></i> <span class="hidden sm:inline">報告</span>
+                </button>
+                <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
+                   class="flex-1 sm:flex-initial text-center bg-orange-600 hover:bg-orange-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
+                  <span>公式ページ</span>
+                  <i class="fa-solid fa-angle-right text-[10px] ml-0.5"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- 中段: 設備バッジ一覧 -->
+            <div class="py-2 flex flex-wrap gap-1">
+              ${badges.join('')}
+            </div>
+
+            ${diffBanner ? `<div class="mb-2.5">${diffBanner}</div>` : ''}
+
+            <!-- 📱 スマホ用: 主要パックのコンパクトグリッド (md:hidden) -->
+            <div class="block md:hidden bg-slate-50 rounded-lg p-2.5 border border-slate-100 mb-2">
+              <div class="grid grid-cols-4 gap-1.5 text-center">
+                <div class="bg-white rounded p-1.5 shadow-xs border border-slate-100">
+                  <div class="text-[9px] text-slate-400 font-semibold mb-0.5">基本30分</div>
+                  <div class="text-xs font-bold text-slate-800">${formatFee(s['平日_基本30分'])}</div>
+                  <div class="text-[9px] text-amber-700">${formatFee(s['週末_基本30分'])}</div>
+                </div>
+                <div class="bg-orange-50/60 rounded p-1.5 shadow-xs border border-orange-200/60">
+                  <div class="text-[9px] text-orange-600 font-bold mb-0.5">3hパック</div>
+                  <div class="text-xs font-bold text-slate-900">${formatFee(s['平日_3hパック'])}</div>
+                  <div class="text-[9px] text-amber-800 font-medium">${formatFee(s['週末_3hパック'])}</div>
+                </div>
+                <div class="bg-orange-50/60 rounded p-1.5 shadow-xs border border-orange-200/60">
+                  <div class="text-[9px] text-orange-600 font-bold mb-0.5">6hパック</div>
+                  <div class="text-xs font-bold text-slate-900">${formatFee(s['平日_6hパック'])}</div>
+                  <div class="text-[9px] text-amber-800 font-medium">${formatFee(s['週末_6hパック'])}</div>
+                </div>
+                <div class="bg-indigo-50/60 rounded p-1.5 shadow-xs border border-indigo-200/60">
+                  <div class="text-[9px] text-indigo-700 font-bold mb-0.5">ナイト8h</div>
+                  <div class="text-xs font-bold text-indigo-950">${formatFee(s['平日_ナイト8h'])}</div>
+                  <div class="text-[9px] text-slate-400">${formatFee(s['週末_ナイト8h'])}</div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center text-[9px] text-slate-400 mt-1.5 px-0.5">
+                <div>黒字: 平日 / <span class="text-amber-700">茶字: 週末</span></div>
+                <button id="btn-details-${code}" onclick="toggleStoreDetails('${code}')" class="text-orange-600 font-bold flex items-center gap-1">
+                  <span class="btn-text">全パック料金を見る</span>
+                  <i id="arrow-details-${code}" class="fa-solid fa-chevron-down text-[8px] transition-transform"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 💻 PC用 ＆ スマホ展開用: 全料金パック一覧テーブル (全11項目) -->
+            <div id="details-${code}" class="hidden md:block overflow-x-auto rounded-lg border border-slate-200 bg-slate-50/50 shadow-inner mt-2 md:mt-0">
+              <table class="w-full text-center text-xs price-table">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-600 border-b border-slate-200 text-[10px] sm:text-[11px]">
+                    <th class="py-2 px-2.5 sm:px-3 text-left font-bold sticky left-0 bg-slate-100 shadow-sm">区分</th>
+                    <th class="py-2 px-2">基本30分</th>
+                    <th class="py-2 px-2">延長10分</th>
+                    <th class="py-2 px-2.5 font-bold text-orange-600 bg-orange-50/70 border-x border-orange-100">3h</th>
+                    <th class="py-2 px-2.5 font-bold text-orange-600 bg-orange-50/70 border-r border-orange-100">6h</th>
+                    <th class="py-2 px-2">9h</th>
+                    <th class="py-2 px-2 font-bold">12h</th>
+                    <th class="py-2 px-2">15h</th>
+                    <th class="py-2 px-2">18h</th>
+                    <th class="py-2 px-2">21h</th>
+                    <th class="py-2 px-2 font-bold">24h</th>
+                    <th class="py-2 px-2.5 bg-indigo-50/70 text-indigo-700 font-bold border-l border-indigo-100">ナイト8h</th>
+                    <th class="py-2 px-2.5 bg-indigo-50/70 text-indigo-700 font-bold border-l border-indigo-100">ナイト12h</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white text-[10px] sm:text-[11px]">
+                  <tr class="hover:bg-slate-50/80 transition">
+                    <td class="py-2 px-2.5 sm:px-3 text-left font-bold text-slate-700 sticky left-0 bg-white">平日</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_基本30分')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_延長10分')}</td>
+                    <td class="py-2 px-2.5 bg-orange-50/30 border-x border-orange-100 font-bold">${renderFeeCell('平日_3hパック', true)}</td>
+                    <td class="py-2 px-2.5 bg-orange-50/30 border-r border-orange-100 font-bold">${renderFeeCell('平日_6hパック', true)}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_9hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_12hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_15hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_18hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_21hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('平日_24hパック')}</td>
+                    <td class="py-2 px-2.5 bg-indigo-50/30 border-l border-indigo-100 font-medium">${renderFeeCell('平日_ナイト8h')}</td>
+                    <td class="py-2 px-2.5 bg-indigo-50/30 border-l border-indigo-100 font-medium">${renderFeeCell('平日_ナイト12h')}</td>
+                  </tr>
+                  <tr class="hover:bg-amber-50/30 transition">
+                    <td class="py-2 px-2.5 sm:px-3 text-left font-bold text-amber-800 sticky left-0 bg-white">週末</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_基本30分')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_延長10分')}</td>
+                    <td class="py-2 px-2.5 bg-orange-50/30 border-x border-orange-100 font-bold">${renderFeeCell('週末_3hパック', true)}</td>
+                    <td class="py-2 px-2.5 bg-orange-50/30 border-r border-orange-100 font-bold">${renderFeeCell('週末_6hパック', true)}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_9hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_12hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_15hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_18hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_21hパック')}</td>
+                    <td class="py-2 px-2">${renderFeeCell('週末_24hパック')}</td>
+                    <td class="py-2 px-2.5 bg-indigo-50/30 border-l border-indigo-100 font-medium">${renderFeeCell('週末_ナイト8h')}</td>
+                    <td class="py-2 px-2.5 bg-indigo-50/30 border-l border-indigo-100 font-medium">${renderFeeCell('週末_ナイト12h')}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            ${weekendNote ? `<div class="mt-1.5 text-[9px] sm:text-[10px] text-slate-400 leading-tight">※ ${weekendNote}</div>` : ''}
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    // フィルター開閉トグル（スマホ向け）
+    const toggleFilterBtn = document.getElementById('toggleFilterBtn');
+    const amenityFiltersContainer = document.getElementById('amenityFiltersContainer');
+    const filterArrow = document.getElementById('filterArrow');
+
+    // スマホでは初期状態で開閉可能に
+    toggleFilterBtn.addEventListener('click', () => {
+      amenityFiltersContainer.classList.toggle('hidden');
+      filterArrow.classList.toggle('rotate-180');
+    });
+
+    // イベントリスナー
+    document.getElementById('searchInput').addEventListener('input', renderStores);
+    document.getElementById('sortSelect').addEventListener('change', renderStores);
+    document.querySelectorAll('.filter-cb').forEach(cb => cb.addEventListener('change', renderStores));
+
+    document.getElementById('resetFiltersBtn').addEventListener('click', () => {
+      document.getElementById('searchInput').value = '';
+      selectedPrefs.clear();
+      updatePrefTriggerButton();
+      document.getElementById('sortSelect').value = 'default';
+      document.querySelectorAll('.filter-cb').forEach(cb => cb.checked = false);
+      updateHeaderFavBadge();
+      renderStores();
+    });
+
+    // 初期化
+    loadData();
