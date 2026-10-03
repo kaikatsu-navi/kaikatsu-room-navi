@@ -140,6 +140,13 @@
               <i class="fa-solid fa-location-crosshairs text-[11px] text-blue-600"></i>
               <span>現在地から探す</span>
             </button>
+            <button id="batchVacancyBtn" onclick="checkNearMeVacancyBatch()" type="button"
+                    class="text-xs text-emerald-800 hover:text-emerald-900 font-bold flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 px-2 sm:px-2.5 py-0.5 rounded transition shadow-2xs active:scale-95"
+                    title="表示中の上位店舗の空き状況を一括取得">
+              <i class="fa-solid fa-bolt text-[11px] text-emerald-600"></i>
+              <span class="hidden sm:inline">空席一括確認</span>
+              <span class="sm:hidden">空席一括</span>
+            </button>
             <button id="shareConditionsBtn" onclick="shareCurrentConditions()" type="button" 
                     class="text-xs text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2 py-0.5 rounded transition shadow-2xs active:scale-95" 
                     title="現在の絞り込み条件のURLを共有・コピー">
@@ -458,6 +465,6 @@
   </div>
 
   <!-- スクリプト -->
-  <script src="js/app.js?v=20261003_2212"></script>
+  <script src="js/app.js?v=20261003_2218"></script>
 </body>
 </html>

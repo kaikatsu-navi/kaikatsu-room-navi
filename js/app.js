@@ -95,6 +95,209 @@ function shareStoreOnX(storeCode, event) {
   window.open(shareUrl, '_blank', 'noopener,noreferrer');
 }
 
+// === リアルタイム空席情報 (AWS API Gateway 連携) ===
+const VACANCY_API_KEY = "VBVkOEaMZR5WKLi7mpKiAaFS5INR2rAR6Bgw7aOs";
+const vacancyCache = new Map(); // storeCode -> { data, timestamp }
+const VACANCY_CACHE_TTL = 90 * 1000; // 90秒キャッシュ
+
+async function fetchStoreVacancy(storeCode) {
+  const sCode = String(storeCode);
+  const now = Date.now();
+  if (vacancyCache.has(sCode)) {
+    const cached = vacancyCache.get(sCode);
+    if (now - cached.timestamp < VACANCY_CACHE_TTL) {
+      return cached.data;
+    }
+  }
+
+  const url = `https://jx5rl6ilkg.execute-api.ap-northeast-1.amazonaws.com/prd/empty_seat?store_cd=${sCode}`;
+  const resp = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'x-api-key': VACANCY_API_KEY
+    }
+  });
+
+  if (!resp.ok) {
+    throw new Error(`Vacancy API error: ${resp.status}`);
+  }
+
+  const data = await resp.json();
+  vacancyCache.set(sCode, { data, timestamp: now });
+  return data;
+}
+
+async function toggleStoreVacancy(storeCode, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  const sCode = String(storeCode);
+  const container = document.getElementById(`store-vacancy-${sCode}`);
+  const btn = document.getElementById(`vacancy-btn-${sCode}`);
+  if (!container) return;
+
+  // すでに開いていて読み込み完了している場合は折りたたむ
+  if (!container.classList.contains('hidden') && !container.dataset.loading) {
+    container.classList.add('hidden');
+    if (btn) {
+      btn.classList.remove('bg-emerald-600', 'text-white');
+      btn.classList.add('bg-emerald-50', 'text-emerald-700');
+    }
+    return;
+  }
+
+  // 展開してローディング表示
+  container.classList.remove('hidden');
+  container.dataset.loading = "true";
+  container.innerHTML = `
+    <div class="bg-emerald-50/50 rounded-lg p-3 border border-emerald-100 flex items-center justify-center gap-2 text-xs text-emerald-800">
+      <i class="fa-solid fa-circle-notch fa-spin text-emerald-600"></i>
+      <span>最新のリアルタイム空席状況を取得中...</span>
+    </div>
+  `;
+  if (btn) {
+    btn.classList.remove('bg-emerald-50', 'text-emerald-700');
+    btn.classList.add('bg-emerald-600', 'text-white');
+  }
+
+  try {
+    const data = await fetchStoreVacancy(sCode);
+    container.dataset.loading = "";
+    renderVacancyContent(sCode, data, container);
+  } catch (err) {
+    console.error('Failed to fetch vacancy:', err);
+    container.dataset.loading = "";
+    container.innerHTML = `
+      <div class="bg-red-50 rounded-lg p-3 border border-red-200 text-xs text-red-700 flex items-center justify-between">
+        <div class="flex items-center gap-1.5">
+          <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+          <span>空席情報の取得に失敗しました。</span>
+        </div>
+        <a href="https://www.kaikatsu.jp/shop/detail/vacancy.html?store_code=${sCode}" target="_blank" rel="noopener noreferrer" class="underline text-red-800 font-bold ml-2">
+          公式画面で見る
+        </a>
+      </div>
+    `;
+  }
+}
+
+function renderVacancyContent(storeCode, data, container) {
+  const seats = (data && data.seat_type) ? data.seat_type : [];
+  if (seats.length === 0) {
+    container.innerHTML = `
+      <div class="bg-slate-50 rounded-lg p-2.5 border border-slate-200 text-xs text-slate-500 text-center">
+        現在取得できる空席情報がありません。
+      </div>
+    `;
+    return;
+  }
+
+  // 鍵付個室とその他を分類
+  const keySeats = seats.filter(s => (s.seat_name || '').includes('鍵付'));
+  const otherSeats = seats.filter(s => !(s.seat_name || '').includes('鍵付'));
+
+  const makeSeatBadge = (s) => {
+    const name = s.seat_name || '';
+    const status = s.seat_status || '';
+    const isFull = s.status_no === '4' || status.includes('満席');
+    const badgeBg = isFull 
+      ? 'bg-rose-50 text-rose-700 border-rose-200' 
+      : 'bg-emerald-50 text-emerald-800 border-emerald-300 font-bold';
+    const statusIcon = isFull 
+      ? '<i class="fa-solid fa-ban text-rose-500"></i>' 
+      : '<i class="fa-solid fa-circle-check text-emerald-600"></i>';
+
+    return `
+      <div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg border ${badgeBg} text-xs">
+        <span class="truncate pr-2">${name}</span>
+        <span class="flex items-center gap-1 flex-shrink-0 text-[11px]">${statusIcon} ${status}</span>
+      </div>
+    `;
+  };
+
+  container.innerHTML = `
+    <div class="bg-gradient-to-r from-emerald-50/70 to-slate-50 rounded-xl p-3 border border-emerald-200 shadow-2xs space-y-2">
+      <div class="flex items-center justify-between text-xs pb-1.5 border-b border-emerald-200/60">
+        <div class="font-bold text-slate-800 flex items-center gap-1.5">
+          <i class="fa-solid fa-door-open text-emerald-600"></i>
+          <span>リアルタイム空席速報</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="toggleStoreVacancy('${storeCode}', event)" class="text-[10px] text-slate-400 hover:text-slate-600">
+            <i class="fa-solid fa-chevron-up"></i> 閉じる
+          </button>
+          <a href="https://www.kaikatsu.jp/shop/detail/vacancy.html?store_code=${storeCode}" target="_blank" rel="noopener noreferrer" 
+             class="text-[10px] text-orange-600 hover:underline flex items-center gap-0.5">
+            公式詳細 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+          </a>
+        </div>
+      </div>
+
+      ${keySeats.length > 0 ? `
+        <div>
+          <div class="text-[10px] font-bold text-emerald-800 mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-key text-emerald-600"></i> 鍵付完全個室
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1.5">
+            ${keySeats.map(makeSeatBadge).join('')}
+          </div>
+        </div>
+      ` : ''}
+
+      ${otherSeats.length > 0 ? `
+        <div class="pt-1">
+          <div class="text-[10px] font-semibold text-slate-500 mb-1">その他席種（ブース・カフェ等）</div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1.5">
+            ${otherSeats.map(makeSeatBadge).join('')}
+          </div>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+async function checkNearMeVacancyBatch() {
+  const currentList = document.querySelectorAll('.store-card');
+  if (!currentList || currentList.length === 0) {
+    showToast('現在表示されている店舗がありません。');
+    return;
+  }
+
+  showToast('⚡ 上位店舗のリアルタイム空席情報を一括取得中...');
+  
+  // 上位最大6店舗を取得
+  const topCards = Array.from(currentList).slice(0, 6);
+  const promises = topCards.map(async (card) => {
+    const code = card.id.replace('store-', '');
+    if (!code) return;
+    const container = document.getElementById(`store-vacancy-${code}`);
+    const btn = document.getElementById(`vacancy-btn-${code}`);
+    if (container) {
+      container.classList.remove('hidden');
+      container.innerHTML = `
+        <div class="bg-emerald-50/50 rounded-lg p-2 border border-emerald-100 flex items-center justify-center gap-1.5 text-xs text-emerald-800">
+          <i class="fa-solid fa-circle-notch fa-spin text-emerald-600 text-xs"></i>
+          <span>取得中...</span>
+        </div>
+      `;
+    }
+    try {
+      const data = await fetchStoreVacancy(code);
+      if (container) renderVacancyContent(code, data, container);
+      if (btn) {
+        btn.classList.remove('bg-emerald-50', 'text-emerald-700');
+        btn.classList.add('bg-emerald-600', 'text-white');
+      }
+    } catch (e) {
+      if (container) container.classList.add('hidden');
+    }
+  });
+
+  await Promise.allSettled(promises);
+  showToast('⚡ 上位店舗のリアルタイム空席を表示しました！');
+}
+
 // === お気に入り店舗（LocalStorage）管理 ===
 const FAV_STORAGE_KEY = 'kaikatsu_fav_stores';
 
@@ -1232,6 +1435,11 @@ function submitModalToGoogleForm() {
                   <i class="fa-${isFav ? 'solid' : 'regular'} fa-star text-sm ${isFav ? 'text-amber-500' : ''}"></i>
                   <span class="text-[11px]">${isFav ? '登録中' : '保存'}</span>
                 </button>
+                <button type="button" onclick="toggleStoreVacancy('${code}', event)" id="vacancy-btn-${code}" 
+                        class="text-[11px] bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2 py-1.5 rounded transition flex items-center gap-1 active:scale-95 shadow-2xs" 
+                        title="部屋・席のリアルタイム空き状況を確認">
+                  <i class="fa-solid fa-door-open text-emerald-600"></i> <span>空席</span>
+                </button>
                 <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
                    class="sm:hidden flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
                   <i class="fa-solid fa-location-dot text-orange-500"></i> 地図
@@ -1271,6 +1479,9 @@ function submitModalToGoogleForm() {
             </div>
 
             ${diffBanner ? `<div class="mb-2.5">${diffBanner}</div>` : ''}
+
+            <!-- リアルタイム空席情報エリア（動的展開） -->
+            <div id="store-vacancy-${code}" class="hidden mb-2.5"></div>
 
             <!-- 📱 スマホ用: 主要パックのコンパクトグリッド (md:hidden) -->
             <div class="block md:hidden bg-slate-50 rounded-lg p-2.5 border border-slate-100 mb-2">
