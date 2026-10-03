@@ -166,6 +166,15 @@ def main():
             except Exception as e:
                 logger.error(f"スプレッドシート更新エラー: {e}")
 
+        # 7. X（旧Twitter）への価格改定速報ポスト
+        if all_diffs:
+            try:
+                import x_poster
+                logger.info("X（旧Twitter）への価格改定速報ポストを実行します...")
+                x_poster.post_price_diff_alerts(all_diffs)
+            except Exception as e:
+                logger.error(f"X速報ポストエラー: {e}")
+
     finally:
         # 一時認証ファイルの削除（セキュリティクリーンアップ）
         if temp_cred_file and temp_cred_file.exists():
