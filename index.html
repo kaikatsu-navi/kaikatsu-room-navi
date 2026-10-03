@@ -126,7 +126,15 @@
             <span id="filterActiveBadge" class="hidden text-[10px] bg-orange-600 text-white px-1.5 py-0.2 rounded-full font-normal">選択中</span>
             <i id="filterArrow" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
           </button>
-          <button id="resetFiltersBtn" class="text-orange-600 hover:underline text-xs">リセット</button>
+          <div class="flex items-center gap-2">
+            <button id="shareConditionsBtn" onclick="shareCurrentConditions()" type="button" 
+                    class="text-xs text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2 py-0.5 rounded transition shadow-2xs active:scale-95" 
+                    title="現在の絞り込み条件のURLを共有・コピー">
+              <i class="fa-solid fa-arrow-up-from-bracket text-[10px]"></i>
+              <span>条件を共有</span>
+            </button>
+            <button id="resetFiltersBtn" class="text-slate-500 hover:text-orange-600 hover:underline text-xs">リセット</button>
+          </div>
         </div>
 
         <div id="amenityFiltersContainer" class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs pt-1">
@@ -411,6 +419,12 @@
         </button>
       </div>
     </div>
+  </div>
+
+  <!-- 共有完了 トースト通知 -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900/90 backdrop-blur-sm text-white px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 text-xs border border-slate-700/60">
+    <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+    <span id="toastMessage">共有リンクをクリップボードにコピーしました！</span>
   </div>
 
   <!-- スクリプト -->

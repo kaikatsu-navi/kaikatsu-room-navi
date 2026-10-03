@@ -659,11 +659,157 @@ function submitModalToGoogleForm() {
       }
     }
 
+    // === URLパラメータ同期・復元・共有機能 ===
+    function syncUrlParams() {
+      const params = new URLSearchParams();
+
+      // 都道府県
+      if (selectedPrefs && selectedPrefs.size > 0) {
+        params.set('pref', Array.from(selectedPrefs).join(','));
+      }
+
+      // キーワード検索
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput && searchInput.value.trim()) {
+        params.set('q', searchInput.value.trim());
+      }
+
+      // ソート順
+      const sortSelect = document.getElementById('sortSelect');
+      if (sortSelect && sortSelect.value !== 'default') {
+        params.set('sort', sortSelect.value);
+      }
+
+      // チェックボックス
+      const cbs = Array.from(document.querySelectorAll('.filter-cb:checked')).map(cb => cb.value);
+      if (cbs.includes('favorite_only')) {
+        params.set('fav', '1');
+      }
+      if (cbs.includes('decrease_only')) {
+        params.set('dec', '1');
+      }
+      if (cbs.includes('night_pack_only')) {
+        params.set('night', '1');
+      }
+      const amenityCbs = cbs.filter(c => !['favorite_only', 'decrease_only', 'night_pack_only'].includes(c));
+      if (amenityCbs.length > 0) {
+        params.set('amenity', amenityCbs.join(','));
+      }
+
+      const queryString = params.toString();
+      const newUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    function restoreFromUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (!params || params.toString() === '') return;
+
+      // 都道府県復元
+      if (params.has('pref')) {
+        const prefList = params.get('pref').split(',').map(s => s.trim()).filter(Boolean);
+        prefList.forEach(p => selectedPrefs.add(p));
+        updatePrefTriggerButton();
+      }
+
+      // キーワード検索
+      if (params.has('q')) {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) searchInput.value = params.get('q');
+      }
+
+      // ソート順
+      if (params.has('sort')) {
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) sortSelect.value = params.get('sort');
+      }
+
+      // チェックボックス
+      const targetCbs = new Set();
+      if (params.get('fav') === '1') targetCbs.add('favorite_only');
+      if (params.get('dec') === '1') targetCbs.add('decrease_only');
+      if (params.get('night') === '1') targetCbs.add('night_pack_only');
+      if (params.has('amenity')) {
+        params.get('amenity').split(',').map(s => s.trim()).filter(Boolean).forEach(a => targetCbs.add(a));
+      }
+
+      if (targetCbs.size > 0) {
+        document.querySelectorAll('.filter-cb').forEach(cb => {
+          if (targetCbs.has(cb.value)) {
+            cb.checked = true;
+          }
+        });
+        // 設備フィルターを自動展開
+        const amenityFiltersContainer = document.getElementById('amenityFiltersContainer');
+        const filterArrow = document.getElementById('filterArrow');
+        if (amenityFiltersContainer && amenityFiltersContainer.classList.contains('hidden')) {
+          amenityFiltersContainer.classList.remove('hidden');
+          if (filterArrow) filterArrow.classList.add('rotate-180');
+        }
+      }
+    }
+
+    // ワンタップ条件共有（Web Share API / クリップボードコピー）
+    async function shareCurrentConditions() {
+      syncUrlParams();
+      const shareUrl = window.location.href;
+      const count = document.getElementById('matchCount') ? document.getElementById('matchCount').textContent : '415';
+      const shareData = {
+        title: '快活CLUB 鍵付完全個室ナビ',
+        text: `【快活CLUB 完全個室ナビ】条件に該当する店舗: ${count}件が見つかりました！`,
+        url: shareUrl
+      };
+
+      // スマホのネイティブ共有機能が使える場合
+      if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (err) {
+          // 共有キャンセル時は何もしない
+          if (err.name === 'AbortError') return;
+        }
+      }
+
+      // クリップボードにコピー
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        showToast('共有リンクをクリップボードにコピーしました！✨');
+      } catch (err) {
+        // フォールバック
+        const input = document.createElement('input');
+        input.value = shareUrl;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        showToast('共有リンクをクリップボードにコピーしました！✨');
+      }
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const msgEl = document.getElementById('toastMessage');
+      if (!toast) return;
+      if (msgEl && msg) msgEl.textContent = msg;
+
+      toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
     // データ読み込み
     async function loadData() {
       try {
         const resp = await fetch('stores.json?t=' + Date.now());
         allStores = await resp.json();
+        restoreFromUrlParams();
         renderStores();
         updateHeaderDiffBadge();
         updateHeaderFavBadge();
@@ -679,6 +825,7 @@ function submitModalToGoogleForm() {
 
     // レンダリング (レスポンシブ：PCはワイドテーブル、スマホはハイブリッド最適化)
     function renderStores() {
+      syncUrlParams();
       const search = document.getElementById('searchInput').value.trim().toLowerCase();
       const sort = document.getElementById('sortSelect').value;
       
