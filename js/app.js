@@ -75,22 +75,43 @@ function toggleFavoriteFilterFromHeader() {
   }
 }
 
+// === 誤り報告（Googleフォーム連携） ===
+const GOOGLE_FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSfThvH546qVXt1_OCQgZc5duYQt_2qbiW6Yt5Ze2Expr2sWow/viewform";
+const ENTRY_STORE_NAME = "entry.66072148";
+const ENTRY_ERROR_TYPE = "entry.1702933364";
+
+function openReportForm(storeCode = '', storeName = '', errorType = '料金の誤り') {
+  let url = `${GOOGLE_FORM_BASE}?usp=pp_url`;
+  if (storeName || storeCode) {
+    const fullStoreStr = storeCode ? `${storeName} (店舗コード: ${storeCode})` : storeName;
+    url += `&${ENTRY_STORE_NAME}=${encodeURIComponent(fullStoreStr)}`;
+  }
+  if (errorType) {
+    url += `&${ENTRY_ERROR_TYPE}=${encodeURIComponent(errorType)}`;
+  }
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+let currentReportStore = { code: '', name: '' };
+
+function submitModalToGoogleForm() {
+  openReportForm(currentReportStore.code, currentReportStore.name);
+  toggleModal('feedbackModal');
+}
+
     // モーダル開閉
-    function toggleModal(id, storeName = '') {
+    function toggleModal(id, storeName = '', storeCode = '') {
       const el = document.getElementById(id);
       if (el) {
         el.classList.toggle('hidden');
-        if (id === 'feedbackModal' && storeName) {
-          document.getElementById('reportStoreName').value = storeName;
+        if (id === 'feedbackModal') {
+          currentReportStore = { code: storeCode, name: storeName };
+          const displayEl = document.getElementById('reportStoreNameDisplay');
+          if (displayEl) {
+            displayEl.textContent = storeName ? `${storeName} ${storeCode ? `(コード: ${storeCode})` : ''}` : '全国（全店舗）';
+          }
         }
       }
-    }
-
-    function handleFeedbackSubmit(e) {
-      e.preventDefault();
-      alert('ご報告ありがとうございます！開発チームで確認のうえ、次回スクレイピング時に反映させていただきます✨');
-      toggleModal('feedbackModal');
-      e.target.reset();
     }
 
     // === 料金改定速報＆ヒストリー関連ロジック ===
@@ -968,9 +989,9 @@ function toggleFavoriteFilterFromHeader() {
                         title="料金改定履歴を見る">
                   <i class="fa-solid fa-clock-rotate-left ${hasDiff ? 'text-orange-600' : 'text-slate-400'}"></i> <span class="hidden sm:inline">履歴</span>
                 </button>
-                <button onclick="toggleModal('feedbackModal', '${name}')" 
+                <button type="button" onclick="openReportForm('${code}', '${name}')" 
                         class="text-[11px] text-slate-400 hover:text-red-500 transition px-2 py-1.5 rounded hover:bg-slate-50 flex items-center gap-1"
-                        title="誤り報告">
+                        title="料金・データの誤りをGoogleフォームで報告">
                   <i class="fa-regular fa-flag"></i> <span class="hidden sm:inline">報告</span>
                 </button>
                 <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
