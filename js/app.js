@@ -1240,7 +1240,7 @@ function submitModalToGoogleForm() {
         // 設備バッジ一覧（公式準拠のフルラインナップ）
         const badges = [];
         if (s['個室WEB予約']) badges.push('<a href="https://reservation.kaikatsu.jp/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-sm transition inline-flex items-center gap-1 active:scale-95" title="公式WEB予約ページを開く">📱 WEB予約可 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-amber-100"></i></a>');
-        if (s['無料トースト']) badges.push('<span class="bg-amber-100 text-amber-950 border border-amber-300 font-bold px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-xs" title="全国32店舗限定！無料トースト食べ放題">🍞 無料トースト</span>');
+        if (s['無料トースト']) badges.push('<span class="bg-amber-100 text-amber-950 border border-amber-300 font-bold px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] shadow-xs" title="中京地区限定！無料トースト食べ放題">🍞 無料トースト</span>');
         if (s['VIPルーム'] || s['VIPフラット']) badges.push('<span class="bg-amber-50 text-amber-800 border border-amber-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">👑 VIPルーム</span>');
         if (s['ワイドルーム']) badges.push('<span class="badge-room px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold">🛋️ ワイド</span>');
         if (s['無料シャワー']) badges.push('<span class="bg-sky-50 text-sky-800 border border-sky-200 px-1.5 sm:px-2 py-0.5 rounded text-[10px] sm:text-[11px]">🚿 無料シャワー</span>');
