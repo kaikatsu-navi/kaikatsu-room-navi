@@ -59,7 +59,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.052399,
+    "lng": 141.485168
   },
   {
     "店舗コード": "20104",
@@ -121,7 +123,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.111473,
+    "lng": 141.355789
   },
   {
     "店舗コード": "20106",
@@ -183,7 +187,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.055405,
+    "lng": 141.354202
   },
   {
     "店舗コード": "20109",
@@ -245,7 +251,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.016026,
+    "lng": 141.388031
   },
   {
     "店舗コード": "20110",
@@ -307,7 +315,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.08242,
+    "lng": 141.384644
   },
   {
     "店舗コード": "20111",
@@ -369,7 +379,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 40.807713,
+    "lng": 140.755264
   },
   {
     "店舗コード": "20113",
@@ -431,7 +443,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 40.610607,
+    "lng": 140.496017
   },
   {
     "店舗コード": "20114",
@@ -493,7 +507,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 40.526981,
+    "lng": 141.492996
   },
   {
     "店舗コード": "20121",
@@ -555,7 +571,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.725597,
+    "lng": 141.12442
   },
   {
     "店舗コード": "20122",
@@ -617,7 +635,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.292618,
+    "lng": 141.107346
   },
   {
     "店舗コード": "20123",
@@ -679,7 +699,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.679363,
+    "lng": 141.155899
   },
   {
     "店舗コード": "20126",
@@ -741,7 +763,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.153652,
+    "lng": 141.149368
   },
   {
     "店舗コード": "20127",
@@ -803,7 +827,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.703403,
+    "lng": 141.145386
   },
   {
     "店舗コード": "20131",
@@ -865,7 +891,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.148693,
+    "lng": 140.883362
   },
   {
     "店舗コード": "20132",
@@ -927,7 +955,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.241905,
+    "lng": 140.9077
   },
   {
     "店舗コード": "20135",
@@ -989,7 +1019,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.320999,
+    "lng": 140.897797
   },
   {
     "店舗コード": "20136",
@@ -1051,7 +1083,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.575371,
+    "lng": 140.970154
   },
   {
     "店舗コード": "20137",
@@ -1113,7 +1147,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.282265,
+    "lng": 140.926971
   },
   {
     "店舗コード": "20139",
@@ -1175,7 +1211,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.261707,
+    "lng": 140.878204
   },
   {
     "店舗コード": "20140",
@@ -1237,7 +1275,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.284153,
+    "lng": 140.994171
   },
   {
     "店舗コード": "20142",
@@ -1299,7 +1339,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.698326,
+    "lng": 140.113937
   },
   {
     "店舗コード": "20144",
@@ -1361,7 +1403,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.729053,
+    "lng": 140.103699
   },
   {
     "店舗コード": "20145",
@@ -1423,7 +1467,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 39.309845,
+    "lng": 140.557114
   },
   {
     "店舗コード": "20146",
@@ -1485,7 +1531,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 40.283798,
+    "lng": 140.554413
   },
   {
     "店舗コード": "20153",
@@ -1547,7 +1595,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.741589,
+    "lng": 139.842041
   },
   {
     "店舗コード": "20156",
@@ -1609,7 +1659,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.238789,
+    "lng": 140.306702
   },
   {
     "店舗コード": "20162",
@@ -1671,7 +1723,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.407375,
+    "lng": 140.353516
   },
   {
     "店舗コード": "20164",
@@ -1733,7 +1787,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.724422,
+    "lng": 140.4664
   },
   {
     "店舗コード": "20165",
@@ -1795,7 +1851,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.36071,
+    "lng": 140.366974
   },
   {
     "店舗コード": "20166",
@@ -1857,7 +1915,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.515697,
+    "lng": 139.930649
   },
   {
     "店舗コード": "20168",
@@ -1919,7 +1979,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.783905,
+    "lng": 140.48793
   },
   {
     "店舗コード": "20169",
@@ -1981,7 +2043,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.048286,
+    "lng": 140.892654
   },
   {
     "店舗コード": "20170",
@@ -2043,7 +2107,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.995453,
+    "lng": 140.907684
   },
   {
     "店舗コード": "20171",
@@ -2105,7 +2171,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.00618,
+    "lng": 141.42952
   },
   {
     "店舗コード": "20172",
@@ -2167,7 +2235,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.028404,
+    "lng": 141.448929
   },
   {
     "店舗コード": "20173",
@@ -2229,7 +2299,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.057877,
+    "lng": 141.355225
   },
   {
     "店舗コード": "20174",
@@ -2291,7 +2363,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.79895,
+    "lng": 143.866623
   },
   {
     "店舗コード": "20175",
@@ -2353,7 +2427,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 41.824329,
+    "lng": 140.734894
   },
   {
     "店舗コード": "20176",
@@ -2415,7 +2491,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.784996,
+    "lng": 142.360306
   },
   {
     "店舗コード": "20191",
@@ -2477,7 +2555,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.052776,
+    "lng": 140.731064
   },
   {
     "店舗コード": "20192",
@@ -2539,7 +2619,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.440994,
+    "lng": 141.30249
   },
   {
     "店舗コード": "20203",
@@ -2601,7 +2683,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.903152,
+    "lng": 140.064667
   },
   {
     "店舗コード": "20205",
@@ -2663,7 +2747,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.101944,
+    "lng": 140.195541
   },
   {
     "店舗コード": "20206",
@@ -2725,7 +2811,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.399719,
+    "lng": 140.505432
   },
   {
     "店舗コード": "20208",
@@ -2787,7 +2875,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.347263,
+    "lng": 140.45343
   },
   {
     "店舗コード": "20210",
@@ -2849,7 +2939,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.286942,
+    "lng": 140.424728
   },
   {
     "店舗コード": "20211",
@@ -2911,7 +3003,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.298962,
+    "lng": 139.812256
   },
   {
     "店舗コード": "20212",
@@ -2973,7 +3067,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.592201,
+    "lng": 139.913971
   },
   {
     "店舗コード": "20214",
@@ -3035,7 +3131,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.394588,
+    "lng": 139.733871
   },
   {
     "店舗コード": "20216",
@@ -3097,7 +3195,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.511253,
+    "lng": 139.875824
   },
   {
     "店舗コード": "20222",
@@ -3159,7 +3259,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.420864,
+    "lng": 139.059097
   },
   {
     "店舗コード": "20225",
@@ -3221,7 +3323,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.277596,
+    "lng": 139.377838
   },
   {
     "店舗コード": "20227",
@@ -3283,7 +3387,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.297062,
+    "lng": 139.06778
   },
   {
     "店舗コード": "20228",
@@ -3345,7 +3451,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.372562,
+    "lng": 139.059586
   },
   {
     "店舗コード": "20229",
@@ -3407,7 +3515,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.328476,
+    "lng": 139.027649
   },
   {
     "店舗コード": "20230",
@@ -3469,7 +3579,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.310459,
+    "lng": 139.184433
   },
   {
     "店舗コード": "20235",
@@ -3531,7 +3643,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.903648,
+    "lng": 139.471359
   },
   {
     "店舗コード": "20236",
@@ -3593,7 +3707,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.157539,
+    "lng": 139.370804
   },
   {
     "店舗コード": "20237",
@@ -3655,7 +3771,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.884109,
+    "lng": 139.740875
   },
   {
     "店舗コード": "20239",
@@ -3717,7 +3835,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.947086,
+    "lng": 139.395157
   },
   {
     "店舗コード": "20242",
@@ -3779,7 +3899,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.877472,
+    "lng": 139.776611
   },
   {
     "店舗コード": "20245",
@@ -3841,7 +3963,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.866146,
+    "lng": 139.508057
   },
   {
     "店舗コード": "20246",
@@ -3903,7 +4027,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.797813,
+    "lng": 139.488251
   },
   {
     "店舗コード": "20247",
@@ -3965,7 +4091,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.056778,
+    "lng": 139.523834
   },
   {
     "店舗コード": "20249",
@@ -4027,7 +4155,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.846737,
+    "lng": 139.859772
   },
   {
     "店舗コード": "20250",
@@ -4089,7 +4219,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.816715,
+    "lng": 139.649475
   },
   {
     "店舗コード": "20252",
@@ -4151,7 +4283,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.075592,
+    "lng": 139.72345
   },
   {
     "店舗コード": "20257",
@@ -4213,7 +4347,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.808071,
+    "lng": 139.829926
   },
   {
     "店舗コード": "20258",
@@ -4275,7 +4411,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.80257,
+    "lng": 139.556412
   },
   {
     "店舗コード": "20259",
@@ -4337,7 +4475,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.968231,
+    "lng": 139.745255
   },
   {
     "店舗コード": "20260",
@@ -4399,7 +4539,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.788822,
+    "lng": 139.471252
   },
   {
     "店舗コード": "20263",
@@ -4461,7 +4603,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.878281,
+    "lng": 139.96875
   },
   {
     "店舗コード": "20264",
@@ -4523,7 +4667,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.718021,
+    "lng": 140.134659
   },
   {
     "店舗コード": "20265",
@@ -4585,7 +4731,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.637436,
+    "lng": 140.094543
   },
   {
     "店舗コード": "20267",
@@ -4647,7 +4795,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.708115,
+    "lng": 139.942307
   },
   {
     "店舗コード": "20268",
@@ -4709,7 +4859,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.956306,
+    "lng": 139.877518
   },
   {
     "店舗コード": "20271",
@@ -4771,7 +4923,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.616291,
+    "lng": 140.132507
   },
   {
     "店舗コード": "20273",
@@ -4833,7 +4987,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.649021,
+    "lng": 140.043198
   },
   {
     "店舗コード": "20275",
@@ -4895,7 +5051,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.729263,
+    "lng": 139.909058
   },
   {
     "店舗コード": "20279",
@@ -4957,7 +5115,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.429008,
+    "lng": 140.319244
   },
   {
     "店舗コード": "20281",
@@ -5019,7 +5179,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.372852,
+    "lng": 139.93425
   },
   {
     "店舗コード": "20283",
@@ -5081,7 +5243,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.551888,
+    "lng": 140.117615
   },
   {
     "店舗コード": "20284",
@@ -5143,7 +5307,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.792488,
+    "lng": 140.323334
   },
   {
     "店舗コード": "20285",
@@ -5205,7 +5371,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.817055,
+    "lng": 139.913101
   },
   {
     "店舗コード": "20286",
@@ -5267,7 +5435,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.519672,
+    "lng": 140.105072
   },
   {
     "店舗コード": "20287",
@@ -5329,7 +5499,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.61005,
+    "lng": 140.117691
   },
   {
     "店舗コード": "20288",
@@ -5391,7 +5563,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.863411,
+    "lng": 139.970154
   },
   {
     "店舗コード": "20289",
@@ -5453,7 +5627,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.698868,
+    "lng": 139.98613
   },
   {
     "店舗コード": "20290",
@@ -5515,7 +5691,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.783115,
+    "lng": 139.89949
   },
   {
     "店舗コード": "20291",
@@ -5577,7 +5755,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.574776,
+    "lng": 140.634567
   },
   {
     "店舗コード": "20293",
@@ -5639,7 +5819,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.956799,
+    "lng": 140.644135
   },
   {
     "店舗コード": "20295",
@@ -5701,7 +5883,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.048965,
+    "lng": 140.130035
   },
   {
     "店舗コード": "20296",
@@ -5763,7 +5947,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.456142,
+    "lng": 140.502701
   },
   {
     "店舗コード": "20297",
@@ -5825,7 +6011,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.047283,
+    "lng": 140.167938
   },
   {
     "店舗コード": "20305",
@@ -5887,7 +6075,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.664829,
+    "lng": 139.35939
   },
   {
     "店舗コード": "20308",
@@ -5949,7 +6139,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.738323,
+    "lng": 139.614853
   },
   {
     "店舗コード": "20310",
@@ -6011,7 +6203,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.770458,
+    "lng": 139.309891
   },
   {
     "店舗コード": "20313",
@@ -6073,7 +6267,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.763138,
+    "lng": 139.467773
   },
   {
     "店舗コード": "20315",
@@ -6135,7 +6331,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.699123,
+    "lng": 139.771515
   },
   {
     "店舗コード": "20317",
@@ -6197,7 +6395,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.657837,
+    "lng": 139.336838
   },
   {
     "店舗コード": "20318",
@@ -6259,7 +6459,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.730293,
+    "lng": 139.716522
   },
   {
     "店舗コード": "20320",
@@ -6321,7 +6523,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.588875,
+    "lng": 139.727402
   },
   {
     "店舗コード": "20321",
@@ -6383,7 +6587,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.742413,
+    "lng": 139.813904
   },
   {
     "店舗コード": "20322",
@@ -6445,7 +6651,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.677113,
+    "lng": 139.736267
   },
   {
     "店舗コード": "20323",
@@ -6507,7 +6715,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.728111,
+    "lng": 139.712143
   },
   {
     "店舗コード": "20324",
@@ -6569,7 +6779,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.744667,
+    "lng": 139.503311
   },
   {
     "店舗コード": "20325",
@@ -6631,7 +6843,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.731117,
+    "lng": 139.708282
   },
   {
     "店舗コード": "20326",
@@ -6693,7 +6907,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.652626,
+    "lng": 139.554825
   },
   {
     "店舗コード": "20327",
@@ -6755,7 +6971,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.690876,
+    "lng": 139.77092
   },
   {
     "店舗コード": "20328",
@@ -6817,7 +7035,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.755371,
+    "lng": 139.73703
   },
   {
     "店舗コード": "20329",
@@ -6879,7 +7099,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.690342,
+    "lng": 139.697296
   },
   {
     "店舗コード": "20330",
@@ -6941,7 +7163,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.749813,
+    "lng": 139.803101
   },
   {
     "店舗コード": "20332",
@@ -7003,7 +7227,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.561794,
+    "lng": 139.587967
   },
   {
     "店舗コード": "20333",
@@ -7065,7 +7291,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.558941,
+    "lng": 139.403107
   },
   {
     "店舗コード": "20335",
@@ -7127,7 +7355,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.381542,
+    "lng": 139.4758
   },
   {
     "店舗コード": "20337",
@@ -7189,7 +7419,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.461662,
+    "lng": 139.349289
   },
   {
     "店舗コード": "20338",
@@ -7251,7 +7483,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.3381,
+    "lng": 139.448318
   },
   {
     "店舗コード": "20339",
@@ -7313,7 +7547,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.573883,
+    "lng": 139.365433
   },
   {
     "店舗コード": "20342",
@@ -7375,7 +7611,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.430347,
+    "lng": 139.557571
   },
   {
     "店舗コード": "20343",
@@ -7437,7 +7675,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.531494,
+    "lng": 139.435944
   },
   {
     "店舗コード": "20344",
@@ -7499,7 +7739,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.350418,
+    "lng": 139.531662
   },
   {
     "店舗コード": "20345",
@@ -7561,7 +7803,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.451405,
+    "lng": 139.39238
   },
   {
     "店舗コード": "20348",
@@ -7623,7 +7867,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.416225,
+    "lng": 139.57341
   },
   {
     "店舗コード": "20351",
@@ -7685,7 +7931,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.4576,
+    "lng": 139.46666
   },
   {
     "店舗コード": "20352",
@@ -7747,7 +7995,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.556156,
+    "lng": 139.417969
   },
   {
     "店舗コード": "20353",
@@ -7809,7 +8059,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.39872,
+    "lng": 139.300964
   },
   {
     "店舗コード": "20354",
@@ -7871,7 +8123,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.507046,
+    "lng": 139.416672
   },
   {
     "店舗コード": "20355",
@@ -7933,7 +8187,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.543797,
+    "lng": 139.571716
   },
   {
     "店舗コード": "20356",
@@ -7995,7 +8251,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.334846,
+    "lng": 139.352295
   },
   {
     "店舗コード": "20357",
@@ -8057,7 +8315,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.337002,
+    "lng": 139.48938
   },
   {
     "店舗コード": "20358",
@@ -8119,7 +8379,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.440048,
+    "lng": 139.363113
   },
   {
     "店舗コード": "20359",
@@ -8181,7 +8443,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.279312,
+    "lng": 139.170792
   },
   {
     "店舗コード": "20360",
@@ -8243,7 +8507,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.46534,
+    "lng": 139.532211
   },
   {
     "店舗コード": "20361",
@@ -8305,7 +8571,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.463596,
+    "lng": 138.823349
   },
   {
     "店舗コード": "20362",
@@ -8367,7 +8635,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.151535,
+    "lng": 138.238647
   },
   {
     "店舗コード": "20363",
@@ -8429,7 +8699,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.95229,
+    "lng": 139.295944
   },
   {
     "店舗コード": "20365",
@@ -8491,7 +8763,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.900848,
+    "lng": 139.050461
   },
   {
     "店舗コード": "20366",
@@ -8553,7 +8827,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.926025,
+    "lng": 139.091827
   },
   {
     "店舗コード": "20368",
@@ -8615,7 +8891,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.456951,
+    "lng": 138.872696
   },
   {
     "店舗コード": "20370",
@@ -8677,7 +8955,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 37.784805,
+    "lng": 139.113129
   },
   {
     "店舗コード": "20371",
@@ -8739,7 +9019,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.646046,
+    "lng": 138.605667
   },
   {
     "店舗コード": "20382",
@@ -8801,7 +9083,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.406311,
+    "lng": 138.270859
   },
   {
     "店舗コード": "20383",
@@ -8863,7 +9147,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.644096,
+    "lng": 138.21579
   },
   {
     "店舗コード": "20384",
@@ -8925,7 +9211,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.191963,
+    "lng": 137.96492
   },
   {
     "店舗コード": "20387",
@@ -8987,7 +9275,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.020393,
+    "lng": 138.130936
   },
   {
     "店舗コード": "20389",
@@ -9049,7 +9339,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.648537,
+    "lng": 138.194824
   },
   {
     "店舗コード": "20390",
@@ -9111,7 +9403,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.603966,
+    "lng": 138.166946
   },
   {
     "店舗コード": "20391",
@@ -9173,7 +9467,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.614052,
+    "lng": 139.522308
   },
   {
     "店舗コード": "20392",
@@ -9235,7 +9531,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.59787,
+    "lng": 139.337799
   },
   {
     "店舗コード": "20401",
@@ -9297,7 +9595,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.667816,
+    "lng": 137.211349
   },
   {
     "店舗コード": "20403",
@@ -9359,7 +9659,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.687996,
+    "lng": 136.977127
   },
   {
     "店舗コード": "20404",
@@ -9421,7 +9723,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.825871,
+    "lng": 137.414749
   },
   {
     "店舗コード": "20405",
@@ -9483,7 +9787,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.760952,
+    "lng": 137.023438
   },
   {
     "店舗コード": "20412",
@@ -9545,7 +9851,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.615955,
+    "lng": 136.683029
   },
   {
     "店舗コード": "20413",
@@ -9607,7 +9915,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.534885,
+    "lng": 136.632431
   },
   {
     "店舗コード": "20421",
@@ -9669,7 +9979,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.069759,
+    "lng": 136.242722
   },
   {
     "店舗コード": "20422",
@@ -9731,7 +10043,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.933968,
+    "lng": 136.190079
   },
   {
     "店舗コード": "20423",
@@ -9793,7 +10107,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.06271,
+    "lng": 136.222382
   },
   {
     "店舗コード": "20435",
@@ -9855,7 +10171,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.335396,
+    "lng": 136.621475
   },
   {
     "店舗コード": "20436",
@@ -9917,7 +10235,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.41412,
+    "lng": 137.054535
   },
   {
     "店舗コード": "20441",
@@ -9979,7 +10299,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.744743,
+    "lng": 137.741257
   },
   {
     "店舗コード": "20442",
@@ -10041,7 +10363,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.152561,
+    "lng": 138.693054
   },
   {
     "店舗コード": "20443",
@@ -10103,7 +10427,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.159504,
+    "lng": 138.663406
   },
   {
     "店舗コード": "20444",
@@ -10165,7 +10491,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.68478,
+    "lng": 137.754318
   },
   {
     "店舗コード": "20446",
@@ -10227,7 +10555,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.981617,
+    "lng": 138.416061
   },
   {
     "店舗コード": "20448",
@@ -10289,7 +10619,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.310623,
+    "lng": 138.925446
   },
   {
     "店舗コード": "20449",
@@ -10351,7 +10683,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.837379,
+    "lng": 138.203812
   },
   {
     "店舗コード": "20451",
@@ -10413,7 +10747,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.253784,
+    "lng": 136.86644
   },
   {
     "店舗コード": "20452",
@@ -10475,7 +10811,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.140324,
+    "lng": 136.99321
   },
   {
     "店舗コード": "20453",
@@ -10537,7 +10875,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.199303,
+    "lng": 136.988281
   },
   {
     "店舗コード": "20456",
@@ -10599,7 +10939,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.195156,
+    "lng": 137.029266
   },
   {
     "店舗コード": "20458",
@@ -10661,7 +11003,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.065201,
+    "lng": 136.913376
   },
   {
     "店舗コード": "20459",
@@ -10723,7 +11067,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.87936,
+    "lng": 136.916611
   },
   {
     "店舗コード": "20460",
@@ -10785,7 +11131,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.285629,
+    "lng": 136.829651
   },
   {
     "店舗コード": "20462",
@@ -10847,7 +11195,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.091492,
+    "lng": 136.99704
   },
   {
     "店舗コード": "20463",
@@ -10909,7 +11259,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.970844,
+    "lng": 137.052139
   },
   {
     "店舗コード": "20465",
@@ -10971,7 +11323,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.006145,
+    "lng": 137.002167
   },
   {
     "店舗コード": "20467",
@@ -11033,7 +11387,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.183926,
+    "lng": 136.824234
   },
   {
     "店舗コード": "20468",
@@ -11095,7 +11451,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.331844,
+    "lng": 136.86763
   },
   {
     "店舗コード": "20469",
@@ -11157,7 +11515,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.981308,
+    "lng": 137.16011
   },
   {
     "店舗コード": "20470",
@@ -11219,7 +11579,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.001347,
+    "lng": 137.023361
   },
   {
     "店舗コード": "20472",
@@ -11281,7 +11643,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.664722,
+    "lng": 136.518234
   },
   {
     "店舗コード": "20473",
@@ -11343,7 +11707,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.074654,
+    "lng": 136.661102
   },
   {
     "店舗コード": "20475",
@@ -11405,7 +11771,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.875069,
+    "lng": 136.554642
   },
   {
     "店舗コード": "20480",
@@ -11467,7 +11835,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.59354,
+    "lng": 136.521271
   },
   {
     "店舗コード": "20483",
@@ -11529,7 +11899,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.766895,
+    "lng": 137.368835
   },
   {
     "店舗コード": "20484",
@@ -11591,7 +11963,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.114304,
+    "lng": 136.869812
   },
   {
     "店舗コード": "20485",
@@ -11653,7 +12027,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.822342,
+    "lng": 137.405075
   },
   {
     "店舗コード": "20488",
@@ -11715,7 +12091,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.169071,
+    "lng": 136.911545
   },
   {
     "店舗コード": "20493",
@@ -11777,7 +12155,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.960686,
+    "lng": 138.380814
   },
   {
     "店舗コード": "20494",
@@ -11839,7 +12219,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.120411,
+    "lng": 138.871674
   },
   {
     "店舗コード": "20495",
@@ -11901,7 +12283,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.775513,
+    "lng": 137.990936
   },
   {
     "店舗コード": "20496",
@@ -11963,7 +12347,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.970539,
+    "lng": 138.389786
   },
   {
     "店舗コード": "20497",
@@ -12025,7 +12411,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.107983,
+    "lng": 138.904526
   },
   {
     "店舗コード": "20498",
@@ -12087,7 +12475,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.996452,
+    "lng": 138.412628
   },
   {
     "店舗コード": "20499",
@@ -12149,7 +12539,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.854256,
+    "lng": 138.25412
   },
   {
     "店舗コード": "20501",
@@ -12211,7 +12603,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.003757,
+    "lng": 135.880798
   },
   {
     "店舗コード": "20503",
@@ -12273,7 +12667,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.24165,
+    "lng": 136.257553
   },
   {
     "店舗コード": "20507",
@@ -12335,7 +12731,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.995995,
+    "lng": 135.920929
   },
   {
     "店舗コード": "20508",
@@ -12397,7 +12795,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.978828,
+    "lng": 136.151428
   },
   {
     "店舗コード": "20513",
@@ -12459,7 +12859,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.948071,
+    "lng": 135.745865
   },
   {
     "店舗コード": "20514",
@@ -12521,7 +12923,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.937195,
+    "lng": 135.750732
   },
   {
     "店舗コード": "20515",
@@ -12583,7 +12987,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.003899,
+    "lng": 135.731628
   },
   {
     "店舗コード": "20517",
@@ -12645,7 +13051,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.869568,
+    "lng": 135.761063
   },
   {
     "店舗コード": "20522",
@@ -12707,7 +13115,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.944302,
+    "lng": 135.715881
   },
   {
     "店舗コード": "20533",
@@ -12769,7 +13179,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.734413,
+    "lng": 135.598587
   },
   {
     "店舗コード": "20534",
@@ -12831,7 +13243,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.813763,
+    "lng": 135.668304
   },
   {
     "店舗コード": "20535",
@@ -12893,7 +13307,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.548378,
+    "lng": 135.495758
   },
   {
     "店舗コード": "20536",
@@ -12955,7 +13371,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.689896,
+    "lng": 135.636978
   },
   {
     "店舗コード": "20537",
@@ -13017,7 +13435,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.40448,
+    "lng": 135.315277
   },
   {
     "店舗コード": "20542",
@@ -13079,7 +13499,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.627731,
+    "lng": 135.480728
   },
   {
     "店舗コード": "20543",
@@ -13141,7 +13563,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.780178,
+    "lng": 135.497208
   },
   {
     "店舗コード": "20545",
@@ -13203,7 +13627,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.670658,
+    "lng": 135.601242
   },
   {
     "店舗コード": "20549",
@@ -13265,7 +13691,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.532494,
+    "lng": 135.46431
   },
   {
     "店舗コード": "20553",
@@ -13327,7 +13755,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.820438,
+    "lng": 134.692886
   },
   {
     "店舗コード": "20555",
@@ -13389,7 +13819,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.74147,
+    "lng": 134.844757
   },
   {
     "店舗コード": "20557",
@@ -13451,7 +13883,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.744194,
+    "lng": 135.405182
   },
   {
     "店舗コード": "20558",
@@ -13513,7 +13947,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.728523,
+    "lng": 135.159744
   },
   {
     "店舗コード": "20560",
@@ -13575,7 +14011,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.80756,
+    "lng": 134.662598
   },
   {
     "店舗コード": "20561",
@@ -13637,7 +14075,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.771812,
+    "lng": 135.384995
   },
   {
     "店舗コード": "20562",
@@ -13699,7 +14139,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.695473,
+    "lng": 135.196457
   },
   {
     "店舗コード": "20564",
@@ -13761,7 +14203,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.688568,
+    "lng": 135.186249
   },
   {
     "店舗コード": "20565",
@@ -13823,7 +14267,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.828773,
+    "lng": 134.691101
   },
   {
     "店舗コード": "20566",
@@ -13885,7 +14331,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.738293,
+    "lng": 135.343735
   },
   {
     "店舗コード": "20569",
@@ -13947,7 +14395,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.719738,
+    "lng": 135.415695
   },
   {
     "店舗コード": "20570",
@@ -14009,7 +14459,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.693813,
+    "lng": 135.192535
   },
   {
     "店舗コード": "20572",
@@ -14071,7 +14523,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.497185,
+    "lng": 135.734222
   },
   {
     "店舗コード": "20574",
@@ -14133,7 +14587,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.676628,
+    "lng": 135.801208
   },
   {
     "店舗コード": "20575",
@@ -14195,7 +14651,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.533958,
+    "lng": 135.796753
   },
   {
     "店舗コード": "20584",
@@ -14257,7 +14715,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.236008,
+    "lng": 135.166321
   },
   {
     "店舗コード": "20591",
@@ -14319,7 +14779,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.508087,
+    "lng": 135.433456
   },
   {
     "店舗コード": "20593",
@@ -14381,7 +14843,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.561596,
+    "lng": 135.453674
   },
   {
     "店舗コード": "20596",
@@ -14443,7 +14907,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.609482,
+    "lng": 135.51265
   },
   {
     "店舗コード": "20600",
@@ -14505,7 +14971,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.668686,
+    "lng": 135.505264
   },
   {
     "店舗コード": "20602",
@@ -14567,7 +15035,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.476364,
+    "lng": 134.217896
   },
   {
     "店舗コード": "20611",
@@ -14629,7 +15099,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.478249,
+    "lng": 133.063705
   },
   {
     "店舗コード": "20612",
@@ -14691,7 +15163,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.365921,
+    "lng": 132.741592
   },
   {
     "店舗コード": "20622",
@@ -14753,7 +15227,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.628674,
+    "lng": 133.922333
   },
   {
     "店舗コード": "20623",
@@ -14815,7 +15291,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.67289,
+    "lng": 133.967331
   },
   {
     "店舗コード": "20624",
@@ -14877,7 +15355,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.659386,
+    "lng": 133.889359
   },
   {
     "店舗コード": "20625",
@@ -14939,7 +15419,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.472672,
+    "lng": 133.819901
   },
   {
     "店舗コード": "20626",
@@ -15001,7 +15483,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.523746,
+    "lng": 133.758911
   },
   {
     "店舗コード": "20627",
@@ -15063,7 +15547,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.665005,
+    "lng": 133.9198
   },
   {
     "店舗コード": "20633",
@@ -15125,7 +15611,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.493252,
+    "lng": 133.393753
   },
   {
     "店舗コード": "20635",
@@ -15187,7 +15675,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.392548,
+    "lng": 132.462982
   },
   {
     "店舗コード": "20637",
@@ -15249,7 +15739,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.366287,
+    "lng": 132.368912
   },
   {
     "店舗コード": "20638",
@@ -15311,7 +15803,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.443806,
+    "lng": 133.25502
   },
   {
     "店舗コード": "20640",
@@ -15373,7 +15867,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.409027,
+    "lng": 132.449966
   },
   {
     "店舗コード": "20641",
@@ -15435,7 +15931,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.055763,
+    "lng": 131.560898
   },
   {
     "店舗コード": "20642",
@@ -15497,7 +15995,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.952847,
+    "lng": 131.241623
   },
   {
     "店舗コード": "20643",
@@ -15559,7 +16059,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.156754,
+    "lng": 131.496719
   },
   {
     "店舗コード": "20645",
@@ -15621,7 +16123,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.1633,
+    "lng": 131.443817
   },
   {
     "店舗コード": "20646",
@@ -15683,7 +16187,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.014076,
+    "lng": 130.922546
   },
   {
     "店舗コード": "20647",
@@ -15745,7 +16251,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.03434,
+    "lng": 131.838516
   },
   {
     "店舗コード": "20651",
@@ -15807,7 +16315,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.077358,
+    "lng": 134.559921
   },
   {
     "店舗コード": "20652",
@@ -15869,7 +16379,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.072075,
+    "lng": 134.507782
   },
   {
     "店舗コード": "20653",
@@ -15931,7 +16443,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.043526,
+    "lng": 134.553619
   },
   {
     "店舗コード": "20664",
@@ -15993,7 +16507,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.339672,
+    "lng": 134.052216
   },
   {
     "店舗コード": "20665",
@@ -16055,7 +16571,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.321281,
+    "lng": 134.041245
   },
   {
     "店舗コード": "20666",
@@ -16117,7 +16635,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.296764,
+    "lng": 133.808289
   },
   {
     "店舗コード": "20672",
@@ -16179,7 +16699,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.837074,
+    "lng": 132.770233
   },
   {
     "店舗コード": "20681",
@@ -16241,7 +16763,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.571579,
+    "lng": 133.520035
   },
   {
     "店舗コード": "20691",
@@ -16303,7 +16827,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.981709,
+    "lng": 136.612045
   },
   {
     "店舗コード": "20692",
@@ -16365,7 +16891,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.082207,
+    "lng": 136.605743
   },
   {
     "店舗コード": "20693",
@@ -16427,7 +16955,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.506714,
+    "lng": 136.728607
   },
   {
     "店舗コード": "20694",
@@ -16489,7 +17019,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.969498,
+    "lng": 136.623795
   },
   {
     "店舗コード": "20705",
@@ -16551,7 +17083,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.344048,
+    "lng": 139.61528
   },
   {
     "店舗コード": "20706",
@@ -16613,7 +17147,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.663563,
+    "lng": 139.731369
   },
   {
     "店舗コード": "20713",
@@ -16675,7 +17211,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.469456,
+    "lng": 135.419693
   },
   {
     "店舗コード": "20714",
@@ -16737,7 +17275,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.707321,
+    "lng": 135.56015
   },
   {
     "店舗コード": "20716",
@@ -16799,7 +17339,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.665878,
+    "lng": 135.529572
   },
   {
     "店舗コード": "20717",
@@ -16861,7 +17403,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.667732,
+    "lng": 135.503204
   },
   {
     "店舗コード": "20718",
@@ -16923,7 +17467,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.666615,
+    "lng": 135.500839
   },
   {
     "店舗コード": "20719",
@@ -16985,7 +17531,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.698025,
+    "lng": 135.494431
   },
   {
     "店舗コード": "20720",
@@ -17047,7 +17595,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.646694,
+    "lng": 135.511368
   },
   {
     "店舗コード": "20771",
@@ -17109,7 +17659,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.082958,
+    "lng": 137.143112
   },
   {
     "店舗コード": "20772",
@@ -17171,7 +17723,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.159092,
+    "lng": 136.905869
   },
   {
     "店舗コード": "20773",
@@ -17233,7 +17787,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.176579,
+    "lng": 136.730606
   },
   {
     "店舗コード": "20774",
@@ -17295,7 +17851,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.170017,
+    "lng": 136.906082
   },
   {
     "店舗コード": "20775",
@@ -17357,7 +17915,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.751423,
+    "lng": 137.406448
   },
   {
     "店舗コード": "20801",
@@ -17419,7 +17979,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.501183,
+    "lng": 130.531128
   },
   {
     "店舗コード": "20802",
@@ -17481,7 +18043,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.877678,
+    "lng": 130.88739
   },
   {
     "店舗コード": "20805",
@@ -17543,7 +18107,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.885635,
+    "lng": 130.880066
   },
   {
     "店舗コード": "20810",
@@ -17605,7 +18171,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.582741,
+    "lng": 130.358902
   },
   {
     "店舗コード": "20811",
@@ -17667,7 +18235,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.726967,
+    "lng": 130.967102
   },
   {
     "店舗コード": "20812",
@@ -17729,7 +18299,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.672558,
+    "lng": 130.45079
   },
   {
     "店舗コード": "20814",
@@ -17791,7 +18363,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.867668,
+    "lng": 130.783539
   },
   {
     "店舗コード": "20815",
@@ -17853,7 +18427,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.587402,
+    "lng": 130.400436
   },
   {
     "店舗コード": "20816",
@@ -17915,7 +18491,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.559021,
+    "lng": 130.425308
   },
   {
     "店舗コード": "20817",
@@ -17977,7 +18555,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.857548,
+    "lng": 130.745209
   },
   {
     "店舗コード": "20818",
@@ -18039,7 +18619,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.525967,
+    "lng": 130.493408
   },
   {
     "店舗コード": "20819",
@@ -18101,7 +18683,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.2864,
+    "lng": 130.518829
   },
   {
     "店舗コード": "20820",
@@ -18163,7 +18747,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.897495,
+    "lng": 130.856277
   },
   {
     "店舗コード": "20821",
@@ -18225,7 +18811,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.240711,
+    "lng": 130.285217
   },
   {
     "店舗コード": "20822",
@@ -18287,7 +18875,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.383713,
+    "lng": 130.511536
   },
   {
     "店舗コード": "20823",
@@ -18349,7 +18939,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.261669,
+    "lng": 130.320618
   },
   {
     "店舗コード": "20832",
@@ -18411,7 +19003,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.927296,
+    "lng": 129.940903
   },
   {
     "店舗コード": "20833",
@@ -18473,7 +19067,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.170765,
+    "lng": 129.721619
   },
   {
     "店舗コード": "20834",
@@ -18535,7 +19131,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.154449,
+    "lng": 129.769775
   },
   {
     "店舗コード": "20843",
@@ -18597,7 +19195,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.815193,
+    "lng": 130.699936
   },
   {
     "店舗コード": "20845",
@@ -18659,7 +19259,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.801643,
+    "lng": 130.708679
   },
   {
     "店舗コード": "20847",
@@ -18721,7 +19323,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.844444,
+    "lng": 130.716537
   },
   {
     "店舗コード": "20848",
@@ -18783,7 +19387,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.800861,
+    "lng": 130.707901
   },
   {
     "店舗コード": "20849",
@@ -18845,7 +19451,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.787441,
+    "lng": 130.714142
   },
   {
     "店舗コード": "20850",
@@ -18907,7 +19515,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.691097,
+    "lng": 130.67276
   },
   {
     "店舗コード": "20851",
@@ -18969,7 +19579,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.286652,
+    "lng": 131.504181
   },
   {
     "店舗コード": "20852",
@@ -19031,7 +19643,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.235222,
+    "lng": 131.682114
   },
   {
     "店舗コード": "20853",
@@ -19093,7 +19707,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.236561,
+    "lng": 131.606537
   },
   {
     "店舗コード": "20861",
@@ -19155,7 +19771,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 31.906994,
+    "lng": 131.447144
   },
   {
     "店舗コード": "20862",
@@ -19217,7 +19835,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 31.735903,
+    "lng": 131.065628
   },
   {
     "店舗コード": "20872",
@@ -19279,7 +19899,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 31.591743,
+    "lng": 130.556335
   },
   {
     "店舗コード": "20873",
@@ -19341,7 +19963,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 31.551439,
+    "lng": 130.544174
   },
   {
     "店舗コード": "20874",
@@ -19403,7 +20027,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 31.56966,
+    "lng": 130.563919
   },
   {
     "店舗コード": "20875",
@@ -19465,7 +20091,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 31.589409,
+    "lng": 130.555939
   },
   {
     "店舗コード": "20881",
@@ -19527,7 +20155,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 26.337538,
+    "lng": 127.816498
   },
   {
     "店舗コード": "20882",
@@ -19589,7 +20219,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 26.216866,
+    "lng": 127.690208
   },
   {
     "店舗コード": "20884",
@@ -19651,7 +20283,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 26.239988,
+    "lng": 127.68911
   },
   {
     "店舗コード": "20885",
@@ -19713,7 +20347,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 26.610247,
+    "lng": 127.984612
   },
   {
     "店舗コード": "20886",
@@ -19775,7 +20411,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 26.196192,
+    "lng": 127.676933
   },
   {
     "店舗コード": "20887",
@@ -19837,7 +20475,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 26.246836,
+    "lng": 127.737564
   },
   {
     "店舗コード": "20888",
@@ -19899,7 +20539,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.711182,
+    "lng": 139.798218
   },
   {
     "店舗コード": "20889",
@@ -19961,7 +20603,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.646912,
+    "lng": 139.711838
   },
   {
     "店舗コード": "20890",
@@ -20023,7 +20667,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.576847,
+    "lng": 130.435608
   },
   {
     "店舗コード": "20891",
@@ -20085,7 +20731,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.397438,
+    "lng": 133.090149
   },
   {
     "店舗コード": "20892",
@@ -20147,7 +20795,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.425331,
+    "lng": 132.745895
   },
   {
     "店舗コード": "20893",
@@ -20209,7 +20859,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.392689,
+    "lng": 132.460327
   },
   {
     "店舗コード": "20894",
@@ -20271,7 +20923,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 43.065075,
+    "lng": 141.351685
   },
   {
     "店舗コード": "20895",
@@ -20333,7 +20987,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.620438,
+    "lng": 139.567551
   },
   {
     "店舗コード": "20896",
@@ -20395,7 +21051,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.400112,
+    "lng": 139.617065
   },
   {
     "店舗コード": "20897",
@@ -20457,7 +21115,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.626652,
+    "lng": 139.725449
   },
   {
     "店舗コード": "20898",
@@ -20519,7 +21179,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.261066,
+    "lng": 140.884186
   },
   {
     "店舗コード": "20899",
@@ -20581,7 +21243,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.677105,
+    "lng": 135.501358
   },
   {
     "店舗コード": "20900",
@@ -20643,7 +21307,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.783581,
+    "lng": 139.90126
   },
   {
     "店舗コード": "20901",
@@ -20705,7 +21371,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.507767,
+    "lng": 139.614792
   },
   {
     "店舗コード": "20902",
@@ -20767,7 +21435,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.674286,
+    "lng": 135.502121
   },
   {
     "店舗コード": "20903",
@@ -20829,7 +21499,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.651218,
+    "lng": 139.544357
   },
   {
     "店舗コード": "20904",
@@ -20891,7 +21563,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.708492,
+    "lng": 139.773987
   },
   {
     "店舗コード": "20905",
@@ -20953,7 +21627,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.599899,
+    "lng": 139.613907
   },
   {
     "店舗コード": "20906",
@@ -21015,7 +21691,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.802677,
+    "lng": 139.719391
   },
   {
     "店舗コード": "20907",
@@ -21077,7 +21755,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.445553,
+    "lng": 139.633514
   },
   {
     "店舗コード": "20908",
@@ -21139,7 +21819,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.905243,
+    "lng": 139.625427
   },
   {
     "店舗コード": "20909",
@@ -21201,7 +21883,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.672028,
+    "lng": 139.478622
   },
   {
     "店舗コード": "20910",
@@ -21263,7 +21947,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.168362,
+    "lng": 136.901184
   },
   {
     "店舗コード": "20911",
@@ -21325,7 +22011,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.578526,
+    "lng": 136.651276
   },
   {
     "店舗コード": "20912",
@@ -21387,7 +22075,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.660599,
+    "lng": 139.668442
   },
   {
     "店舗コード": "20913",
@@ -21449,7 +22139,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.723305,
+    "lng": 140.091644
   },
   {
     "店舗コード": "20914",
@@ -21511,7 +22203,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.69952,
+    "lng": 139.414062
   },
   {
     "店舗コード": "20915",
@@ -21573,7 +22267,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.716259,
+    "lng": 139.858749
   },
   {
     "店舗コード": "20916",
@@ -21635,7 +22331,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.508816,
+    "lng": 139.674866
   },
   {
     "店舗コード": "20917",
@@ -21697,7 +22395,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.701817,
+    "lng": 135.502884
   },
   {
     "店舗コード": "20918",
@@ -21759,7 +22459,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.69062,
+    "lng": 139.702759
   },
   {
     "店舗コード": "20919",
@@ -21821,7 +22523,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.70266,
+    "lng": 135.502106
   },
   {
     "店舗コード": "20920",
@@ -21883,7 +22587,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.563046,
+    "lng": 139.716797
   },
   {
     "店舗コード": "20922",
@@ -21945,7 +22651,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.909946,
+    "lng": 139.482254
   },
   {
     "店舗コード": "20923",
@@ -22007,7 +22715,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.856319,
+    "lng": 139.402054
   },
   {
     "店舗コード": "20925",
@@ -22069,7 +22779,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.796642,
+    "lng": 139.601761
   },
   {
     "店舗コード": "20926",
@@ -22131,7 +22843,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.110615,
+    "lng": 139.607391
   },
   {
     "店舗コード": "20927",
@@ -22193,7 +22907,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.81078,
+    "lng": 139.74324
   },
   {
     "店舗コード": "20928",
@@ -22255,7 +22971,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.233109,
+    "lng": 139.208817
   },
   {
     "店舗コード": "20929",
@@ -22317,7 +23035,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.803253,
+    "lng": 139.4431
   },
   {
     "店舗コード": "20930",
@@ -22379,7 +23099,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.830986,
+    "lng": 139.791031
   },
   {
     "店舗コード": "20931",
@@ -22441,7 +23163,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.693348,
+    "lng": 139.703217
   },
   {
     "店舗コード": "20933",
@@ -22503,7 +23227,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.702835,
+    "lng": 139.544952
   },
   {
     "店舗コード": "20934",
@@ -22565,7 +23291,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.562439,
+    "lng": 139.714661
   },
   {
     "店舗コード": "20935",
@@ -22627,7 +23355,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.619289,
+    "lng": 139.704773
   },
   {
     "店舗コード": "20936",
@@ -22689,7 +23419,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.704693,
+    "lng": 139.578201
   },
   {
     "店舗コード": "20937",
@@ -22751,7 +23483,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.688461,
+    "lng": 139.697037
   },
   {
     "店舗コード": "20938",
@@ -22813,7 +23547,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.693176,
+    "lng": 139.896713
   },
   {
     "店舗コード": "20939",
@@ -22875,7 +23611,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.732491,
+    "lng": 139.881607
   },
   {
     "店舗コード": "20940",
@@ -22937,7 +23675,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.544212,
+    "lng": 139.446503
   },
   {
     "店舗コード": "20941",
@@ -22999,7 +23739,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.667599,
+    "lng": 135.151016
   },
   {
     "店舗コード": "20942",
@@ -23061,7 +23803,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.751766,
+    "lng": 135.35289
   },
   {
     "店舗コード": "20943",
@@ -23123,7 +23867,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.667011,
+    "lng": 135.004181
   },
   {
     "店舗コード": "20946",
@@ -23185,7 +23931,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.646069,
+    "lng": 135.515167
   },
   {
     "店舗コード": "20947",
@@ -23247,7 +23995,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.643776,
+    "lng": 139.69809
   },
   {
     "店舗コード": "20948",
@@ -23309,7 +24059,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.744167,
+    "lng": 129.878098
   },
   {
     "店舗コード": "20949",
@@ -23371,7 +24123,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.660572,
+    "lng": 139.69957
   },
   {
     "店舗コード": "20950",
@@ -23433,7 +24187,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 33.590019,
+    "lng": 130.398407
   },
   {
     "店舗コード": "20951",
@@ -23495,7 +24251,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.769573,
+    "lng": 140.2995
   },
   {
     "店舗コード": "20952",
@@ -23557,7 +24315,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.682655,
+    "lng": 139.915283
   },
   {
     "店舗コード": "20953",
@@ -23619,7 +24379,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.635494,
+    "lng": 140.152176
   },
   {
     "店舗コード": "20954",
@@ -23681,7 +24443,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.748573,
+    "lng": 140.309448
   },
   {
     "店舗コード": "20956",
@@ -23743,7 +24507,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.169285,
+    "lng": 136.881317
   },
   {
     "店舗コード": "20957",
@@ -23805,7 +24571,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.664944,
+    "lng": 139.85881
   },
   {
     "店舗コード": "20958",
@@ -23867,7 +24635,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.859211,
+    "lng": 139.658218
   },
   {
     "店舗コード": "20959",
@@ -23929,7 +24699,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.672909,
+    "lng": 139.764053
   },
   {
     "店舗コード": "20960",
@@ -23991,7 +24763,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.528835,
+    "lng": 139.697815
   },
   {
     "店舗コード": "20961",
@@ -24053,7 +24827,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 36.282707,
+    "lng": 139.401138
   },
   {
     "店舗コード": "20963",
@@ -24115,7 +24891,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.663467,
+    "lng": 135.502975
   },
   {
     "店舗コード": "20964",
@@ -24177,7 +24955,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.607899,
+    "lng": 139.669998
   },
   {
     "店舗コード": "20965",
@@ -24239,7 +25019,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.707317,
+    "lng": 139.665314
   },
   {
     "店舗コード": "20966",
@@ -24301,7 +25083,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.016865,
+    "lng": 135.764053
   },
   {
     "店舗コード": "20967",
@@ -24363,7 +25147,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.707867,
+    "lng": 139.772858
   },
   {
     "店舗コード": "20968",
@@ -24425,7 +25211,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.656143,
+    "lng": 139.754929
   },
   {
     "店舗コード": "20969",
@@ -24487,7 +25275,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.707001,
+    "lng": 139.774277
   },
   {
     "店舗コード": "20970",
@@ -24549,7 +25339,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.987606,
+    "lng": 135.755478
   },
   {
     "店舗コード": "20971",
@@ -24611,7 +25403,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.77636,
+    "lng": 135.614212
   },
   {
     "店舗コード": "20973",
@@ -24673,7 +25467,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.009998,
+    "lng": 135.751389
   },
   {
     "店舗コード": "20974",
@@ -24735,7 +25531,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.705303,
+    "lng": 137.733337
   },
   {
     "店舗コード": "20975",
@@ -24797,7 +25595,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.732651,
+    "lng": 139.727859
   },
   {
     "店舗コード": "20976",
@@ -24859,7 +25659,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.444141,
+    "lng": 139.632599
   },
   {
     "店舗コード": "20977",
@@ -24921,7 +25723,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.704926,
+    "lng": 139.580399
   },
   {
     "店舗コード": "20978",
@@ -24983,7 +25787,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 38.261887,
+    "lng": 140.87149
   },
   {
     "店舗コード": "20979",
@@ -25045,7 +25851,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.711784,
+    "lng": 139.792236
   },
   {
     "店舗コード": "20980",
@@ -25107,7 +25915,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.701508,
+    "lng": 139.771011
   },
   {
     "店舗コード": "20981",
@@ -25169,7 +25979,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.965622,
+    "lng": 139.605988
   },
   {
     "店舗コード": "20982",
@@ -25231,7 +26043,9 @@
     "ビリヤード": true,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.988457,
+    "lng": 139.647995
   },
   {
     "店舗コード": "20983",
@@ -25293,7 +26107,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.757469,
+    "lng": 135.496399
   },
   {
     "店舗コード": "20984",
@@ -25355,7 +26171,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.861797,
+    "lng": 139.972351
   },
   {
     "店舗コード": "20985",
@@ -25417,7 +26235,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 34.719372,
+    "lng": 135.481766
   },
   {
     "店舗コード": "20986",
@@ -25479,7 +26299,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.713043,
+    "lng": 139.705856
   },
   {
     "店舗コード": "20987",
@@ -25541,7 +26363,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 32.799194,
+    "lng": 130.706482
   },
   {
     "店舗コード": "20988",
@@ -25603,7 +26427,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.544537,
+    "lng": 139.445129
   },
   {
     "店舗コード": "20989",
@@ -25665,7 +26491,9 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.672062,
+    "lng": 139.737106
   },
   {
     "店舗コード": "20990",
@@ -25727,6 +26555,8 @@
     "ビリヤード": false,
     "diffs": [],
     "last_price_change_date": "",
-    "has_diff": false
+    "has_diff": false,
+    "lat": 35.669266,
+    "lng": 139.767014
   }
 ]

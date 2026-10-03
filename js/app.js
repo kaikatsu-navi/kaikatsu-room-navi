@@ -1,4 +1,99 @@
 let allStores = [];
+let userLocation = null; // { lat: number, lng: number }
+
+// === GPS / 現在地・距離計算 ===
+function deg2rad(deg) {
+  return deg * (Math.PI / 180);
+}
+
+function calculateDistanceKm(lat1, lon1, lat2, lon2) {
+  const R = 6371; // 地球の半径 (km)
+  const dLat = deg2rad(lat2 - lat1);
+  const dLon = deg2rad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function getStoreDistance(store) {
+  if (!userLocation || !store || store.lat === null || store.lat === undefined || store.lng === null || store.lng === undefined) {
+    return null;
+  }
+  return calculateDistanceKm(userLocation.lat, userLocation.lng, parseFloat(store.lat), parseFloat(store.lng));
+}
+
+function formatDistance(distKm) {
+  if (distKm === null || distKm === undefined || isNaN(distKm)) return '';
+  if (distKm < 1.0) {
+    return `${Math.round(distKm * 1000)}m`;
+  }
+  return `${distKm.toFixed(1)}km`;
+}
+
+function requestNearMeSearch() {
+  if (!navigator.geolocation) {
+    showToast('お使いの端末・ブラウザは位置情報に対応していません。');
+    return;
+  }
+
+  showToast('📍 現在地を取得しています...');
+
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      userLocation = {
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      };
+      const sortSelect = document.getElementById('sortSelect');
+      if (sortSelect) sortSelect.value = 'distance_asc';
+      renderStores();
+      showToast('📍 現在地から近い順に並び替えました！');
+    },
+    (err) => {
+      console.warn('Geolocation error:', err);
+      let msg = '位置情報を取得できませんでした。';
+      if (err.code === 1) {
+        msg = '位置情報の利用が許可されませんでした。ブラウザの設定から許可してください。';
+      } else if (err.code === 2) {
+        msg = '位置情報を特定できませんでした。電波環境の良い場所で再試行してください。';
+      } else if (err.code === 3) {
+        msg = '位置情報の取得がタイムアウトしました。';
+      }
+      showToast(msg);
+      const sortSelect = document.getElementById('sortSelect');
+      if (sortSelect && sortSelect.value === 'distance_asc') {
+        sortSelect.value = 'default';
+        renderStores();
+      }
+    },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+  );
+}
+
+// === X (旧Twitter) Web Intent シェア ===
+function shareStoreOnX(storeCode, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  const s = allStores.find(item => String(item['店舗コード']) === String(storeCode));
+  if (!s) return;
+  const name = s['店舗名'] || '';
+  const pref = s['都道府県'] || '';
+  const h3 = s['平日_3hパック'] ? `平日3h:${s['平日_3hパック']}円〜` : '';
+  const toast = s['無料トースト'] ? '🍞無料トースト' : '';
+  const shower = s['無料シャワー'] ? '🚿無料シャワー' : '';
+  const features = [h3, toast, shower].filter(Boolean).join(' / ');
+  
+  const text = `快活CLUB ${name}（${pref}）の鍵付完全個室料金・設備をチェック！\n${features ? features + '\n' : ''}\n`;
+  const url = `https://kaikatsu-navi.github.io/kaikatsu-room-navi/?pref=${encodeURIComponent(pref)}&q=${encodeURIComponent(name)}`;
+  const hashtags = '快活CLUB,完全個室,快活ナビ';
+  const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(hashtags)}`;
+  window.open(shareUrl, '_blank', 'noopener,noreferrer');
+}
 
 // === お気に入り店舗（LocalStorage）管理 ===
 const FAV_STORAGE_KEY = 'kaikatsu_fav_stores';
@@ -721,7 +816,11 @@ function submitModalToGoogleForm() {
       // ソート順
       if (params.has('sort')) {
         const sortSelect = document.getElementById('sortSelect');
-        if (sortSelect) sortSelect.value = params.get('sort');
+        const sortVal = params.get('sort');
+        if (sortSelect) sortSelect.value = sortVal;
+        if (sortVal === 'distance_asc' && !userLocation) {
+          requestNearMeSearch();
+        }
       }
 
       // チェックボックス
@@ -873,7 +972,13 @@ function submitModalToGoogleForm() {
       });
 
       // ソート処理（指定条件でソート後、お気に入り店舗★を最上部にピン留め）
-      if (sort === 'weekday3h_asc') {
+      if (sort === 'distance_asc') {
+        filtered.sort((a, b) => {
+          const distA = getStoreDistance(a);
+          const distB = getStoreDistance(b);
+          return (distA !== null ? distA : 999999) - (distB !== null ? distB : 999999);
+        });
+      } else if (sort === 'weekday3h_asc') {
         filtered.sort((a, b) => (parseInt(a['平日_3hパック']) || 99999) - (parseInt(b['平日_3hパック']) || 99999));
       } else if (sort === 'weekend3h_asc') {
         filtered.sort((a, b) => (parseInt(a['週末_3hパック']) || 99999) - (parseInt(b['週末_3hパック']) || 99999));
@@ -1079,6 +1184,11 @@ function submitModalToGoogleForm() {
           ? 'border-amber-300 ring-2 ring-amber-300/40 shadow-sm' 
           : 'border-slate-200';
 
+        const storeDist = getStoreDistance(s);
+        const distBadge = (userLocation && storeDist !== null) 
+          ? `<a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-xs font-bold text-blue-700 bg-blue-50 border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition px-1.5 py-0.5 rounded flex items-center gap-1 shadow-2xs" title="現在地からの直線距離（クリックでルート案内）"><i class="fa-solid fa-location-arrow text-[10px] text-blue-600"></i> ${formatDistance(storeDist)}</a>`
+          : '';
+
         return `
           <div id="store-${code}" class="store-card bg-white rounded-xl shadow-sm border ${cardBorderClass} p-3.5 sm:p-5 hover:shadow-md transition duration-300 relative">
             
@@ -1087,6 +1197,7 @@ function submitModalToGoogleForm() {
               <div class="w-full sm:w-auto">
                 <div class="flex items-center gap-1.5 sm:gap-2 mb-1 flex-wrap">
                   <span class="text-[10px] sm:text-xs font-bold text-orange-600 bg-orange-50 px-1.5 py-0.5 rounded">${pref} ${city}</span>
+                  ${distBadge}
                   <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                     <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
                        class="hover:text-orange-600 transition inline-flex items-center gap-1.5">
@@ -1135,6 +1246,11 @@ function submitModalToGoogleForm() {
                         class="text-[11px] ${hasDiff ? 'text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 font-semibold' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'} transition px-2 py-1.5 rounded flex items-center gap-1"
                         title="料金改定履歴を見る">
                   <i class="fa-solid fa-clock-rotate-left ${hasDiff ? 'text-orange-600' : 'text-slate-400'}"></i> <span class="hidden sm:inline">履歴</span>
+                </button>
+                <button type="button" onclick="shareStoreOnX('${code}', event)" 
+                        class="text-[11px] text-slate-500 hover:text-black hover:bg-slate-100 transition px-2 py-1.5 rounded flex items-center gap-1"
+                        title="この店舗の料金・設備をXでシェア">
+                  <i class="fa-brands fa-x-twitter text-slate-800"></i> <span class="hidden sm:inline">シェア</span>
                 </button>
                 <button type="button" onclick="openReportForm('${code}', '${name}')" 
                         class="text-[11px] text-slate-400 hover:text-red-500 transition px-2 py-1.5 rounded hover:bg-slate-50 flex items-center gap-1"
@@ -1264,7 +1380,14 @@ function submitModalToGoogleForm() {
 
     // イベントリスナー
     document.getElementById('searchInput').addEventListener('input', renderStores);
-    document.getElementById('sortSelect').addEventListener('change', renderStores);
+    document.getElementById('sortSelect').addEventListener('change', () => {
+      const sortVal = document.getElementById('sortSelect').value;
+      if (sortVal === 'distance_asc' && !userLocation) {
+        requestNearMeSearch();
+      } else {
+        renderStores();
+      }
+    });
     document.querySelectorAll('.filter-cb').forEach(cb => cb.addEventListener('change', renderStores));
 
     document.getElementById('resetFiltersBtn').addEventListener('click', () => {

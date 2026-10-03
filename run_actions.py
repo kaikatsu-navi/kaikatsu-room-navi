@@ -133,6 +133,10 @@ def main():
                 cur["diffs"] = prev.get("diffs", [])
                 cur["last_price_change_date"] = prev.get("last_price_change_date", "")
 
+            # 緯度・経度（GPS用座標）を既存データから継承
+            cur["lat"] = prev.get("lat")
+            cur["lng"] = prev.get("lng")
+
             # 直近30日以内の改定があるか判定
             is_recent = False
             if cur["last_price_change_date"] and len(cur.get("diffs", [])) > 0:

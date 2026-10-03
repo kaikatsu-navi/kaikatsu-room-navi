@@ -53,6 +53,12 @@
           <span>改定速報</span>
           <span id="headerDiffCountBadge" class="hidden bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">0</span>
         </button>
+        <a href="https://x.com/panforge_lab" target="_blank" rel="noopener noreferrer" 
+           class="bg-black/40 hover:bg-black/60 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs border border-white/20 active:scale-95 shadow-2xs" 
+           title="公式X (@panforge_lab) を見る">
+          <i class="fa-brands fa-x-twitter text-xs"></i>
+          <span class="hidden md:inline font-medium">@panforge_lab</span>
+        </a>
         <button onclick="toggleModal('infoModal')" class="bg-white/20 hover:bg-white/30 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1 text-xs">
           <i class="fa-solid fa-circle-info"></i>
           <span class="hidden sm:inline">このサイトについて</span>
@@ -109,6 +115,7 @@
         <div class="sm:col-span-2 md:col-span-1">
           <select id="sortSelect" class="w-full py-2 px-3 border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none bg-white">
             <option value="default">並び替え: 標準（都道府県順）</option>
+            <option value="distance_asc">📍 現在地から近い順</option>
             <option value="weekday3h_asc">平日3時間パックが安い順</option>
             <option value="weekend3h_asc">週末3時間パックが安い順</option>
             <option value="weekday6h_asc">平日6時間パックが安い順</option>
@@ -126,12 +133,19 @@
             <span id="filterActiveBadge" class="hidden text-[10px] bg-orange-600 text-white px-1.5 py-0.2 rounded-full font-normal">選択中</span>
             <i id="filterArrow" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
           </button>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <button id="nearMeQuickBtn" onclick="requestNearMeSearch()" type="button"
+                    class="text-xs text-blue-700 hover:text-blue-800 font-bold flex items-center gap-1 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-2 sm:px-2.5 py-0.5 rounded transition shadow-2xs active:scale-95"
+                    title="現在地から近い順に店舗を並び替え">
+              <i class="fa-solid fa-location-crosshairs text-[11px] text-blue-600"></i>
+              <span>現在地から探す</span>
+            </button>
             <button id="shareConditionsBtn" onclick="shareCurrentConditions()" type="button" 
                     class="text-xs text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2 py-0.5 rounded transition shadow-2xs active:scale-95" 
                     title="現在の絞り込み条件のURLを共有・コピー">
               <i class="fa-solid fa-arrow-up-from-bracket text-[10px]"></i>
-              <span>条件を共有</span>
+              <span class="hidden sm:inline">条件を共有</span>
+              <span class="sm:hidden">共有</span>
             </button>
             <button id="resetFiltersBtn" class="text-slate-500 hover:text-orange-600 hover:underline text-xs">リセット</button>
           </div>
@@ -224,13 +238,18 @@
 
   <!-- フッター -->
   <footer class="mt-8 border-t border-slate-200 py-6 text-center text-xs text-slate-500 bg-white">
-    <div class="max-w-7xl mx-auto px-4 space-y-1.5">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
       <div class="font-bold text-slate-700">快活CLUB 鍵付完全個室ナビ (非公式β)</div>
       <div class="text-[11px] text-slate-500">
         価格改定監視・データ収集開始: <span class="font-bold text-orange-600">2026年10月3日</span> ｜ 毎朝自動更新
       </div>
-      <div class="text-[10px] text-slate-400">
-        運営: PanForge Lab (<a href="mailto:panforge.lab@gmail.com" class="hover:underline text-slate-500">panforge.lab@gmail.com</a>)
+      <div class="flex items-center justify-center gap-3 text-xs pt-1 flex-wrap">
+        <a href="https://x.com/panforge_lab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-700 hover:text-black font-semibold bg-slate-100 hover:bg-slate-200 px-3 py-1 rounded-full transition border border-slate-200">
+          <i class="fa-brands fa-x-twitter text-slate-900"></i> 公式X: @panforge_lab をフォロー
+        </a>
+        <a href="mailto:panforge.lab@gmail.com" class="text-slate-500 hover:underline">
+          お問い合わせ
+        </a>
       </div>
     </div>
   </footer>
@@ -250,6 +269,17 @@
         <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
           <div class="font-bold text-slate-800 mb-1">💡 開発の背景と仕組み</div>
           <p>快活CLUBの料金表は店舗によって形式が異なり、一部店舗では画像貼り付けになっているため比較が困難でした。本サイトでは独自クローラーとGoogle Cloud Vision APIを用いて全店舗の料金表を解析し、毎日の価格変動や値上げを自動検知しています。</p>
+        </div>
+        <div class="bg-sky-50 p-3 rounded-lg border border-sky-200 text-sky-950">
+          <div class="font-bold mb-1 flex items-center gap-1.5">
+            <i class="fa-brands fa-x-twitter text-slate-900 text-sm"></i> 公式X（旧Twitter）アカウント
+          </div>
+          <p class="text-[11px] text-slate-600 mb-2">
+            PanForge Labの公式X（<a href="https://x.com/panforge_lab" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:underline">@panforge_lab</a>）にて、開発状況や機能追加、快活CLUBに関する最新情報を発信しています！
+          </p>
+          <a href="https://x.com/panforge_lab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-black hover:bg-slate-800 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg transition">
+            <i class="fa-brands fa-x-twitter text-xs"></i> @panforge_lab を開く
+          </a>
         </div>
         <div class="bg-amber-50 p-3 rounded-lg border border-amber-200 text-amber-900">
           <div class="font-bold mb-1">⚠️ 免責事項</div>
@@ -428,6 +458,6 @@
   </div>
 
   <!-- スクリプト -->
-  <script src="js/app.js?v=20261003_2057"></script>
+  <script src="js/app.js?v=20261003_2212"></script>
 </body>
 </html>
