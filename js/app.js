@@ -300,16 +300,29 @@ function renderVacancyContent(storeCode, data, container, timestamp) {
 }
 
 async function checkNearMeVacancyBatch() {
-  const currentList = document.querySelectorAll('.store-card');
+  const currentList = Array.from(document.querySelectorAll('.store-card'));
   if (!currentList || currentList.length === 0) {
     showToast('現在表示されている店舗がありません。');
     return;
   }
 
-  showToast('⚡ 上位店舗のリアルタイム空席情報を一括取得中...');
+  // 現在地がある場合は純粋な距離順（お気に入りピン留めを無視）、なければ現在の表示順で上位10店舗を抽出
+  let targetCards = [...currentList];
+  if (userLocation) {
+    targetCards.sort((a, b) => {
+      const codeA = a.id.replace('store-', '');
+      const codeB = b.id.replace('store-', '');
+      const storeA = allStores.find(s => String(s['店舗コード']) === codeA);
+      const storeB = allStores.find(s => String(s['店舗コード']) === codeB);
+      const distA = storeA ? getStoreDistance(storeA) : 999999;
+      const distB = storeB ? getStoreDistance(storeB) : 999999;
+      return (distA !== null ? distA : 999999) - (distB !== null ? distB : 999999);
+    });
+  }
+
+  const topCards = targetCards.slice(0, 10);
+  showToast(`⚡ 近い順の上位${topCards.length}店舗の空席情報を一括取得中...`);
   
-  // 上位最大6店舗を取得
-  const topCards = Array.from(currentList).slice(0, 6);
   const promises = topCards.map(async (card) => {
     const code = card.id.replace('store-', '');
     if (!code) return;
@@ -337,7 +350,7 @@ async function checkNearMeVacancyBatch() {
   });
 
   await Promise.allSettled(promises);
-  showToast('⚡ 上位店舗のリアルタイム空席を表示しました！');
+  showToast(`⚡ 近い順の上位${topCards.length}店舗のリアルタイム空席を表示しました！`);
 }
 
 // === お気に入り店舗（LocalStorage）管理 ===
@@ -1480,7 +1493,7 @@ function submitModalToGoogleForm() {
                 <button type="button" onclick="toggleStoreVacancy('${code}', event)" id="vacancy-btn-${code}" 
                         class="text-[11px] bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2 py-1.5 rounded transition flex items-center gap-1 active:scale-95 shadow-2xs" 
                         title="部屋・席のリアルタイム空き状況を確認">
-                  <i class="fa-solid fa-door-open text-emerald-600"></i> <span>空席</span>
+                  <i class="fa-solid fa-door-open text-emerald-600"></i> <span>空席状況</span>
                 </button>
                 <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
                    class="sm:hidden flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
