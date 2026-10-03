@@ -196,6 +196,19 @@
 
   </main>
 
+  <!-- フッター -->
+  <footer class="mt-8 border-t border-slate-200 py-6 text-center text-xs text-slate-500 bg-white">
+    <div class="max-w-7xl mx-auto px-4 space-y-1.5">
+      <div class="font-bold text-slate-700">快活CLUB 鍵付完全個室ナビ (非公式β)</div>
+      <div class="text-[11px] text-slate-500">
+        価格改定監視・データ収集開始: <span class="font-bold text-orange-600">2026年10月3日</span> ｜ 毎朝自動更新
+      </div>
+      <div class="text-[10px] text-slate-400">
+        運営: PanForge Lab (<a href="mailto:panforge.lab@gmail.com" class="hover:underline text-slate-500">panforge.lab@gmail.com</a>)
+      </div>
+    </div>
+  </footer>
+
   <!-- このサイトについて モーダル -->
   <div id="infoModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bg-white rounded-xl max-w-lg w-full p-5 sm:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -322,8 +335,9 @@
 
       <!-- サブバー（フィルター＆件数） -->
       <div class="py-2.5 px-3 bg-slate-50 border-b border-slate-200 flex flex-wrap justify-between items-center gap-2 flex-shrink-0 text-xs">
-        <div class="text-slate-600 font-medium">
-          改定検知: <span id="priceUpdatesCount" class="font-bold text-orange-600 text-sm">0</span> 店舗
+        <div class="text-slate-600 font-medium flex items-center gap-2 flex-wrap">
+          <span>改定検知: <span id="priceUpdatesCount" class="font-bold text-orange-600 text-sm">0</span> 店舗</span>
+          <span class="text-[10px] text-slate-400 bg-white border border-slate-200 px-1.5 py-0.5 rounded">※ 改定監視: 2026/10/03 より開始</span>
         </div>
         <div class="flex items-center gap-1 text-[11px]">
           <button type="button" onclick="filterUpdatesModal('all')" id="btnUpdatesAll" class="px-2.5 py-1 rounded-full border bg-orange-600 text-white border-orange-600 font-bold transition">すべて</button>
@@ -474,9 +488,17 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="p-8 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200">
-            <i class="fa-solid fa-clock-rotate-left text-2xl mb-1.5 text-slate-300"></i>
-            <p>該当する料金改定店舗はありません。</p>
+          <div class="p-6 sm:p-8 text-center text-slate-500 bg-slate-50 rounded-xl border border-dashed border-slate-200 space-y-2">
+            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <div class="font-bold text-slate-800 text-sm">現在、改定検知データはありません</div>
+            <p class="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+              本サイトの価格改定監視・自動収集システムは <span class="font-bold text-orange-600">2026年10月3日</span> より正式稼働を開始しました！
+            </p>
+            <p class="text-[11px] text-slate-400">
+              明日以降、快活CLUB公式HPで料金変更（値上げ・値下げ）が検知され次第、ここにリアルタイムで速報が自動蓄積されます。
+            </p>
           </div>
         `;
         return;
@@ -657,7 +679,9 @@
           <div class="p-6 text-center text-slate-500 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
             <i class="fa-solid fa-circle-check text-emerald-500 text-3xl"></i>
             <div class="font-bold text-slate-800 text-sm">直近の料金改定はありません</div>
-            <p class="text-xs text-slate-400">この店舗は直近30日以内に料金の変更がなく、安定して稼働しています。</p>
+            <p class="text-xs text-slate-500">
+              この店舗は <span class="font-bold text-slate-700">2026/10/03（データ収集開始日）</span> 以降、料金の変更がなく安定して稼働しています。
+            </p>
           </div>
         `;
       } else {
