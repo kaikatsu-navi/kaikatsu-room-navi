@@ -25,7 +25,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=20261003">
+  <link rel="stylesheet" href="css/style.css?v=20261004">
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen pb-12">
 
@@ -42,25 +42,25 @@
           <p class="text-[10px] sm:text-xs text-amber-100 hidden sm:block">全国415店舗の完全個室・全時間パック料金＆設備一括比較チェッカー</p>
         </div>
       </div>
-      <div class="flex items-center gap-2">
-        <button id="headerFavBtn" onclick="toggleFavoriteFilterFromHeader()" class="bg-white/20 hover:bg-white/30 text-white font-medium px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs shadow-sm active:scale-95">
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+        <button id="headerFavBtn" onclick="toggleFavoriteFilterFromHeader()" class="bg-white/20 hover:bg-white/30 text-white font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1 text-xs shadow-sm active:scale-95 whitespace-nowrap flex-shrink-0" title="お気に入り店舗のみ表示">
           <i class="fa-solid fa-star text-amber-300"></i>
-          <span>お気に入り</span>
+          <span class="hidden sm:inline">お気に入り</span>
           <span id="headerFavCountBadge" class="hidden bg-amber-400 text-slate-900 text-[10px] font-bold px-1.5 py-0.2 rounded-full">0</span>
         </button>
-        <button onclick="openPriceUpdatesModal()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs shadow-sm active:scale-95">
+        <button onclick="openPriceUpdatesModal()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1 text-xs shadow-sm active:scale-95 whitespace-nowrap flex-shrink-0" title="価格改定速報を見る">
           <i class="fa-solid fa-bell text-orange-600 animate-pulse"></i>
-          <span>改定速報</span>
+          <span class="hidden sm:inline">改定速報</span>
           <span id="headerDiffCountBadge" class="hidden bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">0</span>
         </button>
         <a href="https://x.com/panforge_lab" target="_blank" rel="noopener noreferrer" 
-           class="bg-black/40 hover:bg-black/60 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs border border-white/20 active:scale-95 shadow-2xs" 
+           class="bg-black/40 hover:bg-black/60 text-white w-7 h-7 sm:w-auto sm:h-auto px-0 sm:px-3 py-0 sm:py-1.5 rounded-full transition flex items-center justify-center gap-1.5 text-xs border border-white/20 active:scale-95 shadow-2xs flex-shrink-0" 
            title="公式X (@panforge_lab) を見る">
-          <i class="fa-brands fa-x-twitter text-xs"></i>
+          <i class="fa-brands fa-x-twitter text-xs flex-shrink-0"></i>
           <span class="hidden md:inline font-medium">@panforge_lab</span>
         </a>
-        <button onclick="toggleModal('infoModal')" class="bg-white/20 hover:bg-white/30 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1 text-xs">
-          <i class="fa-solid fa-circle-info"></i>
+        <button onclick="toggleModal('infoModal')" class="bg-white/20 hover:bg-white/30 text-white w-7 h-7 sm:w-auto sm:h-auto px-0 sm:px-3 py-0 sm:py-1.5 rounded-full transition flex items-center justify-center gap-1 text-xs flex-shrink-0" title="このサイトについて">
+          <i class="fa-solid fa-circle-info flex-shrink-0"></i>
           <span class="hidden sm:inline">このサイトについて</span>
         </button>
       </div>
@@ -126,35 +126,41 @@
 
       <!-- 設備チェックボックスフィルター -->
       <div class="pt-2.5 border-t border-slate-100">
-        <div class="flex items-center justify-between mb-2">
-          <button id="toggleFilterBtn" class="text-xs font-bold text-slate-600 flex items-center gap-1.5 hover:text-orange-600 transition">
-            <i class="fa-solid fa-sliders text-orange-500"></i>
-            <span>設備・アイコンで絞り込み</span>
-            <span id="filterActiveBadge" class="hidden text-[10px] bg-orange-600 text-white px-1.5 py-0.2 rounded-full font-normal">選択中</span>
-            <i id="filterArrow" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
-          </button>
-          <div class="flex items-center gap-1.5 sm:gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+          <!-- 上段（スマホ時）: 絞り込みトグル & リセット -->
+          <div class="flex items-center justify-between w-full sm:w-auto">
+            <button id="toggleFilterBtn" class="text-xs font-bold text-slate-600 flex items-center gap-1.5 hover:text-orange-600 transition whitespace-nowrap">
+              <i class="fa-solid fa-sliders text-orange-500"></i>
+              <span>設備・アイコンで絞り込み</span>
+              <span id="filterActiveBadge" class="hidden text-[10px] bg-orange-600 text-white px-1.5 py-0.2 rounded-full font-normal">選択中</span>
+              <i id="filterArrow" class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform"></i>
+            </button>
+            <button id="resetFiltersBtnMobile" onclick="document.getElementById('resetFiltersBtn').click()" class="sm:hidden text-slate-500 hover:text-orange-600 hover:underline text-xs whitespace-nowrap">リセット</button>
+          </div>
+
+          <!-- 下段（スマホ時）: アクションボタン群 -->
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
             <button id="nearMeQuickBtn" onclick="requestNearMeSearch()" type="button"
-                    class="text-xs text-blue-700 hover:text-blue-800 font-bold flex items-center gap-1 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-2 sm:px-2.5 py-0.5 rounded transition shadow-2xs active:scale-95"
+                    class="text-xs text-blue-700 hover:text-blue-800 font-bold flex items-center gap-1 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-2 sm:px-2.5 py-1 sm:py-0.5 rounded transition shadow-2xs active:scale-95 whitespace-nowrap flex-shrink-0"
                     title="現在地から近い順に店舗を並び替え">
               <i class="fa-solid fa-location-crosshairs text-[11px] text-blue-600"></i>
               <span>現在地から探す</span>
             </button>
             <button id="batchVacancyBtn" onclick="checkNearMeVacancyBatch()" type="button"
-                    class="text-xs text-emerald-800 hover:text-emerald-900 font-bold flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 px-2 sm:px-2.5 py-0.5 rounded transition shadow-2xs active:scale-95"
+                    class="text-xs text-emerald-800 hover:text-emerald-900 font-bold flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 px-2 sm:px-2.5 py-1 sm:py-0.5 rounded transition shadow-2xs active:scale-95 whitespace-nowrap flex-shrink-0"
                     title="現在地から近い順の上位10店舗の空き状況を一括取得">
               <i class="fa-solid fa-bolt text-[11px] text-emerald-600"></i>
               <span class="hidden sm:inline">空席一括確認（近い順に10件）</span>
               <span class="sm:hidden">空席一括（近い順10件）</span>
             </button>
             <button id="shareConditionsBtn" onclick="shareCurrentConditions()" type="button" 
-                    class="text-xs text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2 py-0.5 rounded transition shadow-2xs active:scale-95" 
+                    class="text-xs text-orange-600 hover:text-orange-700 font-medium flex items-center gap-1 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-2 py-1 sm:py-0.5 rounded transition shadow-2xs active:scale-95 whitespace-nowrap flex-shrink-0" 
                     title="現在の絞り込み条件のURLを共有・コピー">
               <i class="fa-solid fa-arrow-up-from-bracket text-[10px]"></i>
               <span class="hidden sm:inline">条件を共有</span>
               <span class="sm:hidden">共有</span>
             </button>
-            <button id="resetFiltersBtn" class="text-slate-500 hover:text-orange-600 hover:underline text-xs">リセット</button>
+            <button id="resetFiltersBtn" class="hidden sm:inline text-slate-500 hover:text-orange-600 hover:underline text-xs whitespace-nowrap flex-shrink-0">リセット</button>
           </div>
         </div>
 
@@ -465,6 +471,6 @@
   </div>
 
   <!-- スクリプト -->
-  <script src="js/app.js?v=20261003_2233"></script>
+  <script src="js/app.js?v=20261004_0900"></script>
 </body>
 </html>

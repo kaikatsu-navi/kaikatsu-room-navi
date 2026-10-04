@@ -412,9 +412,9 @@ function updateHeaderFavBadge() {
     const cb = document.getElementById('favoriteOnlyCheckbox');
     const isFavOnly = cb && cb.checked;
     if (isFavOnly) {
-      favBtn.className = 'bg-amber-400 text-slate-900 font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs shadow-sm active:scale-95';
+      favBtn.className = 'bg-amber-400 text-slate-900 font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1 text-xs shadow-sm active:scale-95 whitespace-nowrap flex-shrink-0';
     } else {
-      favBtn.className = 'bg-white/20 hover:bg-white/30 text-white font-medium px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1.5 text-xs shadow-sm active:scale-95';
+      favBtn.className = 'bg-white/20 hover:bg-white/30 text-white font-medium px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition flex items-center gap-1 text-xs shadow-sm active:scale-95 whitespace-nowrap flex-shrink-0';
     }
   }
 }
@@ -1483,48 +1483,62 @@ function submitModalToGoogleForm() {
               </div>
 
               <!-- 右上/スマホ下部のアクションボタン -->
-              <div class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-end pt-1 sm:pt-0">
-                <button type="button" onclick="toggleFavorite('${code}', event)" 
-                        class="text-xs ${favBtnClass} transition px-2.5 py-1.5 rounded-lg flex items-center gap-1 active:scale-95" 
-                        title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}">
-                  <i class="fa-${isFav ? 'solid' : 'regular'} fa-star text-sm ${isFav ? 'text-amber-500' : ''}"></i>
-                  <span class="text-[11px]">${isFav ? '登録中' : '保存'}</span>
-                </button>
-                <button type="button" onclick="toggleStoreVacancy('${code}', event)" id="vacancy-btn-${code}" 
-                        class="text-[11px] bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2 py-1.5 rounded transition flex items-center gap-1 active:scale-95 shadow-2xs" 
-                        title="部屋・席のリアルタイム空き状況を確認">
-                  <i class="fa-solid fa-door-open text-emerald-600"></i> <span>空席状況</span>
-                </button>
-                <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
-                   class="sm:hidden flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
-                  <i class="fa-solid fa-location-dot text-orange-500"></i> 地図
-                </a>
-                ${tel ? `
-                  <a href="tel:${tel.replace(/[^0-9]/g, '')}" 
-                     class="sm:hidden flex-1 text-center bg-orange-50 hover:bg-orange-100 text-orange-700 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-phone text-orange-600"></i> 電話
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-end pt-2 sm:pt-0">
+                <!-- 主要アクション（スマホ上段 / PC左側） -->
+                <div class="flex items-center gap-1.5 sm:gap-2 justify-between sm:justify-start">
+                  <button type="button" onclick="toggleFavorite('${code}', event)" 
+                          class="text-xs ${favBtnClass} transition px-2.5 py-1.5 rounded-lg flex items-center justify-center gap-1 active:scale-95 whitespace-nowrap flex-shrink-0" 
+                          title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}">
+                    <i class="fa-${isFav ? 'solid' : 'regular'} fa-star text-sm ${isFav ? 'text-amber-500' : ''}"></i>
+                    <span class="text-[11px] whitespace-nowrap">${isFav ? '登録中' : '保存'}</span>
+                  </button>
+                  <button type="button" onclick="toggleStoreVacancy('${code}', event)" id="vacancy-btn-${code}" 
+                          class="text-[11px] bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2.5 py-1.5 rounded-lg transition flex items-center justify-center gap-1 active:scale-95 shadow-2xs whitespace-nowrap flex-shrink-0" 
+                          title="部屋・席のリアルタイム空き状況を確認">
+                    <i class="fa-solid fa-door-open text-emerald-600"></i> <span class="whitespace-nowrap">空席状況</span>
+                  </button>
+                  <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
+                     class="sm:hidden text-center bg-orange-600 hover:bg-orange-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm whitespace-nowrap flex-shrink-0 flex items-center justify-center gap-1">
+                    <span class="whitespace-nowrap">公式ページ</span>
+                    <i class="fa-solid fa-angle-right text-[10px]"></i>
                   </a>
-                ` : ''}
-                <button onclick="openStoreHistoryModal('${code}')" 
-                        class="text-[11px] ${hasDiff ? 'text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 font-semibold' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'} transition px-2 py-1.5 rounded flex items-center gap-1"
-                        title="料金改定履歴を見る">
-                  <i class="fa-solid fa-clock-rotate-left ${hasDiff ? 'text-orange-600' : 'text-slate-400'}"></i> <span class="hidden sm:inline">履歴</span>
-                </button>
-                <button type="button" onclick="shareStoreOnX('${code}', event)" 
-                        class="text-[11px] text-slate-500 hover:text-black hover:bg-slate-100 transition px-2 py-1.5 rounded flex items-center gap-1"
-                        title="この店舗の料金・設備をXでシェア">
-                  <i class="fa-brands fa-x-twitter text-slate-800"></i> <span class="hidden sm:inline">シェア</span>
-                </button>
-                <button type="button" onclick="openReportForm('${code}', '${name}')" 
-                        class="text-[11px] text-slate-400 hover:text-red-500 transition px-2 py-1.5 rounded hover:bg-slate-50 flex items-center gap-1"
-                        title="料金・データの誤りをGoogleフォームで報告">
-                  <i class="fa-regular fa-flag"></i> <span class="hidden sm:inline">報告</span>
-                </button>
-                <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
-                   class="flex-1 sm:flex-initial text-center bg-orange-600 hover:bg-orange-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm">
-                  <span>公式ページ</span>
-                  <i class="fa-solid fa-angle-right text-[10px] ml-0.5"></i>
-                </a>
+                </div>
+
+                <!-- 補助アクション（スマホ下段 / PC右側） -->
+                <div class="flex items-center gap-1 sm:gap-1.5 justify-end">
+                  <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
+                     class="sm:hidden px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-xs font-medium transition flex items-center justify-center gap-1 whitespace-nowrap flex-shrink-0"
+                     title="Googleマップで開く">
+                    <i class="fa-solid fa-location-dot text-orange-500 text-[11px]"></i> <span>地図</span>
+                  </a>
+                  ${tel ? `
+                    <a href="tel:${tel.replace(/[^0-9]/g, '')}" 
+                       class="sm:hidden px-2.5 py-1 bg-orange-50 hover:bg-orange-100 text-orange-700 rounded-md text-xs font-medium transition flex items-center justify-center gap-1 whitespace-nowrap flex-shrink-0"
+                       title="電話をかける">
+                      <i class="fa-solid fa-phone text-orange-600 text-[11px]"></i> <span>電話</span>
+                    </a>
+                  ` : ''}
+                  <button onclick="openStoreHistoryModal('${code}')" 
+                          class="text-[11px] ${hasDiff ? 'text-orange-700 bg-orange-50 hover:bg-orange-100 border border-orange-200 font-semibold' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'} transition px-2 py-1 sm:py-1.5 rounded flex items-center gap-1 whitespace-nowrap flex-shrink-0"
+                          title="料金改定履歴を見る">
+                    <i class="fa-solid fa-clock-rotate-left ${hasDiff ? 'text-orange-600' : 'text-slate-400'}"></i> <span class="hidden sm:inline">履歴</span>
+                  </button>
+                  <button type="button" onclick="shareStoreOnX('${code}', event)" 
+                          class="text-[11px] text-slate-500 hover:text-black hover:bg-slate-100 transition px-2 py-1 sm:py-1.5 rounded flex items-center gap-1 whitespace-nowrap flex-shrink-0"
+                          title="この店舗の料金・設備をXでシェア">
+                    <i class="fa-brands fa-x-twitter text-slate-800"></i> <span class="hidden sm:inline">シェア</span>
+                  </button>
+                  <button type="button" onclick="openReportForm('${code}', '${name}')" 
+                          class="text-[11px] text-slate-400 hover:text-red-500 transition px-2 py-1 sm:py-1.5 rounded hover:bg-slate-50 flex items-center gap-1 whitespace-nowrap flex-shrink-0"
+                          title="料金・データの誤りをGoogleフォームで報告">
+                    <i class="fa-regular fa-flag"></i> <span class="hidden sm:inline">報告</span>
+                  </button>
+                  <a href="https://www.kaikatsu.jp/shop/detail/${code}.html" target="_blank" rel="noopener noreferrer" 
+                     class="hidden sm:inline-flex items-center text-center bg-orange-600 hover:bg-orange-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition shadow-sm whitespace-nowrap flex-shrink-0 gap-1">
+                    <span class="whitespace-nowrap">公式ページ</span>
+                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  </a>
+                </div>
               </div>
             </div>
 
