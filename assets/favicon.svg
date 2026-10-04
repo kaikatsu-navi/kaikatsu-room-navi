@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="50%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <linearGradient id="doorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#7c2d12" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  
+  <!-- 背景（角丸スクエア） -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)" />
+  
+  <!-- ドアと鍵のシンボル -->
+  <g filter="url(#shadow)">
+    <!-- ドア本体 -->
+    <rect x="136" y="96" width="240" height="320" rx="24" fill="url(#doorGrad)" />
+    <!-- ドアの厚み/シャドウ -->
+    <path d="M352 120 L352 392 a 12 12 0 0 1 -12 12 L160 404 a 12 12 0 0 0 12 12 L352 416 a 24 24 0 0 0 24 -24 L376 120 z" fill="#fde047" opacity="0.6"/>
+    <!-- ドアの上部小窓 -->
+    <rect x="176" y="140" width="160" height="84" rx="14" fill="#ea580c" opacity="0.15" />
+    <rect x="180" y="144" width="152" height="76" rx="10" fill="#fef9c3" stroke="#f59e0b" stroke-width="4" />
+    <!-- ドアノブ -->
+    <circle cx="330" cy="280" r="18" fill="#ea580c" />
+    <circle cx="330" cy="280" r="12" fill="#78350f" />
+    <!-- 鍵穴 -->
+    <path d="M330 274 a 4 4 0 0 1 4 4 c 0 1.8 -1.2 3.2 -2.8 3.8 l 1.8 7.2 h -6 l 1.8 -7.2 c -1.6 -0.6 -2.8 -2 -2.8 -3.8 a 4 4 0 0 1 4 -4 z" fill="#fef08a" />
+  </g>
+
+  <!-- 右下の南京錠/キーアイコン（鍵付を強調） -->
+  <g transform="translate(280, 260) scale(0.95)" filter="url(#shadow)">
+    <!-- 錠前のツル -->
+    <path d="M50 70 V45 a 30 30 0 0 1 60 0 V70" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+    <!-- 錠前の本体 -->
+    <rect x="30" y="65" width="100" height="80" rx="18" fill="#f59e0b" stroke="#ffffff" stroke-width="8"/>
+    <!-- 鍵穴 -->
+    <circle cx="80" cy="98" r="9" fill="#78350f" />
+    <path d="M76 98 L84 98 L82 122 L78 122 Z" fill="#78350f" />
+  </g>
+</svg>
