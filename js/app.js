@@ -34,56 +34,61 @@ function formatDistance(distKm) {
 }
 
 function requestNearMeSearch(isAuto = false) {
-  if (!navigator.geolocation) {
-    if (!isAuto) {
-      showToast('お使いの端末・ブラウザは位置情報に対応していません。');
-    }
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortSelect && sortSelect.value === 'distance_asc') {
-      sortSelect.value = 'default';
-      renderStores();
-    }
-    return;
-  }
-
-  if (!isAuto) {
-    showToast('📍 現在地を取得しています...');
-  }
-
-  navigator.geolocation.getCurrentPosition(
-    (pos) => {
-      userLocation = {
-        lat: pos.coords.latitude,
-        lng: pos.coords.longitude
-      };
-      const sortSelect = document.getElementById('sortSelect');
-      if (sortSelect) sortSelect.value = 'distance_asc';
-      renderStores();
-      showToast('📍 現在地から近い順に並び替えました！');
-    },
-    (err) => {
-      console.warn('Geolocation error:', err);
+  return new Promise((resolve) => {
+    if (!navigator.geolocation) {
       if (!isAuto) {
-        let msg = '位置情報を取得できませんでした。';
-        if (err.code === 1) {
-          msg = '位置情報の利用が許可されませんでした。ブラウザの設定から許可してください。';
-        } else if (err.code === 2) {
-          msg = '位置情報を特定できませんでした。電波環境の良い場所で再試行してください。';
-        } else if (err.code === 3) {
-          msg = '位置情報の取得がタイムアウトしました。';
-        }
-        showToast(msg);
-      } else if (err.code === 1) {
-        showToast('📍 位置情報が未許可のため、標準（都道府県順）で表示します。');
+        showToast('お使いの端末・ブラウザは位置情報に対応していません。');
       }
       const sortSelect = document.getElementById('sortSelect');
       if (sortSelect && sortSelect.value === 'distance_asc') {
         sortSelect.value = 'default';
         renderStores();
       }
-    },
-    { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-  );
+      resolve(false);
+      return;
+    }
+
+    if (!isAuto) {
+      showToast('📍 現在地を取得しています...');
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        userLocation = {
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude
+        };
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) sortSelect.value = 'distance_asc';
+        renderStores();
+        showToast('📍 現在地から近い順に並び替えました！');
+        resolve(true);
+      },
+      (err) => {
+        console.warn('Geolocation error:', err);
+        if (!isAuto) {
+          let msg = '位置情報を取得できませんでした。';
+          if (err.code === 1) {
+            msg = '位置情報の利用が許可されませんでした。ブラウザの設定から許可してください。';
+          } else if (err.code === 2) {
+            msg = '位置情報を特定できませんでした。電波環境の良い場所で再試行してください。';
+          } else if (err.code === 3) {
+            msg = '位置情報の取得がタイムアウトしました。';
+          }
+          showToast(msg);
+        } else if (err.code === 1) {
+          showToast('📍 位置情報が未許可のため、標準（都道府県順）で表示します。');
+        }
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect && sortSelect.value === 'distance_asc') {
+          sortSelect.value = 'default';
+          renderStores();
+        }
+        resolve(false);
+      },
+      { enableHighAccuracy: false, timeout: 6000, maximumAge: 300000 }
+    );
+  });
 }
 
 // === X (旧Twitter) Web Intent シェア ===
@@ -1089,15 +1094,9 @@ function submitModalToGoogleForm() {
       if (params.has('sort')) {
         const sortVal = params.get('sort');
         if (sortSelect) sortSelect.value = sortVal;
-        if (sortVal === 'distance_asc' && !userLocation) {
-          requestNearMeSearch(false);
-        }
       } else {
-        // パラメータ未指定時（初回アクセス）: デフォルトで現在地から近い順を試行
+        // パラメータ未指定時（初回アクセス）: デフォルトで現在地から近い順
         if (sortSelect) sortSelect.value = 'distance_asc';
-        if (!userLocation) {
-          requestNearMeSearch(true);
-        }
       }
 
       // チェックボックス
@@ -1186,7 +1185,31 @@ function submitModalToGoogleForm() {
         const resp = await fetch('stores.json?t=' + Date.now());
         allStores = await resp.json();
         restoreFromUrlParams();
-        renderStores();
+
+        const sortSelect = document.getElementById('sortSelect');
+        const currentSort = sortSelect ? sortSelect.value : 'distance_asc';
+
+        if (currentSort === 'distance_asc' && !userLocation) {
+          const container = document.getElementById('storeList');
+          if (container) {
+            container.innerHTML = `
+              <div class="bg-white rounded-2xl p-8 border border-slate-200 text-center shadow-xs my-6 space-y-3">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 text-blue-600 mb-1">
+                  <i class="fa-solid fa-location-crosshairs text-xl animate-spin"></i>
+                </div>
+                <h3 class="text-sm font-bold text-slate-800">現在地から近い順に店舗を探しています...</h3>
+                <p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
+                  位置情報の利用を許可すると、最も近い快活CLUBが最上部に並びます。<br>
+                  <span class="text-[11px] text-slate-400">※ 未許可や取得できない場合は、自動で都道府県順に切り替わります</span>
+                </p>
+              </div>
+            `;
+          }
+          await requestNearMeSearch(true);
+        } else {
+          renderStores();
+        }
+
         updateHeaderDiffBadge();
         updateHeaderFavBadge();
       } catch (err) {
