@@ -33,13 +33,22 @@ function formatDistance(distKm) {
   return `${distKm.toFixed(1)}km`;
 }
 
-function requestNearMeSearch() {
+function requestNearMeSearch(isAuto = false) {
   if (!navigator.geolocation) {
-    showToast('お使いの端末・ブラウザは位置情報に対応していません。');
+    if (!isAuto) {
+      showToast('お使いの端末・ブラウザは位置情報に対応していません。');
+    }
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect && sortSelect.value === 'distance_asc') {
+      sortSelect.value = 'default';
+      renderStores();
+    }
     return;
   }
 
-  showToast('📍 現在地を取得しています...');
+  if (!isAuto) {
+    showToast('📍 現在地を取得しています...');
+  }
 
   navigator.geolocation.getCurrentPosition(
     (pos) => {
@@ -54,15 +63,19 @@ function requestNearMeSearch() {
     },
     (err) => {
       console.warn('Geolocation error:', err);
-      let msg = '位置情報を取得できませんでした。';
-      if (err.code === 1) {
-        msg = '位置情報の利用が許可されませんでした。ブラウザの設定から許可してください。';
-      } else if (err.code === 2) {
-        msg = '位置情報を特定できませんでした。電波環境の良い場所で再試行してください。';
-      } else if (err.code === 3) {
-        msg = '位置情報の取得がタイムアウトしました。';
+      if (!isAuto) {
+        let msg = '位置情報を取得できませんでした。';
+        if (err.code === 1) {
+          msg = '位置情報の利用が許可されませんでした。ブラウザの設定から許可してください。';
+        } else if (err.code === 2) {
+          msg = '位置情報を特定できませんでした。電波環境の良い場所で再試行してください。';
+        } else if (err.code === 3) {
+          msg = '位置情報の取得がタイムアウトしました。';
+        }
+        showToast(msg);
+      } else if (err.code === 1) {
+        showToast('📍 位置情報が未許可のため、標準（都道府県順）で表示します。');
       }
-      showToast(msg);
       const sortSelect = document.getElementById('sortSelect');
       if (sortSelect && sortSelect.value === 'distance_asc') {
         sortSelect.value = 'default';
@@ -1072,12 +1085,18 @@ function submitModalToGoogleForm() {
       }
 
       // ソート順
+      const sortSelect = document.getElementById('sortSelect');
       if (params.has('sort')) {
-        const sortSelect = document.getElementById('sortSelect');
         const sortVal = params.get('sort');
         if (sortSelect) sortSelect.value = sortVal;
         if (sortVal === 'distance_asc' && !userLocation) {
-          requestNearMeSearch();
+          requestNearMeSearch(false);
+        }
+      } else {
+        // パラメータ未指定時（初回アクセス）: デフォルトで現在地から近い順を試行
+        if (sortSelect) sortSelect.value = 'distance_asc';
+        if (!userLocation) {
+          requestNearMeSearch(true);
         }
       }
 
@@ -1674,7 +1693,7 @@ function submitModalToGoogleForm() {
       document.getElementById('searchInput').value = '';
       selectedPrefs.clear();
       updatePrefTriggerButton();
-      document.getElementById('sortSelect').value = 'default';
+      document.getElementById('sortSelect').value = userLocation ? 'distance_asc' : 'default';
       document.querySelectorAll('.filter-cb').forEach(cb => cb.checked = false);
       updateHeaderFavBadge();
       renderStores();
