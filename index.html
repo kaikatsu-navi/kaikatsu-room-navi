@@ -17,7 +17,8 @@
     gtag('config', 'G-VQYVCZ706K');
   </script>
 
-  <title>快活CLUB 鍵付完全個室ナビ (非公式)</title>
+  <title>快活CLUB 鍵付完全個室ナビ｜全国415店舗の料金・設備・リアルタイム空席一括比較 (非公式)</title>
+  <link rel="canonical" href="https://kaikatsu-navi.github.io/kaikatsu-room-navi/">
   
   <!-- OGP / Twitter Card -->
   <meta name="description" content="全国415店舗の快活CLUB「鍵付完全個室」を一括比較！現在地から近い順ソート、リアルタイム空き状況確認、毎朝のサイレント価格改定速報、無料シャワー・駐車場絞り込みに対応。">
@@ -33,6 +34,41 @@
   <meta name="twitter:title" content="快活CLUB 鍵付完全個室ナビ｜全国の完全個室料金・設備一括比較">
   <meta name="twitter:description" content="全国415店舗の快活CLUB「鍵付完全個室」を一括比較！現在地から近い順ソート、リアルタイム空き状況確認、毎朝のサイレント価格改定速報も。">
   <meta name="twitter:image" content="https://kaikatsu-navi.github.io/kaikatsu-room-navi/assets/ogp-image.png?v=20261005">
+
+  <!-- 構造化データ (JSON-LD: WebApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "快活CLUB 鍵付完全個室ナビ",
+    "alternateName": "快活ナビ",
+    "url": "https://kaikatsu-navi.github.io/kaikatsu-room-navi/",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "description": "全国415店舗の快活CLUB「鍵付完全個室」を一括比較できる非公式ナビゲーションWebツール。現在地から近い順ソート、リアルタイム空室・残席数確認、全パック料金比較、サイレント価格改定速報、無料シャワー・駐車場・トースト等の設備絞り込みに対応。",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "softwareVersion": "2.0",
+    "author": {
+      "@type": "Organization",
+      "name": "PanForge Lab",
+      "url": "https://x.com/panforge_lab"
+    },
+    "featureList": [
+      "全国415店舗の快活CLUB 鍵付完全個室料金の一括比較",
+      "GPS現在地測位による近い順ソート＆距離表示",
+      "鍵付個室のリアルタイム空き状況・残席数確認",
+      "毎朝自動スクレイピングによるサイレント価格改定（値上げ・値下げ）検知",
+      "無料シャワー・駐車場・無料トースト・WEB予約などの設備フィルター",
+      "お気に入り店舗のピン留め・保存機能",
+      "検索条件のURL自動同期＆ワンタップ共有"
+    ]
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -257,6 +293,14 @@
       <div class="text-[11px] text-slate-400">※ 各料金は税込表示</div>
     </div>
 
+    <!-- noscript (クローラー＆JS無効環境向け) -->
+    <noscript>
+      <div class="bg-amber-50 border border-amber-300 text-amber-900 p-4 rounded-xl mb-4 text-xs">
+        <p class="font-bold mb-1">⚠️ JavaScriptが無効になっています</p>
+        <p>本サイト「快活CLUB 鍵付完全個室ナビ」は、全国415店舗の鍵付完全個室の料金比較、リアルタイム空席状況確認、現在地から近い順ソート、サイレント価格改定速報をご利用いただくためのWebツールです。全機能をご利用いただくにはブラウザのJavaScriptを有効にしてください。</p>
+      </div>
+    </noscript>
+
     <!-- 1列表示の店舗リスト -->
     <div id="storeList" class="space-y-3 sm:space-y-4">
       <!-- JavaScriptで動的生成 -->
@@ -266,7 +310,7 @@
 
   <!-- フッター -->
   <footer class="mt-8 border-t border-slate-200 py-6 text-center text-xs text-slate-500 bg-white">
-    <div class="max-w-7xl mx-auto px-4 space-y-2">
+    <div class="max-w-7xl mx-auto px-4 space-y-3">
       <div class="font-bold text-slate-700">快活CLUB 鍵付完全個室ナビ (非公式β)</div>
       <div class="text-[11px] text-slate-500">
         価格改定監視・データ収集開始: <span class="font-bold text-orange-600">2026年10月3日</span> ｜ 毎朝自動更新
@@ -278,6 +322,14 @@
         <a href="mailto:panforge.lab@gmail.com" class="text-slate-500 hover:underline">
           お問い合わせ
         </a>
+      </div>
+
+      <!-- SEO・サイト説明 (自然な解説文) -->
+      <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 max-w-4xl mx-auto leading-relaxed text-left sm:text-center">
+        <p>
+          「快活CLUB 鍵付完全個室ナビ」は、テレワークや出張、終電後の宿泊などで重宝する全国415店舗の快活CLUB「鍵付完全個室」に特化した料金・設備比較検索ツールです。
+          GPS位置情報を利用した現在地から近い店舗の即座ソート、リアルタイムな部屋・席種別の空き状況（残席数）確認、全パック料金（通常・ナイトパック・週末料金）の網羅、日々のサイレント値上げ・値下げ改定の自動検知に対応しています。
+        </p>
       </div>
     </div>
   </footer>
