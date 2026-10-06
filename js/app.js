@@ -1014,7 +1014,7 @@ function submitModalToGoogleForm() {
       
       const count = selectedPrefs.size;
       if (count === 0) {
-        labelEl.textContent = 'すべての都道府県（全国 415店舗）';
+        labelEl.textContent = 'すべての都道府県';
         badgeEl.classList.add('hidden');
       } else {
         const arr = Array.from(selectedPrefs);
@@ -1128,7 +1128,7 @@ function submitModalToGoogleForm() {
     async function shareCurrentConditions() {
       syncUrlParams();
       const shareUrl = window.location.href;
-      const count = document.getElementById('matchCount') ? document.getElementById('matchCount').textContent : '415';
+      const count = document.getElementById('matchCount') ? document.getElementById('matchCount').textContent : (allStores.length || '');
       const shareData = {
         title: '快活CLUB 鍵付完全個室ナビ',
         text: `【快活CLUB 完全個室ナビ】条件に該当する店舗: ${count}件が見つかりました！`,
@@ -1296,6 +1296,10 @@ function submitModalToGoogleForm() {
       });
 
       document.getElementById('matchCount').textContent = filtered.length;
+      const totalCountEl = document.getElementById('totalStoreCount');
+      if (totalCountEl && allStores.length > 0) {
+        totalCountEl.textContent = `全${allStores.length}`;
+      }
 
       const container = document.getElementById('storeList');
       if (filtered.length === 0) {
