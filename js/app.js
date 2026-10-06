@@ -608,10 +608,16 @@ function submitModalToGoogleForm() {
           const city = s['市区町村'];
           const diffs = s['diffs'] || [];
           const hasDec = diffs.some(d => (d.diff || '').startsWith('-'));
-          const hasInc = diffs.some(d => !(d.diff || '').startsWith('-'));
+          const hasInc = diffs.some(d => !(d.diff || '').startsWith('-') && !(d.diff || '').includes('NEW') && !(d.diff || '').includes('閉店'));
+          const isNewStore = diffs.some(d => (d.diff || '').includes('NEW') || (d.item || '').includes('新設'));
+          const isClosedStore = s.is_closed || diffs.some(d => (d.diff || '').includes('閉店') || (d.item || '').includes('閉店'));
 
           let badgeHtml = '';
-          if (hasDec && !hasInc) {
+          if (isNewStore) {
+            badgeHtml = '<span class="bg-blue-100 text-blue-800 border border-blue-300 text-[10px] font-bold px-1.5 py-0.2 rounded">🎉 新店舗/個室新設</span>';
+          } else if (isClosedStore) {
+            badgeHtml = '<span class="bg-slate-200 text-slate-800 border border-slate-300 text-[10px] font-bold px-1.5 py-0.2 rounded">⚠️ 閉店/個室終了</span>';
+          } else if (hasDec && !hasInc) {
             badgeHtml = '<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 text-[10px] font-bold px-1.5 py-0.2 rounded">🎉 値下げ</span>';
           } else if (hasInc && !hasDec) {
             badgeHtml = '<span class="bg-red-100 text-red-800 border border-red-200 text-[10px] font-bold px-1.5 py-0.2 rounded">値上げ</span>';
@@ -621,12 +627,34 @@ function submitModalToGoogleForm() {
 
           const summaryItems = diffs.slice(0, 3).map(d => {
             const isMinus = (d.diff || '').startsWith('-');
-            const color = isMinus ? 'text-emerald-700 bg-emerald-50' : 'text-red-700 bg-red-50';
-            return `<span class="inline-block px-1.5 py-0.5 rounded text-[10px] ${color} font-medium border border-slate-200/60">${d.item}: ${Number(d.before).toLocaleString()}円→${Number(d.after).toLocaleString()}円 (${d.diff})</span>`;
+            const isNew = (d.diff || '').includes('NEW');
+            const isClose = (d.diff || '').includes('閉店');
+            let color = 'text-red-700 bg-red-50 border-red-200';
+            if (isMinus) color = 'text-emerald-700 bg-emerald-50 border-emerald-200';
+            if (isNew) color = 'text-blue-700 bg-blue-50 border-blue-200';
+            if (isClose) color = 'text-slate-600 bg-slate-100 border-slate-300';
+
+            const numBefore = Number(d.before);
+            const numAfter = Number(d.after);
+            const isNumeric = !isNaN(numBefore) && !isNaN(numAfter) && d.before !== '' && d.before !== '-' && d.after !== '' && d.after !== '-';
+
+            let desc = '';
+            if (isNumeric) {
+              desc = `${d.item}: ${numBefore.toLocaleString()}円→${numAfter.toLocaleString()}円 (${d.diff})`;
+            } else if (d.before && d.after && d.before !== '-' && d.after !== '-') {
+              desc = `${d.item}: ${d.before}→${d.after} (${d.diff})`;
+            } else {
+              desc = `${d.item}: ${d.diff}`;
+            }
+            return `<span class="inline-block px-1.5 py-0.5 rounded text-[10px] ${color} font-medium border">${desc}</span>`;
           }).join(' ');
 
+          const actionBtnText = isClosedStore 
+            ? '<span class="text-[10px] text-slate-400 font-medium">※営業終了</span>' 
+            : '<div class="text-[10px] text-orange-600 font-medium group-hover:underline flex items-center gap-0.5 whitespace-nowrap">カードへ移動 <i class="fa-solid fa-arrow-down text-[9px]"></i></div>';
+
           return `
-            <div onclick="goToStoreFromModal('${code}')" 
+            <div onclick="goToStoreFromModal('${code}', ${isClosedStore})" 
                  class="bg-white hover:bg-orange-50/50 p-2.5 sm:p-3 rounded-lg border border-slate-200 hover:border-orange-300 transition cursor-pointer shadow-2xs group">
               <div class="flex justify-between items-start gap-2 mb-1">
                 <div>
@@ -639,9 +667,7 @@ function submitModalToGoogleForm() {
                     ${badgeHtml}
                   </div>
                 </div>
-                <div class="text-[10px] text-orange-600 font-medium group-hover:underline flex items-center gap-0.5 whitespace-nowrap">
-                  カードへ移動 <i class="fa-solid fa-arrow-down text-[9px]"></i>
-                </div>
+                ${actionBtnText}
               </div>
               <div class="flex flex-wrap gap-1 mt-1">
                 ${summaryItems}
@@ -675,7 +701,11 @@ function submitModalToGoogleForm() {
     }
 
     // モーダルから店舗へジャンプ＆ハイライト
-    function goToStoreFromModal(storeCode) {
+    function goToStoreFromModal(storeCode, isClosed) {
+      if (isClosed) {
+        showToast('※ この店舗は営業終了または完全個室の提供を終了しました');
+        return;
+      }
       toggleModal('priceUpdatesModal');
       
       const targetStore = allStores.find(s => String(s['店舗コード']) === String(storeCode));
@@ -1248,6 +1278,7 @@ function submitModalToGoogleForm() {
       };
 
       let filtered = allStores.filter(s => {
+        if (s.is_closed) return false;
         const sCode = String(s['店舗コード']);
         if (favOnly && !favSet.has(sCode)) return false;
 
@@ -1298,7 +1329,8 @@ function submitModalToGoogleForm() {
       document.getElementById('matchCount').textContent = filtered.length;
       const totalCountEl = document.getElementById('totalStoreCount');
       if (totalCountEl && allStores.length > 0) {
-        totalCountEl.textContent = `全${allStores.length}`;
+        const activeCount = allStores.filter(s => !s.is_closed).length;
+        totalCountEl.textContent = `全${activeCount}`;
       }
 
       const container = document.getElementById('storeList');
